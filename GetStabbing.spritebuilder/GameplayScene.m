@@ -19,6 +19,8 @@
     float _conveyorSpeed;
     
     int _numCorrectPiercings;
+    int _score;
+    int _strikes;
 }
 
 - (void)didLoadFromCCB
@@ -57,6 +59,19 @@
         if([self isAtEndOfConveyor:currentHead])
         {
             // check all piercings were completed
+            if(currentHead.allTargetsHit)
+            {
+                _score += 1;
+            }
+            else
+            {
+                _strikes += 1;
+            }
+            
+            if(_strikes == MAX_NUM_STRIKES)
+            {
+                [self gameOver];
+            }
             
             // move to head of line
             CGFloat newX = currentHead.position.x - (MAX_NUM_HEADS * (currentHead.contentSizeInPoints.width + SPACE_BETWEEN_HEADS));

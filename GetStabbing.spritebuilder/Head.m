@@ -126,13 +126,9 @@
         self.piercingsMade++;
     }
     
-    //TODO: FIX LOSING CONDITION
-    
-    // TODO: FIX WINNING CONDITION
     if (self.piercingsMade >= self.piercingsNeeded)
     {
         self.allTargetsHit = YES;
-        NSLog(@"all targets hit");
     }
 }
 

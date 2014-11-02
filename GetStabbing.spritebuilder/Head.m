@@ -14,25 +14,25 @@
 {
     CCSprite *_neckSprite;
     CCSprite *_shirtSprite;
-
+    
     CCSprite *_rightEyeSprite;
     CCSprite *_leftEyeSprite;
     
     CCSprite *_rightEar1Sprite;
     CCSprite *_rightEar2Sprite;
-
+    
     CCSprite *_leftEar1Sprite;
     CCSprite *_leftEar2Sprite;
-
+    
     CCSprite *_head1Sprite;
     CCSprite *_head2Sprite;
-
+    
     CCSprite *_nose1Sprite;
     CCSprite *_nose2Sprite;
-
+    
     CCSprite *_mouth1Sprite;
     CCSprite *_mouth2Sprite;
-
+    
     CCSprite *_hair1Sprite;
     CCSprite *_hair2Sprite;
     
@@ -66,49 +66,35 @@
     CCColor *color3;
     CCColor *color4;
     CCColor *color5;
-    
 }
 
 - (void)didLoadFromCCB
 {
     // add targets to array
     self.targets = [[NSMutableArray alloc] init];
+    
+    self.labret.piercing = _labretP;
     [self.targets addObject:self.labret];
     
+    self.leftEyebrow.piercing = _leftEyebrowP;
+    self.rightEyebrow.piercing = _rightEyebrowP;
     [self.targets addObject:self.leftEyebrow];
     [self.targets addObject:self.rightEyebrow];
-
+    
+    self.leftNose.piercing = _leftNoseP;
+    self.rightNose.piercing = _rightNoseP;
     [self.targets addObject:self.leftNose];
     [self.targets addObject:self.rightNose];
-
+    
+    self.lowerLeftEar.piercing = _lowerLeftEarP;
+    self.lowerRightEar.piercing = _lowerRightEarP;
     [self.targets addObject:self.lowerLeftEar];
     [self.targets addObject:self.lowerRightEar];
     
+    self.upperLeftEar.piercing = _upperLeftEarP;
+    self.upperRightEar.piercing = _upperRightEarP;
     [self.targets addObject:self.upperLeftEar];
     [self.targets addObject:self.upperRightEar];
-    
-    // add piercingss to array
-    self.piercings = [[NSMutableArray alloc] init];
-    [self.piercings addObject:_labretP];
-    
-    [self.piercings addObject:_leftEyebrowP];
-    [self.piercings addObject:_rightEyebrowP];
-    
-    [self.piercings addObject:_leftNoseP];
-    [self.piercings addObject:_rightNoseP];
-    
-    [self.piercings addObject:_lowerLeftEarP];
-    [self.piercings addObject:_lowerRightEarP];
-    
-    [self.piercings addObject:_upperLeftEarP];
-    [self.piercings addObject:_upperRightEarP];
-    
-    self.atEnd = NO;
-    
-    // TODO: move these somewhere they can be called and reset
-    self.piercingsMade = 0;
-    self.piercingsNeeded = 1; 
-    self.allTargetsHit = NO;
     
     // skin colors
     skin0 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.849 green:1.000 blue:0.852 alpha:1.000]];
@@ -126,27 +112,34 @@
     color4 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.197 green:0.658 blue:1.000 alpha:1.000]];
     color5 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.193 green:1.000 blue:0.258 alpha:1.000]];
     
-    [self modularMagic];
+    // reset
+    [self reset];
 }
 
--(void)targetTouched:(Target*)target {
-    if (target.visible) {
-        NSUInteger index = [self.targets indexOfObject:target];
-        CCSprite *piercing = [self.piercings objectAtIndex:index];
-        piercing.visible = YES;
-        
+-(void)targetTouched:(Target*)target
+{
+    if (target.visible)
+    {
+        target.piercing.visible = YES;
         target.visible = NO;
+        
         self.piercingsMade++;
     }
-    if (self.piercingsMade >= self.piercingsNeeded) {
+    
+    //TODO: FIX LOSING CONDITION
+    
+    // TODO: FIX WINNING CONDITION
+    if (self.piercingsMade >= self.piercingsNeeded)
+    {
         self.allTargetsHit = YES;
         NSLog(@"all targets hit");
     }
 }
 
--(void)modularMagic {
+-(void)modularMagic
+{
     // semi-randomly generated customer appearance!
-
+    
     // set all Sprites to not visible
     _rightEar1Sprite.visible = NO;
     _rightEar2Sprite.visible = NO;
@@ -165,22 +158,12 @@
     _hair1Sprite.visible = NO;
     _hair2Sprite.visible = NO;
     
-    for (CCSprite *sprite in self.piercings) {
-        sprite.visible = NO;
-    }
-    for (Target *target in self.targets) {
-        target.visible = YES;
-    }
-//    _labretP.visible = NO;
-//    _lowerLeftEarP.visible = NO;
-//    _lowerRightEarP.visible = NO;
-//    _upperLeftEarP.visible = NO;
-//    _upperRightEarP.visible = NO;
-//    _rightNoseP.visible = NO;
-//    _leftNoseP.visible = NO;
-//    _rightEyebrowP.visible = NO;
-//    _leftEyebrowP.visible = NO;
-    
+    //    for (Target *target in self.targets)
+    //    {
+    //        target.piercing.visible = NO;
+    //        target.visible = YES;
+    //    }
+    //
     // get colors
     _skinColor = [self getSkinColor];
     _eyeColor = [self getColor];
@@ -188,18 +171,28 @@
     // chose body parts and assign skin color
     // ears, face, neck
     NSMutableArray *bodyParts = [[NSMutableArray alloc] initWithObjects:_neckSprite, nil];
-    if ([self coinFlip]) { // ears
+    if ([self coinFlip])
+    {
+        // ears
         [bodyParts addObject:_rightEar1Sprite];
         [bodyParts addObject:_leftEar1Sprite];
-    } else {
+    }
+    else
+    {
         [bodyParts addObject:_rightEar2Sprite];
         [bodyParts addObject:_leftEar2Sprite];
     }
-    if ([self coinFlip]) { // head
+    
+    if ([self coinFlip])
+    {
+        // head
         [bodyParts addObject:_head1Sprite];
-    } else {
+    }
+    else
+    {
         [bodyParts addObject:_head2Sprite];
     }
+    
     for (CCSprite *sprite in bodyParts) {
         [self turnOnSprite:sprite withColor:_skinColor];
     }
@@ -207,46 +200,54 @@
     // chose other things and assign colors
     // hair, shirt
     NSMutableArray *otherParts = [[NSMutableArray alloc] initWithObjects:_shirtSprite, nil];
-    if ([self coinFlip]) {
+    if ([self coinFlip])
+    {
         [otherParts addObject:_hair1Sprite];
-    } else {
+    }
+    else
+    {
         [otherParts addObject:_hair2Sprite];
     }
-    for (CCSprite *sprite in otherParts) {
+    
+    for (CCSprite *sprite in otherParts)
+    {
         [self turnOnSprite:sprite withColor:[self getColor]];
     }
+    
     // eyes
     [self turnOnSprite:_rightEyeSprite withColor:_eyeColor];
     [self turnOnSprite:_leftEyeSprite withColor:_eyeColor];
+    
     // mouth and nose
-    if ([self coinFlip]) {
+    if ([self coinFlip])
+    {
         _mouth1Sprite.visible = YES;
-    } else _mouth2Sprite.visible = YES;
-    if ([self coinFlip]) {
+    }
+    else _mouth2Sprite.visible = YES;
+    
+    if ([self coinFlip])
+    {
         _nose1Sprite.visible = YES;
     } else _nose2Sprite.visible = YES;
     
 }
 
--(void)turnOnSprite:(CCSprite*)sprite withColor:(CCColor*)color {
+#pragma mark - Helper methods
+
+-(void)turnOnSprite:(CCSprite*)sprite withColor:(CCColor*)color
+{
     sprite.visible = YES;
     sprite.color = color;
 }
 
--(BOOL)coinFlip {
-    if (arc4random_uniform(2)) {
-        return YES;
-    } else {
-        return NO;
-    }
-}
-
--(CCColor*)getSkinColor {
+-(CCColor*)getSkinColor
+{
     
     int skinNumber = arc4random_uniform(6);
-//    NSLog(@"skin number %i",skinNumber);
-
-    switch (skinNumber) {
+    //    NSLog(@"skin number %i",skinNumber);
+    
+    switch (skinNumber)
+    {
         case 0:
             return skin0;
         case 1:
@@ -264,12 +265,14 @@
     }
 }
 
--(CCColor*)getColor {
+-(CCColor*)getColor
+{
     
     int colorNumber = arc4random_uniform(6);
-//    NSLog(@"color number %i",colorNumber);
+    //    NSLog(@"color number %i",colorNumber);
     
-    switch (colorNumber) {
+    switch (colorNumber)
+    {
         case 0:
             return color0;
         case 1:
@@ -284,6 +287,47 @@
             return color5;
         default:
             return color0;
+    }
+}
+
+- (void)reset
+{
+    self.piercingsMade = 0;
+    self.piercingsNeeded = 0;
+    self.allTargetsHit = NO;
+    self.atEnd = NO;
+    
+    // clear targets
+    for(Target *target in self.targets)
+    {
+        target.piercingNeeded = NO;
+        target.piercing.visible = NO;
+    }
+    
+    [self modularMagic];
+    [self randomlyAssignPiercingsNeeded];
+}
+
+#pragma mark - Helper methods
+
+-(BOOL)coinFlip
+{
+    if (arc4random_uniform(2))
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+}
+
+- (void)randomlyAssignPiercingsNeeded
+{
+    for(Target *target in self.targets)
+    {
+        target.piercingNeeded = [self coinFlip];
+        if(target.piercingNeeded) { self.piercingsNeeded++; }
     }
 }
 

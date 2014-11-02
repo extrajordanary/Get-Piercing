@@ -1,2 +1,2 @@
 dependencies: \
-  /Users/Jordan/Files/Coding/GetStabbing.spritebuilder/Source/main.m
+  /Users/Jordan/Files/Coding/GetStabbing/GetStabbing.spritebuilder/Source/main.m

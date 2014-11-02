@@ -6,21 +6,21 @@
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
-#import "CCSprite.h"
+@class Target;
 
-@class Piercing;
+#import "CCSprite.h"
 
 @interface Head : CCSprite
 
-@property (nonatomic, strong) Piercing *leftUpperEarPiercing;
-@property (nonatomic, strong) Piercing *rightUpperEarPiercing;
-@property (nonatomic, strong) Piercing *leftLowerEarPiercing;
-@property (nonatomic, strong) Piercing *rightLowerEarPiercing;
-@property (nonatomic, strong) Piercing *leftEyebrowPiercing;
-@property (nonatomic, strong) Piercing *rightEyebrowPiercing;
-@property (nonatomic, strong) Piercing *leftNostrilPiercing;
-@property (nonatomic, strong) Piercing *rightNostrilPiercing;
-@property (nonatomic, strong) Piercing *labretPiercing;
+@property (nonatomic, strong) Target *upperLeftEar;
+@property (nonatomic, strong) Target *upperRightEar;
+@property (nonatomic, strong) Target *lowerLeftEar;
+@property (nonatomic, strong) Target *lowerRightEar;
+@property (nonatomic, strong) Target *leftEyebrow;
+@property (nonatomic, strong) Target *rightEyebrow;
+@property (nonatomic, strong) Target *leftNose;
+@property (nonatomic, strong) Target *rightNose;
+@property (nonatomic, strong) Target *labret;
 
 @property (nonatomic, strong) NSMutableArray *piercings;
 

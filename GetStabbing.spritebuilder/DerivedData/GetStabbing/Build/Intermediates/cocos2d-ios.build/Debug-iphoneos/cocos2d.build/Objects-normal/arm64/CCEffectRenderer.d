@@ -1,17 +1,17 @@
 dependencies: \
-  /Users/Jordan/Files/Coding/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/cocos2d/CCEffectRenderer.m \
+  /Users/Jordan/Files/Coding/GetStabbing/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/cocos2d/CCEffectRenderer.m \
   cocos2d/CCEffectRenderer.h cocos2d/ccTypes.h cocos2d/ccMacros.h \
   cocos2d/ccConfig.h \
-  /Users/Jordan/Files/Coding/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/cocos2d/Support/CGPointExtension.h \
+  /Users/Jordan/Files/Coding/GetStabbing/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/cocos2d/Support/CGPointExtension.h \
   cocos2d/Platforms/CCGL.h cocos2d/Platforms/iOS/CCGLView.h \
   cocos2d/Platforms/iOS/CCESRenderer.h cocos2d/CCConfiguration.h \
   cocos2d/CCDirector.h cocos2d/CCProtocols.h \
-  /Users/Jordan/Files/Coding/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/cocos2d/Support/CCColor.h \
+  /Users/Jordan/Files/Coding/GetStabbing/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/cocos2d/Support/CCColor.h \
   cocos2d/CCResponderManager.h cocos2d/CCRenderer.h cocos2d/CCEffect.h \
   cocos2d/CCSprite.h cocos2d/CCNode.h cocos2d/CCResponder.h \
   cocos2d/CCScheduler.h cocos2d/CCShader.h cocos2d/CCEffectStack.h \
   cocos2d/CCTexture.h cocos2d/Platforms/CCNS.h \
-  /Users/Jordan/Files/Coding/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/cocos2d/Support/ccUtils.h \
+  /Users/Jordan/Files/Coding/GetStabbing/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/cocos2d/Support/ccUtils.h \
   cocos2d/CCEffect_Private.h cocos2d/CCEffectStackProtocol.h \
   cocos2d/CCRenderer_Private.h cocos2d/CCCache.h cocos2d/cocos2d.h \
   cocos2d/CCAction.h cocos2d/CCActionCatmullRom.h \
@@ -36,23 +36,23 @@ dependencies: \
   cocos2d/CCTransition.h cocos2d/CCLayout.h cocos2d/CCLayoutBox.h \
   cocos2d/CCPhysicsBody.h cocos2d/CCPhysicsJoint.h \
   cocos2d/CCPhysicsNode.h cocos2d/CCPhysicsShape.h \
-  /Users/Jordan/Files/Coding/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/external/ObjectAL/OALSimpleAudio.h \
-  /Users/Jordan/Files/Coding/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/external/ObjectAL/Support/SynthesizeSingleton.h \
-  /Users/Jordan/Files/Coding/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/external/ObjectAL/OpenAL/ALDevice.h \
+  /Users/Jordan/Files/Coding/GetStabbing/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/external/ObjectAL/OALSimpleAudio.h \
+  /Users/Jordan/Files/Coding/GetStabbing/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/external/ObjectAL/Support/SynthesizeSingleton.h \
+  /Users/Jordan/Files/Coding/GetStabbing/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/external/ObjectAL/OpenAL/ALDevice.h \
   external/ObjectAL/OpenAL/ALContext.h \
   external/ObjectAL/OpenAL/ALListener.h \
   external/ObjectAL/OpenAL/ALTypes.h \
-  /Users/Jordan/Files/Coding/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/external/ObjectAL/Session/OALSuspendHandler.h \
+  /Users/Jordan/Files/Coding/GetStabbing/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/external/ObjectAL/Session/OALSuspendHandler.h \
   external/ObjectAL/OpenAL/ALSource.h \
   external/ObjectAL/OpenAL/ALSoundSource.h \
   external/ObjectAL/OpenAL/ALBuffer.h \
-  /Users/Jordan/Files/Coding/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/external/ObjectAL/Actions/OALAction.h \
-  /Users/Jordan/Files/Coding/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/external/ObjectAL/ObjectALConfig.h \
-  /Users/Jordan/Files/Coding/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/external/ObjectAL/OpenAL/ALChannelSource.h \
+  /Users/Jordan/Files/Coding/GetStabbing/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/external/ObjectAL/Actions/OALAction.h \
+  /Users/Jordan/Files/Coding/GetStabbing/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/external/ObjectAL/ObjectALConfig.h \
+  /Users/Jordan/Files/Coding/GetStabbing/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/external/ObjectAL/OpenAL/ALChannelSource.h \
   external/ObjectAL/OpenAL/ALSoundSourcePool.h \
-  /Users/Jordan/Files/Coding/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/external/ObjectAL/AudioTrack/OALAudioTrack.h \
+  /Users/Jordan/Files/Coding/GetStabbing/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/external/ObjectAL/AudioTrack/OALAudioTrack.h \
   external/ObjectAL/AudioTrack/OALAudioTrackNotifications.h \
-  /Users/Jordan/Files/Coding/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/cocos2d/Platforms/iOS/CCAppDelegate.h \
+  /Users/Jordan/Files/Coding/GetStabbing/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/cocos2d/Platforms/iOS/CCAppDelegate.h \
   cocos2d/Platforms/iOS/CCDirectorIOS.h \
   cocos2d/Platforms/iOS/UITouch+CC.h cocos2d/Support/CCFileUtils.h \
   cocos2d/Support/CCProfiling.h cocos2d/Support/NSThread+performBlock.h \

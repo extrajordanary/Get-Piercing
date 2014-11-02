@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/Jordan/Files/Coding/GetStabbing.spritebuilder/Source/AppDelegate.m \
-  /Users/Jordan/Files/Coding/GetStabbing.spritebuilder/Source/AppDelegate.h
+  /Users/Jordan/Files/Coding/GetStabbing/GetStabbing.spritebuilder/Source/AppDelegate.m \
+  /Users/Jordan/Files/Coding/GetStabbing/GetStabbing.spritebuilder/Source/AppDelegate.h

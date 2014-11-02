@@ -23,6 +23,10 @@
 @property (nonatomic, strong) Target *upperRightEar;
 
 @property (nonatomic, strong) NSMutableArray *targets;
+@property (nonatomic, strong) NSMutableArray *piercings;
+
+@property (nonatomic, assign) int piercingsNeeded;
+@property (nonatomic, assign) int piercingsMade;
 @property (nonatomic, assign) BOOL allTargetsHit;
 
 @property (nonatomic, assign) BOOL atEnd;
@@ -53,5 +57,7 @@
 //@property (nonatomic, strong) CCSprite *hair2Sprite;
 
 -(void)modularMagic;
+-(void)targetTouched:(Target*)target;
+
 
 @end

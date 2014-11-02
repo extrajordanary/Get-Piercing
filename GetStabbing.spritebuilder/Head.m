@@ -41,6 +41,17 @@
     CCColor *_hairColor;
     CCColor *_skinColor;
     
+    // piercings
+    CCSprite *_labretP;
+    CCSprite *_lowerLeftEarP;
+    CCSprite *_lowerRightEarP;
+    CCSprite *_upperLeftEarP;
+    CCSprite *_upperRightEarP;
+    CCSprite *_leftEyebrowP;
+    CCSprite *_rightEyebrowP;
+    CCSprite *_leftNoseP;
+    CCSprite *_rightNoseP;
+    
     // color selection
     CCColor *skin0;
     CCColor *skin1;
@@ -61,6 +72,7 @@
 - (void)didLoadFromCCB
 {
     // add targets to array
+    self.targets = [[NSMutableArray alloc] init];
     [self.targets addObject:self.labret];
     
     [self.targets addObject:self.leftEyebrow];
@@ -75,7 +87,28 @@
     [self.targets addObject:self.upperLeftEar];
     [self.targets addObject:self.upperRightEar];
     
+    // add piercingss to array
+    self.piercings = [[NSMutableArray alloc] init];
+    [self.piercings addObject:_labretP];
+    
+    [self.piercings addObject:_leftEyebrowP];
+    [self.piercings addObject:_rightEyebrowP];
+    
+    [self.piercings addObject:_leftNoseP];
+    [self.piercings addObject:_rightNoseP];
+    
+    [self.piercings addObject:_lowerLeftEarP];
+    [self.piercings addObject:_lowerRightEarP];
+    
+    [self.piercings addObject:_upperLeftEarP];
+    [self.piercings addObject:_upperRightEarP];
+    
     self.atEnd = NO;
+    
+    // TODO: move these somewhere they can be called and reset
+    self.piercingsMade = 0;
+    self.piercingsNeeded = 1;
+    self.allTargetsHit = NO;
     
     // skin colors
     skin0 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.849 green:1.000 blue:0.852 alpha:1.000]];
@@ -92,14 +125,23 @@
     color3 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.417 green:0.217 blue:0.846 alpha:1.000]];
     color4 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.197 green:0.658 blue:1.000 alpha:1.000]];
     color5 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.193 green:1.000 blue:0.258 alpha:1.000]];
-//    color0 = [CCColor colorWithRed:0.5 green:0.8 blue:1.0 alpha:1.0];
-//    color1 = [CCColor colorWithRed:0.5 green:0.8 blue:1.0 alpha:1.0];
-//    color2 = [CCColor colorWithRed:0.5 green:0.8 blue:1.0 alpha:1.0];
-//    color3 = [CCColor colorWithRed:0.5 green:0.8 blue:1.0 alpha:1.0];
-//    color4 = [CCColor colorWithRed:0.5 green:0.8 blue:1.0 alpha:1.0];
-//    color5 = [CCColor colorWithRed:0.5 green:0.6 blue:0.9];
     
     [self modularMagic];
+}
+
+-(void)targetTouched:(Target*)target {
+    if (target.visible) {
+        NSUInteger index = [self.targets indexOfObject:target];
+        CCSprite *piercing = [self.piercings objectAtIndex:index];
+        piercing.visible = YES;
+        
+        target.visible = NO;
+        self.piercingsMade++;
+    }
+    if (self.piercingsMade >= self.piercingsNeeded) {
+        self.allTargetsHit = YES;
+        NSLog(@"all targets hit");
+    }
 }
 
 -(void)modularMagic {
@@ -114,20 +156,34 @@
     _head1Sprite.visible = NO;
     _head2Sprite.visible = NO;
     
-//    _nose1Sprite.visible = NO;
-//    _nose2Sprite.visible = NO;
-//    
-//    _mouth1Sprite.visible = NO;
-//    _mouth2Sprite.visible = NO;
+    _nose1Sprite.visible = NO;
+    _nose2Sprite.visible = NO;
+    
+    _mouth1Sprite.visible = NO;
+    _mouth2Sprite.visible = NO;
     
     _hair1Sprite.visible = NO;
     _hair2Sprite.visible = NO;
     
+    for (CCSprite *sprite in self.piercings) {
+        sprite.visible = NO;
+    }
+    for (Target *target in self.targets) {
+        target.visible = YES;
+    }
+//    _labretP.visible = NO;
+//    _lowerLeftEarP.visible = NO;
+//    _lowerRightEarP.visible = NO;
+//    _upperLeftEarP.visible = NO;
+//    _upperRightEarP.visible = NO;
+//    _rightNoseP.visible = NO;
+//    _leftNoseP.visible = NO;
+//    _rightEyebrowP.visible = NO;
+//    _leftEyebrowP.visible = NO;
+    
     // get colors
     _skinColor = [self getSkinColor];
     _eyeColor = [self getColor];
-//    _hairColor = [self getColor];
-//    _shirtColor = [self getColor];
     
     // chose body parts and assign skin color
     // ears, face, neck
@@ -162,8 +218,13 @@
     // eyes
     [self turnOnSprite:_rightEyeSprite withColor:_eyeColor];
     [self turnOnSprite:_leftEyeSprite withColor:_eyeColor];
-    
-    
+    // mouth and nose
+    if ([self coinFlip]) {
+        _mouth1Sprite.visible = YES;
+    } else _mouth2Sprite.visible = YES;
+    if ([self coinFlip]) {
+        _nose1Sprite.visible = YES;
+    } else _nose2Sprite.visible = YES;
     
 }
 
@@ -174,10 +235,8 @@
 
 -(BOOL)coinFlip {
     if (arc4random_uniform(2)) {
-        NSLog(@"YES");
         return YES;
     } else {
-        NSLog(@"NO");
         return NO;
     }
 }
@@ -185,7 +244,7 @@
 -(CCColor*)getSkinColor {
     
     int skinNumber = arc4random_uniform(6);
-    NSLog(@"skin number %i",skinNumber);
+//    NSLog(@"skin number %i",skinNumber);
 
     switch (skinNumber) {
         case 0:
@@ -208,20 +267,15 @@
 -(CCColor*)getColor {
     
     int colorNumber = arc4random_uniform(6);
-    NSLog(@"color number %i",colorNumber);
+//    NSLog(@"color number %i",colorNumber);
     
     switch (colorNumber) {
         case 0:
             return color0;
-//            return [CCColor colorWithRed:0.5 green:0.6 blue:0.9];
         case 1:
             return color1;
-//            return [CCColor blueColor];
-
         case 2:
             return color2;
-//            return [CCColor greenColor];
-
         case 3:
             return color3;
         case 4:

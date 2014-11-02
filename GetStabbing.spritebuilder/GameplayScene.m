@@ -31,6 +31,7 @@
     for(int i = 0; i < MAX_NUM_HEADS; i++)
     {
         Head *head = (Head *)[CCBReader load:@"Head"];
+        // TODO: assign a value to head.piercingsNeeded
         
         [_heads addObject:head];
         [_conveyorNode addChild:head];
@@ -63,6 +64,11 @@
             currentHead.position = ccp(newX, currentHead.position.y);
             currentHead.atEnd = NO;
             [currentHead modularMagic]; // resets colors
+            // TODO: assign a value to head.piercingsNeeded
+            
+            // speed up conveyor
+            _conveyorSpeed += 0.1;
+            // TODO: maxing out at 5.0 seems good
         }
     }
 }

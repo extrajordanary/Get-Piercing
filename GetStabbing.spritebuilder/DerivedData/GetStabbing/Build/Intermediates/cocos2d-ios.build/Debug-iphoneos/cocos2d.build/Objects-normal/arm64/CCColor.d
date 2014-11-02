@@ -1,9 +1,9 @@
 dependencies: \
-  /Users/Jordan/Files/Coding/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/cocos2d/Support/CCColor.m \
+  /Users/Jordan/Files/Coding/GetStabbing/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/cocos2d/Support/CCColor.m \
   cocos2d/Support/CCColor.h \
-  /Users/Jordan/Files/Coding/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/cocos2d/ccMacros.h \
+  /Users/Jordan/Files/Coding/GetStabbing/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/cocos2d/ccMacros.h \
   cocos2d/ccConfig.h \
-  /Users/Jordan/Files/Coding/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/cocos2d/Support/CGPointExtension.h \
-  /Users/Jordan/Files/Coding/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/cocos2d/ccTypes.h \
+  /Users/Jordan/Files/Coding/GetStabbing/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/cocos2d/Support/CGPointExtension.h \
+  /Users/Jordan/Files/Coding/GetStabbing/GetStabbing.spritebuilder/Source/libs/cocos2d-iphone/cocos2d/ccTypes.h \
   cocos2d/Platforms/CCGL.h cocos2d/Platforms/iOS/CCGLView.h \
   cocos2d/Platforms/iOS/CCESRenderer.h

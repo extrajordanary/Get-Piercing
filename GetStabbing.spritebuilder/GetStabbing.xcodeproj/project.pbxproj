@@ -41,7 +41,6 @@
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
 		CEA037C11A060D1600AE81D0 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA037C01A060D1600AE81D0 /* Constants.m */; };
 		CEA037DC1A0629D600AE81D0 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA037DB1A0629D600AE81D0 /* GameOverScene.m */; };
-		CEA037E91A06B84B00AE81D0 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA037E81A06B84B00AE81D0 /* Utilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,8 +105,6 @@
 		CEA037C01A060D1600AE81D0 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		CEA037DA1A0629D600AE81D0 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverScene.h; path = Source/GameOverScene.h; sourceTree = "<group>"; };
 		CEA037DB1A0629D600AE81D0 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverScene.m; path = Source/GameOverScene.m; sourceTree = "<group>"; };
-		CEA037E71A06B84B00AE81D0 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utilities.h; path = Source/Utilities.h; sourceTree = "<group>"; };
-		CEA037E81A06B84B00AE81D0 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utilities.m; path = Source/Utilities.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,8 +154,6 @@
 				17C5BD3D1A0600D60082697D /* Head.m */,
 				17C5BD401A0601EE0082697D /* Target.h */,
 				17C5BD411A0601EE0082697D /* Target.m */,
-				CEA037E71A06B84B00AE81D0 /* Utilities.h */,
-				CEA037E81A06B84B00AE81D0 /* Utilities.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -373,7 +368,6 @@
 				17C5BD3E1A0600D60082697D /* Head.m in Sources */,
 				1741A6D61A05D89900073075 /* GameplayScene.m in Sources */,
 				17C5BD421A0601EE0082697D /* Target.m in Sources */,
-				CEA037E91A06B84B00AE81D0 /* Utilities.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
 				CEA037C11A060D1600AE81D0 /* Constants.m in Sources */,

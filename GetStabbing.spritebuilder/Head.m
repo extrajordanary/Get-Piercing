@@ -9,7 +9,6 @@
 #import "Head.h"
 
 #import "Target.h"
-#import "Utilities.h"
 
 @implementation Head
 {
@@ -185,7 +184,7 @@
     // chose body parts and assign skin color
     // ears, face, neck
     NSMutableArray *bodyParts = [[NSMutableArray alloc] initWithObjects:_neckSprite, nil];
-    if ([[Utilities sharedInstance] coinFlip])
+    if ([self coinFlip])
     {
         // ears
         [bodyParts addObject:_rightEar1Sprite];
@@ -195,7 +194,7 @@
         [bodyParts addObject:_rightEar2Sprite];
         [bodyParts addObject:_leftEar2Sprite];
     }
-    if ([[Utilities sharedInstance] coinFlip])
+    if ([self coinFlip])
     {
         // head
         [bodyParts addObject:_head1Sprite];
@@ -212,7 +211,7 @@
     // chose other things and assign colors
     // hair, shirt
     NSMutableArray *otherParts = [[NSMutableArray alloc] initWithObjects:_shirtSprite, nil];
-    if ([[Utilities sharedInstance] coinFlip])
+    if ([self coinFlip])
     {
         [otherParts addObject:_hair1Sprite];
     }
@@ -231,13 +230,13 @@
     [self turnOnSprite:_leftEyeSprite withColor:_eyeColor];
     
     // mouth and nose
-    if ([[Utilities sharedInstance] coinFlip])
+    if ([self coinFlip])
     {
         _mouth1Sprite.visible = YES;
     }
     else _mouth2Sprite.visible = YES;
     
-    if ([[Utilities sharedInstance] coinFlip])
+    if ([self coinFlip])
     {
         _nose1Sprite.visible = YES;
     } else _nose2Sprite.visible = YES;
@@ -305,6 +304,23 @@
     self.piercingsMade = 0;
     self.piercingsNeeded = 1;
     self.allTargetsHit = NO;
+    self.atEnd = NO;
+    
+    [self modularMagic];
+}
+
+#pragma mark - Helper methods
+
+-(BOOL)coinFlip
+{
+    if (arc4random_uniform(2))
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
 }
 
 @end

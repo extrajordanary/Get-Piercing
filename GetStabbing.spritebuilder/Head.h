@@ -58,6 +58,7 @@
 
 -(void)modularMagic;
 -(void)targetTouched:(Target*)target;
+- (void)reset;
 
 
 @end

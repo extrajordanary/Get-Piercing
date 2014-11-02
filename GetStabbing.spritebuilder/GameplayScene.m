@@ -58,14 +58,14 @@
             
             // move to head of line
             CGFloat newX = currentHead.position.x - (MAX_NUM_HEADS * (currentHead.contentSizeInPoints.width + SPACE_BETWEEN_HEADS));
-                
             currentHead.position = ccp(newX, currentHead.position.y);
-            currentHead.atEnd = NO;
-            [currentHead modularMagic]; // resets colors
-            // TODO: assign a value to head.piercingsNeeded
+            
+            // reset
+            [currentHead reset];
             
             // speed up conveyor
             _conveyorSpeed += 0.1;
+            
             // TODO: maxing out at 5.0 seems good
         }
     }
@@ -88,7 +88,7 @@
 //    [[GameState sharedInstance] clearGameState];
     
     // load GameOver scene
-    CCTransition *gameOverTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionLeft duration:1.0];
+    CCTransition *gameOverTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:1.0];
     
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
     [[CCDirector sharedDirector] replaceScene:scene withTransition:gameOverTransition];

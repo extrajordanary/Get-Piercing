@@ -11,6 +11,11 @@
 #import "Target.h"
 
 @implementation Head
+{
+    CCNode *_leftEar;
+    CCNode *_rightEar;
+    CCNode *_head;
+}
 
 - (void)didLoadFromCCBB
 {
@@ -24,6 +29,8 @@
     [self.targets addObject:self.rightNose];
     [self.targets addObject:self.upperLeftEar];
     [self.targets addObject:self.upperRightEar];
+    
+    self.atEnd = NO;
 }
 
 @end

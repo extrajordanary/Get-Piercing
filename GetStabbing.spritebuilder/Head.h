@@ -25,4 +25,6 @@
 @property (nonatomic, strong) NSMutableArray *targets;
 @property (nonatomic, assign) BOOL allTargetsHit;
 
+@property (nonatomic, assign) BOOL atEnd;
+
 @end

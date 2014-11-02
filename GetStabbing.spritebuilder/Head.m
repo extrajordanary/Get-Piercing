@@ -29,6 +29,8 @@
     [self.targets addObject:self.rightNose];
     [self.targets addObject:self.upperLeftEar];
     [self.targets addObject:self.upperRightEar];
+    
+    self.atEnd = NO;
 }
 
 @end

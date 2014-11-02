@@ -16,6 +16,7 @@
     CCNode *_conveyorNode;
     
     NSMutableArray *_heads;
+    float _conveyorSpeed;
     
     int _numCorrectPiercings;
 }
@@ -23,6 +24,7 @@
 - (void)didLoadFromCCB
 {
     _heads = [NSMutableArray arrayWithCapacity:MAX_NUM_HEADS];
+    _conveyorSpeed = STARTING_CONVEYOR_SPEED;
     _numCorrectPiercings = 0;
     
     // initialize heads
@@ -46,13 +48,20 @@
     {
         Head *currentHead = _heads[i];
         
-        currentHead.position = ccp(currentHead.position.x + STARTING_CONVEYOR_SPEED, currentHead.position.y);
+        currentHead.position = ccp(currentHead.position.x + _conveyorSpeed, currentHead.position.y);
         
         // head is about to exit screen
         if([self isAtEndOfConveyor:currentHead])
         {
             // check all piercings were completed
             
+            // move to head of line
+            CGFloat newX = currentHead.position.x - (MAX_NUM_HEADS * (currentHead.contentSizeInPoints.width + SPACE_BETWEEN_HEADS));
+            
+            NSLog(@"currentHead.newX = %f", newX);
+                
+            currentHead.position = ccp(newX, currentHead.position.y);
+            currentHead.atEnd = NO;
         }
     }
 }
@@ -74,7 +83,7 @@
 //    [[GameState sharedInstance] clearGameState];
     
     // load GameOver scene
-    CCTransition *gameOverTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:0.5];
+    CCTransition *gameOverTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:1.0];
     
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
     [[CCDirector sharedDirector] replaceScene:scene withTransition:gameOverTransition];
@@ -89,8 +98,10 @@
 
 - (BOOL)isAtEndOfConveyor:(Head *)head
 {
-    if(head.allTargetsHit)
+    if((!head.atEnd) && ((head.position.x) > (_conveyorNode.contentSizeInPoints.width + (head.contentSizeInPoints.width))))
     {
+        head.atEnd = YES;
+        
         return YES;
     }
     

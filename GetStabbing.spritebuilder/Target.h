@@ -10,7 +10,6 @@
 
 @interface Target : CCSprite
 
-@property (nonatomic, assign) CCButton *button;
 @property (nonatomic, assign) BOOL isOnHead;
 
 @end

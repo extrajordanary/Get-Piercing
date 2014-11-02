@@ -7,6 +7,7 @@
 //
 
 #import "Target.h"
+#import "Head.h"
 
 @implementation Target
 
@@ -24,6 +25,9 @@
     self.isOnHead = YES;
     
     // set image
+    
+    Head *parent = (Head*)self.parent.parent;
+    [parent targetTouched:self];
 }
 
 @end

@@ -31,6 +31,7 @@
     for(int i = 0; i < MAX_NUM_HEADS; i++)
     {
         Head *head = (Head *)[CCBReader load:@"Head"];
+        // TODO: assign a value to head.piercingsNeeded
         
         [_heads addObject:head];
         [_conveyorNode addChild:head];
@@ -60,6 +61,12 @@
                 
             currentHead.position = ccp(newX, currentHead.position.y);
             currentHead.atEnd = NO;
+            [currentHead modularMagic]; // resets colors
+            // TODO: assign a value to head.piercingsNeeded
+            
+            // speed up conveyor
+            _conveyorSpeed += 0.1;
+            // TODO: maxing out at 5.0 seems good
         }
     }
 }
@@ -81,7 +88,7 @@
 //    [[GameState sharedInstance] clearGameState];
     
     // load GameOver scene
-    CCTransition *gameOverTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:1.0];
+    CCTransition *gameOverTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionLeft duration:1.0];
     
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
     [[CCDirector sharedDirector] replaceScene:scene withTransition:gameOverTransition];

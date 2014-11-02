@@ -13,11 +13,17 @@
 - (void)didLoadFromCCB
 {
     self.isOnHead = NO;
+    
+    self.userInteractionEnabled = YES;
 }
 
-- (void)didGetTapped:(Target *)target
+- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    [self.delegate didGetTapped:self];
+    NSLog(@"Touch occured!");
+
+    self.isOnHead = YES;
+    
+    // set image
 }
 
 @end

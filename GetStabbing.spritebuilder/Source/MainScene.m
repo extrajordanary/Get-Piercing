@@ -14,7 +14,8 @@
     
 }
 
--(void)play {
+-(void)play
+{
     // transition to GameplayScene
     CCScene *gameplayScene = [CCBReader loadAsScene:@"GameplayScene"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];

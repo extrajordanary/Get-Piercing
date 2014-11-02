@@ -72,38 +72,6 @@
 {
     // add targets to array
     self.targets = [[NSMutableArray alloc] init];
-    [self.targets addObject:self.labret];
-    
-    [self.targets addObject:self.leftEyebrow];
-    [self.targets addObject:self.rightEyebrow];
-
-    [self.targets addObject:self.leftNose];
-    [self.targets addObject:self.rightNose];
-
-    [self.targets addObject:self.lowerLeftEar];
-    [self.targets addObject:self.lowerRightEar];
-    
-    [self.targets addObject:self.upperLeftEar];
-    [self.targets addObject:self.upperRightEar];
-    
-//    // add piercingss to array
-//    self.piercings = [[NSMutableArray alloc] init];
-//    [self.piercings addObject:_labretP];
-//    
-//    [self.piercings addObject:_leftEyebrowP];
-//    [self.piercings addObject:_rightEyebrowP];
-//    
-//    [self.piercings addObject:_leftNoseP];
-//    [self.piercings addObject:_rightNoseP];
-//    
-//    [self.piercings addObject:_lowerLeftEarP];
-//    [self.piercings addObject:_lowerRightEarP];
-//    
-//    [self.piercings addObject:_upperLeftEarP];
-//    [self.piercings addObject:_upperRightEarP];
-    
-    
-    self.targets = [[NSMutableArray alloc] init];
     
     self.labret.piercing = _labretP;
     [self.targets addObject:self.labret];
@@ -128,7 +96,14 @@
     [self.targets addObject:self.upperLeftEar];
     [self.targets addObject:self.upperRightEar];
     
-    [self reset];
+    // randomly assign whether piercings is needed
+    for(int i = 0; i < [self.targets count]; i++)
+    {
+        Target *target = (Target *)[self.targets objectAtIndex:i];
+        
+        target.piercingNeeded = [self coinFlip];
+        if(target.piercingNeeded) { self.piercingsNeeded++; }
+    }
     
     // skin colors
     skin0 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.849 green:1.000 blue:0.852 alpha:1.000]];
@@ -146,22 +121,23 @@
     color4 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.197 green:0.658 blue:1.000 alpha:1.000]];
     color5 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.193 green:1.000 blue:0.258 alpha:1.000]];
     
-    [self modularMagic];
+    // reset
+    [self reset];
 }
 
 -(void)targetTouched:(Target*)target
 {
     if (target.visible)
     {
-//        NSUInteger index = [self.targets indexOfObject:target];
-//        CCSprite *piercing = [self.piercings objectAtIndex:index];
-        
         target.piercing.visible = YES;
         target.visible = NO;
         
         self.piercingsMade++;
     }
     
+    //TODO: FIX LOSING CONDITION
+    
+    // TODO: FIX WINNING CONDITION
     if (self.piercingsMade >= self.piercingsNeeded)
     {
         self.allTargetsHit = YES;
@@ -169,7 +145,8 @@
     }
 }
 
--(void)modularMagic {
+-(void)modularMagic
+{
     // semi-randomly generated customer appearance!
 
     // set all Sprites to not visible
@@ -190,25 +167,12 @@
     _hair1Sprite.visible = NO;
     _hair2Sprite.visible = NO;
     
-//    for (CCSprite *sprite in self.piercings) {
-//        sprite.visible = NO;
+//    for (Target *target in self.targets)
+//    {
+//        target.piercing.visible = NO;
+//        target.visible = YES;
 //    }
-    
-    for (Target *target in self.targets)
-    {
-        target.piercing.visible = NO;
-        target.visible = YES;
-    }
-//    _labretP.visible = NO;
-//    _lowerLeftEarP.visible = NO;
-//    _lowerRightEarP.visible = NO;
-//    _upperLeftEarP.visible = NO;
-//    _upperRightEarP.visible = NO;
-//    _rightNoseP.visible = NO;
-//    _leftNoseP.visible = NO;
-//    _rightEyebrowP.visible = NO;
-//    _leftEyebrowP.visible = NO;
-    
+//    
     // get colors
     _skinColor = [self getSkinColor];
     _eyeColor = [self getColor];
@@ -221,11 +185,13 @@
         // ears
         [bodyParts addObject:_rightEar1Sprite];
         [bodyParts addObject:_leftEar1Sprite];
-    } else
+    }
+    else
     {
         [bodyParts addObject:_rightEar2Sprite];
         [bodyParts addObject:_leftEar2Sprite];
     }
+    
     if ([self coinFlip])
     {
         // head
@@ -289,7 +255,8 @@
     int skinNumber = arc4random_uniform(6);
 //    NSLog(@"skin number %i",skinNumber);
 
-    switch (skinNumber) {
+    switch (skinNumber)
+    {
         case 0:
             return skin0;
         case 1:
@@ -313,7 +280,8 @@
     int colorNumber = arc4random_uniform(6);
 //    NSLog(@"color number %i",colorNumber);
     
-    switch (colorNumber) {
+    switch (colorNumber)
+    {
         case 0:
             return color0;
         case 1:
@@ -337,7 +305,7 @@
     self.allTargetsHit = NO;
     self.atEnd = NO;
     
-    self.piercingsNeeded = 1;
+    self.piercingsNeeded = 0;
     
     [self modularMagic];
 }

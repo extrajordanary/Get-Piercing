@@ -26,7 +26,7 @@
     _heads = [NSMutableArray arrayWithCapacity:MAX_NUM_HEADS];
     _conveyorSpeed = STARTING_CONVEYOR_SPEED;
     _numCorrectPiercings = 0;
-    
+
     // initialize heads
     for(int i = 0; i < MAX_NUM_HEADS; i++)
     {

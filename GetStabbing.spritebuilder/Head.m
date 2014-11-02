@@ -107,7 +107,7 @@
     
     // TODO: move these somewhere they can be called and reset
     self.piercingsMade = 0;
-    self.piercingsNeeded = 1;
+    self.piercingsNeeded = 1; 
     self.allTargetsHit = NO;
     
     // skin colors

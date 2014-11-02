@@ -60,6 +60,7 @@
     _strike2.visible = NO;
     _strike3.visible = NO;
     
+    _strikes = [[NSMutableArray alloc] init];
     [_strikes addObject:_strike1];
     [_strikes addObject:_strike2];
     [_strikes addObject:_strike3];

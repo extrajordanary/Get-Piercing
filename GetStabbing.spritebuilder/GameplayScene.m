@@ -13,36 +13,46 @@
 
 @implementation GameplayScene
 {
-    CCSprite *_testHead;
+    CCNode *_conveyorNode;
     
+    float _conveyorSpeed;
     NSMutableArray *_heads;
-    float _converyorSpeed;
-
+    int _headSpacing;
+    
     int _numCorrectPiercings;
 }
 
 - (void)didLoadFromCCB
 {
-    _heads = [NSMutableArray arrayWithCapacity:NUM_HEADS];
-    _converyorSpeed = 0.01;
+    _heads = [NSMutableArray arrayWithCapacity:MAX_NUM_HEADS];
+    _conveyorSpeed = 0.01;
     _numCorrectPiercings = 0;
+    _headSpacing = 100;
     
     // initialize heads
-    for(int i = 0; i < NUM_HEADS; i++)
+    for(int i = 0; i < MAX_NUM_HEADS; i++)
     {
         Head *head = (Head *)[CCBReader load:@"Head"];
         
         [_heads addObject:head];
+        [_conveyorNode addChild:head];
+        
+        CGFloat width = head.contentSize.width;
+        CGFloat yPos = ((_conveyorNode.contentSize.height));
+        
+        head.position = ccp((i*(width + _headSpacing)) + width/2, yPos);
+        
+        NSLog(@"head.position = %f %f)", head.position.x, head.position.y);
     }
 }
 
 - (void)update:(CCTime)delta
 {
-    for(int i = 0; i < NUM_HEADS; i++)
+    for(int i = 0; i < MAX_NUM_HEADS; i++)
     {
         Head *currentHead = _heads[i];
         
-        currentHead.position = ccp(currentHead.position.x, currentHead.position.y - _converyorSpeed);
+//        _testHead.position = ccp(_testHead.position.x + _converyorSpeed, _testHead.position.y);
         
         // head is about to exit screen
         if([self isAtEndOfConveyor:currentHead])
@@ -52,7 +62,7 @@
         }
     }
     
-    _testHead.position = ccp(_testHead.position.x - _converyorSpeed, _testHead.position.y);
+//    _testHead.position = ccp(_testHead.position.x - _converyorSpeed, _testHead.position.y);
 }
 
 - (void)gameOver

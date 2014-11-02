@@ -92,7 +92,7 @@
                 strike.visible = YES;
             }
             
-            if(_numStrikes == [_strikes count])
+            if(_numStrikes >= 3)
             {
                 [self gameOver];
             }

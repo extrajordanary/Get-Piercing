@@ -8,7 +8,93 @@
 
 #import "GameplayScene.h"
 
+#import "Constants.h"
+#import "Head.h"
 
 @implementation GameplayScene
+{
+    NSMutableArray *_heads;
+    int _converyorSpeed;
+
+    int _numCorrectPiercings;
+}
+
+- (void)didLoadFromCCB
+{
+    _heads = [NSMutableArray arrayWithCapacity:NUM_HEADS];
+    _converyorSpeed = 0.5;
+    _numCorrectPiercings = 0;
+    
+    // initialize heads
+    for(int i = 0; i < NUM_HEADS; i++)
+    {
+        Head *head = (Head *)[CCBReader load:@"Head"];
+        
+        [_heads addObject:head];
+    }
+}
+
+- (void)update:(CCTime)delta
+{
+    for(int i = 0; i < NUM_HEADS; i++)
+    {
+        Head *currentHead = _heads[i];
+        
+        currentHead.position = ccp(currentHead.position.x, currentHead.position.y - _converyorSpeed);
+        
+        // head is about to exit screen
+        if([self isAtEndOfConveyor:currentHead])
+        {
+            // check all piercings were completed
+            
+        }
+    }
+}
+
+- (void)gameOver
+{
+//    // set score
+//    int score = [GameState sharedInstance].score + _numCorrectPiercings;
+//    if(score < 0) { score = 0; }
+//    [GameState sharedInstance].score = score;
+//    
+//    // check if high score
+//    if(score > [GameState sharedInstance].highScore)
+//    {
+//        [GameState sharedInstance].highScore = score;
+//    }
+    
+    // load GameOver scene
+    CCTransition *gameOverTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:0.5];
+    
+    CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
+    [[CCDirector sharedDirector] replaceScene:scene withTransition:gameOverTransition];
+    
+//    // reset global values
+//    [[GameState sharedInstance] clearGameState];
+}
+
+- (void)restart
+{
+    
+}
+
+- (void)startOver
+{
+    CCScene *scene = [CCBReader loadAsScene:@"MainScene"];
+    [[CCDirector sharedDirector] replaceScene:scene];
+}
+
+#pragma mark - Helper methods
+
+- (BOOL)isAtEndOfConveyor:(Head *)head
+{
+    if(head.allTargetsHit)
+    {
+        return YES;
+    }
+    
+    return NO;
+}
 
 @end

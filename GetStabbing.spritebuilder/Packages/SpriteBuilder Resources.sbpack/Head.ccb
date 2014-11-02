@@ -325,7 +325,7 @@
 						<key>displayName</key>
 						<string>Target</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>_lowerLeftEar</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>properties</key>
@@ -635,7 +635,7 @@
 						<key>displayName</key>
 						<string>Target</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>_leftNose</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>properties</key>
@@ -870,6 +870,8 @@
 								<string>Target.ccb</string>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>

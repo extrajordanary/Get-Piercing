@@ -62,6 +62,7 @@
                 
             currentHead.position = ccp(newX, currentHead.position.y);
             currentHead.atEnd = NO;
+            [currentHead modularMagic]; // resets colors
         }
     }
 }
@@ -83,7 +84,7 @@
 //    [[GameState sharedInstance] clearGameState];
     
     // load GameOver scene
-    CCTransition *gameOverTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:1.0];
+    CCTransition *gameOverTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionLeft duration:1.0];
     
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
     [[CCDirector sharedDirector] replaceScene:scene withTransition:gameOverTransition];

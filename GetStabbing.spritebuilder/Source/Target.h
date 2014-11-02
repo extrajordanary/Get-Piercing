@@ -8,8 +8,18 @@
 
 #import "CCSprite.h"
 
+@class Target;
+
+@protocol TargetDelegate <NSObject>
+
+- (void)didGetTapped:(Target *)target;
+
+@end
+
 @interface Target : CCSprite
 
+@property (weak) id <TargetDelegate> delegate;
+@property (nonatomic, assign) CCButton *button;
 @property (nonatomic, assign) BOOL isOnHead;
 
 @end

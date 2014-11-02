@@ -15,4 +15,9 @@
     self.isOnHead = NO;
 }
 
+- (void)didGetTapped:(Target *)target
+{
+    [self.delegate didGetTapped:self];
+}
+
 @end

@@ -8,10 +8,9 @@
 
 #ifndef GetStabbing_Constants_h
 
-extern NSString *const APP_NAME;
-static const int NUM_HEADS = 5;
-
 #define GetStabbing_Constants_h
 
+extern NSString *const APP_NAME;
+static const int NUM_HEADS = 5;
 
 #endif

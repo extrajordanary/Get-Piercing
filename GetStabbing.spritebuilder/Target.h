@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface Target : CCNode {
+@interface Target : CCSprite {
     
 }
 

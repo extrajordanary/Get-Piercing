@@ -40,4 +40,10 @@
     [parent targetTouched:self];
 }
 
+- (void)reset
+{
+    self.piercingNeeded = NO;
+    self.visible = NO;
+}
+
 @end

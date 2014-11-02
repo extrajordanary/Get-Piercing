@@ -13,4 +13,6 @@
 @property (nonatomic, assign) BOOL piercingNeeded;
 @property (nonatomic, strong) CCSprite *piercing;
 
+-(void)reset;
+
 @end

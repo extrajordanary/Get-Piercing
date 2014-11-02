@@ -96,15 +96,6 @@
     [self.targets addObject:self.upperLeftEar];
     [self.targets addObject:self.upperRightEar];
     
-    // randomly assign whether piercings is needed
-    for(int i = 0; i < [self.targets count]; i++)
-    {
-        Target *target = (Target *)[self.targets objectAtIndex:i];
-        
-        target.piercingNeeded = [self coinFlip];
-        if(target.piercingNeeded) { self.piercingsNeeded++; }
-    }
-    
     // skin colors
     skin0 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.849 green:1.000 blue:0.852 alpha:1.000]];
     skin1 = [CCColor colorWithUIColor:[UIColor colorWithRed:1.000 green:0.889 blue:0.929 alpha:1.000]];
@@ -302,12 +293,19 @@
 - (void)reset
 {
     self.piercingsMade = 0;
+    self.piercingsNeeded = 0;
     self.allTargetsHit = NO;
     self.atEnd = NO;
     
-    self.piercingsNeeded = 0;
+    // clear targets
+    for(Target *target in self.targets)
+    {
+        target.piercingNeeded = NO;
+        target.piercing.visible = NO;
+    }
     
     [self modularMagic];
+    [self randomlyAssignPiercingsNeeded];
 }
 
 #pragma mark - Helper methods
@@ -321,6 +319,15 @@
     else
     {
         return NO;
+    }
+}
+
+- (void)randomlyAssignPiercingsNeeded
+{
+    for(Target *target in self.targets)
+    {
+        target.piercingNeeded = [self coinFlip];
+        if(target.piercingNeeded) { self.piercingsNeeded++; }
     }
 }
 

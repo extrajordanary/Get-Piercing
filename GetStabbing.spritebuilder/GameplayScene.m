@@ -31,15 +31,17 @@
     for(int i = 0; i < MAX_NUM_HEADS; i++)
     {
         Head *head = (Head *)[CCBReader load:@"Head"];
-        // TODO: assign a value to head.piercingsNeeded
         
         [_heads addObject:head];
+        
+        // add to conveyor
         [_conveyorNode addChild:head];
         
-        // set head position
+        // set initial head position
         CGFloat width = head.contentSize.width;
+        CGFloat xPos = ((i*(width + SPACE_BETWEEN_HEADS)) + width/2) - (_conveyorNode.contentSize.width * 1.5);
         CGFloat yPos = ((_conveyorNode.contentSize.height));
-        head.position = ccp((i*(width + SPACE_BETWEEN_HEADS)) + width/2, yPos);
+        head.position = ccp(xPos, yPos);
     }
 }
 

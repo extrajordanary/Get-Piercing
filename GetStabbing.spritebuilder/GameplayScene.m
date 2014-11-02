@@ -64,25 +64,19 @@
 //        [GameState sharedInstance].highScore = score;
 //    }
     
+//    // reset global values
+//    [[GameState sharedInstance] clearGameState];
+    
     // load GameOver scene
     CCTransition *gameOverTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:0.5];
     
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
     [[CCDirector sharedDirector] replaceScene:scene withTransition:gameOverTransition];
-    
-//    // reset global values
-//    [[GameState sharedInstance] clearGameState];
 }
 
 - (void)restart
 {
     
-}
-
-- (void)startOver
-{
-    CCScene *scene = [CCBReader loadAsScene:@"MainScene"];
-    [[CCDirector sharedDirector] replaceScene:scene];
 }
 
 #pragma mark - Helper methods

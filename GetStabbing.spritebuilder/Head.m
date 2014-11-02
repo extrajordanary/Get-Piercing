@@ -9,6 +9,7 @@
 #import "Head.h"
 
 #import "Target.h"
+#import "Utilities.h"
 
 @implementation Head
 {
@@ -66,7 +67,6 @@
     CCColor *color3;
     CCColor *color4;
     CCColor *color5;
-    
 }
 
 - (void)didLoadFromCCB
@@ -105,10 +105,7 @@
     
     self.atEnd = NO;
     
-    // TODO: move these somewhere they can be called and reset
-    self.piercingsMade = 0;
-    self.piercingsNeeded = 1;
-    self.allTargetsHit = NO;
+    [self reset];
     
     // skin colors
     skin0 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.849 green:1.000 blue:0.852 alpha:1.000]];
@@ -188,18 +185,26 @@
     // chose body parts and assign skin color
     // ears, face, neck
     NSMutableArray *bodyParts = [[NSMutableArray alloc] initWithObjects:_neckSprite, nil];
-    if ([self coinFlip]) { // ears
+    if ([[Utilities sharedInstance] coinFlip])
+    {
+        // ears
         [bodyParts addObject:_rightEar1Sprite];
         [bodyParts addObject:_leftEar1Sprite];
-    } else {
+    } else
+    {
         [bodyParts addObject:_rightEar2Sprite];
         [bodyParts addObject:_leftEar2Sprite];
     }
-    if ([self coinFlip]) { // head
+    if ([[Utilities sharedInstance] coinFlip])
+    {
+        // head
         [bodyParts addObject:_head1Sprite];
-    } else {
+    }
+    else
+    {
         [bodyParts addObject:_head2Sprite];
     }
+    
     for (CCSprite *sprite in bodyParts) {
         [self turnOnSprite:sprite withColor:_skinColor];
     }
@@ -207,41 +212,48 @@
     // chose other things and assign colors
     // hair, shirt
     NSMutableArray *otherParts = [[NSMutableArray alloc] initWithObjects:_shirtSprite, nil];
-    if ([self coinFlip]) {
+    if ([[Utilities sharedInstance] coinFlip])
+    {
         [otherParts addObject:_hair1Sprite];
-    } else {
+    }
+    else
+    {
         [otherParts addObject:_hair2Sprite];
     }
-    for (CCSprite *sprite in otherParts) {
+    
+    for (CCSprite *sprite in otherParts)
+    {
         [self turnOnSprite:sprite withColor:[self getColor]];
     }
+    
     // eyes
     [self turnOnSprite:_rightEyeSprite withColor:_eyeColor];
     [self turnOnSprite:_leftEyeSprite withColor:_eyeColor];
+    
     // mouth and nose
-    if ([self coinFlip]) {
+    if ([[Utilities sharedInstance] coinFlip])
+    {
         _mouth1Sprite.visible = YES;
-    } else _mouth2Sprite.visible = YES;
-    if ([self coinFlip]) {
+    }
+    else _mouth2Sprite.visible = YES;
+    
+    if ([[Utilities sharedInstance] coinFlip])
+    {
         _nose1Sprite.visible = YES;
     } else _nose2Sprite.visible = YES;
     
 }
 
--(void)turnOnSprite:(CCSprite*)sprite withColor:(CCColor*)color {
+#pragma mark - Helper methods
+
+-(void)turnOnSprite:(CCSprite*)sprite withColor:(CCColor*)color
+{
     sprite.visible = YES;
     sprite.color = color;
 }
 
--(BOOL)coinFlip {
-    if (arc4random_uniform(2)) {
-        return YES;
-    } else {
-        return NO;
-    }
-}
-
--(CCColor*)getSkinColor {
+-(CCColor*)getSkinColor
+{
     
     int skinNumber = arc4random_uniform(6);
 //    NSLog(@"skin number %i",skinNumber);
@@ -264,7 +276,8 @@
     }
 }
 
--(CCColor*)getColor {
+-(CCColor*)getColor
+{
     
     int colorNumber = arc4random_uniform(6);
 //    NSLog(@"color number %i",colorNumber);
@@ -285,6 +298,13 @@
         default:
             return color0;
     }
+}
+
+- (void)reset
+{
+    self.piercingsMade = 0;
+    self.piercingsNeeded = 1;
+    self.allTargetsHit = NO;
 }
 
 @end

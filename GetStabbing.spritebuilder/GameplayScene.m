@@ -31,15 +31,17 @@
     for(int i = 0; i < MAX_NUM_HEADS; i++)
     {
         Head *head = (Head *)[CCBReader load:@"Head"];
-        // TODO: assign a value to head.piercingsNeeded
         
         [_heads addObject:head];
+        
+        // add to conveyor
         [_conveyorNode addChild:head];
         
-        // set head position
+        // set initial head position
         CGFloat width = head.contentSize.width;
+        CGFloat xPos = ((i*(width + SPACE_BETWEEN_HEADS)) + width/2) - (_conveyorNode.contentSize.width * 1.5);
         CGFloat yPos = ((_conveyorNode.contentSize.height));
-        head.position = ccp((i*(width + SPACE_BETWEEN_HEADS)) + width/2, yPos);
+        head.position = ccp(xPos, yPos);
     }
 }
 
@@ -58,17 +60,13 @@
             
             // move to head of line
             CGFloat newX = currentHead.position.x - (MAX_NUM_HEADS * (currentHead.contentSizeInPoints.width + SPACE_BETWEEN_HEADS));
-            
-            NSLog(@"currentHead.newX = %f", newX);
-                
             currentHead.position = ccp(newX, currentHead.position.y);
-            currentHead.atEnd = NO;
-            [currentHead modularMagic]; // resets colors
-            // TODO: assign a value to head.piercingsNeeded
             
-            // speed up conveyor
-            _conveyorSpeed += 0.1;
-            // TODO: maxing out at 5.0 seems good
+            // reset
+            [currentHead reset];
+            
+            // speed up conveyor up to max
+            if(_conveyorSpeed < MAX_CONVEYOR_SPEED) { _conveyorSpeed += CONVEYOR_SPEED_INCREASE; }
         }
     }
 }
@@ -90,7 +88,7 @@
 //    [[GameState sharedInstance] clearGameState];
     
     // load GameOver scene
-    CCTransition *gameOverTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionLeft duration:1.0];
+    CCTransition *gameOverTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:1.0];
     
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
     [[CCDirector sharedDirector] replaceScene:scene withTransition:gameOverTransition];
@@ -105,14 +103,12 @@
 
 - (BOOL)isAtEndOfConveyor:(Head *)head
 {
-    if((!head.atEnd) && ((head.position.x) > (_conveyorNode.contentSizeInPoints.width + (head.contentSizeInPoints.width))))
+    if((!head.atEnd) && ((head.position.x) > (_conveyorNode.contentSizeInPoints.width + (head.contentSizeInPoints.width/2))))
     {
         head.atEnd = YES;
-        
-        return YES;
     }
     
-    return NO;
+    return head.atEnd;
 }
 
 @end

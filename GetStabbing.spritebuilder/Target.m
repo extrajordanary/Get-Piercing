@@ -13,21 +13,37 @@
 
 - (void)didLoadFromCCB
 {
-    self.isOnHead = NO;
+    self.piercingNeeded = NO;
     
     self.userInteractionEnabled = YES;
+}
+
+- (void)setPiercingNeeded:(BOOL)piercingNeeded
+{
+    _piercingNeeded = piercingNeeded;
+    self.visible = piercingNeeded;
+}
+
+- (void)setPiercing:(CCSprite *)piercing
+{
+    _piercing = piercing;
+    
+    _piercing.visible = NO;
 }
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
     NSLog(@"Touch occured!");
     
-    self.isOnHead = YES;
-    
     // set image
-    
     Head *parent = (Head*)self.parent.parent;
     [parent targetTouched:self];
+}
+
+- (void)reset
+{
+    self.piercingNeeded = NO;
+    self.visible = NO;
 }
 
 @end

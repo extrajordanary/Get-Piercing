@@ -10,6 +10,9 @@
 
 @interface Target : CCSprite
 
-@property (nonatomic, assign) BOOL isOnHead;
+@property (nonatomic, assign) BOOL piercingNeeded;
+@property (nonatomic, strong) CCSprite *piercing;
+
+-(void)reset;
 
 @end

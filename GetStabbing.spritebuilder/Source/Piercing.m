@@ -10,4 +10,9 @@
 
 @implementation Piercing
 
+- (void)didLoadFromCCB
+{
+    self.isOnHead = NO;
+}
+
 @end

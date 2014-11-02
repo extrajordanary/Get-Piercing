@@ -10,4 +10,6 @@
 
 @interface Piercing : CCSprite
 
+@property (nonatomic, assign) BOOL isOnHead;
+
 @end

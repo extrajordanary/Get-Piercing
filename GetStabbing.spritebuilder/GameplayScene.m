@@ -92,7 +92,7 @@
                 strike.visible = YES;
             }
             
-            if(_numStrikes == [_strikes count])
+            if(_numStrikes == MAX_NUM_STRIKES)
             {
                 [self gameOver];
             }

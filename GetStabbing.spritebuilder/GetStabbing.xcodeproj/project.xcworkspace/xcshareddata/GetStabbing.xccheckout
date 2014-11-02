@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4E92ADAA-E8D9-42D3-B5AF-99FCEB17BC0D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GetStabbing</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3148B863F3E705A1F153ABD60B5E728ABD576EF7</key>
+		<string>https://github.com/extrajordanary/GetStabbing.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GetStabbing.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3148B863F3E705A1F153ABD60B5E728ABD576EF7</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/extrajordanary/GetStabbing.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3148B863F3E705A1F153ABD60B5E728ABD576EF7</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3148B863F3E705A1F153ABD60B5E728ABD576EF7</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GetStabbing.spritebuilder</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -25,6 +25,8 @@
 @property (nonatomic, strong) NSMutableArray *targets;
 @property (nonatomic, assign) BOOL allTargetsHit;
 
+@property (nonatomic, assign) BOOL atEnd;
+
 // for modularizational magic
 @property (nonatomic, strong) CCSprite *neckSprite;
 @property (nonatomic, strong) CCSprite *shirtSprite;

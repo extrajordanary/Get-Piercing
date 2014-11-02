@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "Target.h"
 
-@interface GameplayScene : CCNode
+@interface GameplayScene : CCNode {
+    
+}
 
 @end

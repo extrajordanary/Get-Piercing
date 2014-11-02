@@ -12,6 +12,9 @@
 
 @implementation Head
 {
+    CCSprite *_smile;
+    BOOL _isSmiling;
+    
     CCSprite *_neckSprite;
     CCSprite *_shirtSprite;
     
@@ -70,6 +73,10 @@
 
 - (void)didLoadFromCCB
 {
+    // set smile
+    _isSmiling = NO;
+    _smile.visible = NO;
+    
     // add targets to array
     self.targets = [[NSMutableArray alloc] init];
     
@@ -114,6 +121,12 @@
     
     // reset
     [self reset];
+}
+
+-(void)setIsSmiling:(BOOL)isSmiling
+{
+    _isSmiling = isSmiling;
+    _smile.visible = isSmiling;
 }
 
 -(void)targetTouched:(Target*)target
@@ -292,6 +305,9 @@
     self.piercingsNeeded = 0;
     self.allTargetsHit = NO;
     self.atEnd = NO;
+    
+    // reset smile
+    [self setIsSmiling:NO];
     
     // clear targets
     for(Target *target in self.targets)

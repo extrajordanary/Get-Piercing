@@ -29,6 +29,7 @@
 @property (nonatomic, assign) int piercingsMade;
 @property (nonatomic, assign) BOOL allTargetsHit;
 
+@property (nonatomic, assign) BOOL isSmiling;
 @property (nonatomic, assign) BOOL atEnd;
 
 -(void)modularMagic;

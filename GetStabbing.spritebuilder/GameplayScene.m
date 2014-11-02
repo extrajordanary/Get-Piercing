@@ -20,7 +20,13 @@
     
     int _numCorrectPiercings;
     int _score;
-    int _strikes;
+    
+    // strikes
+    int _numStrikes;
+    CCSprite *_strike1;
+    CCSprite *_strike2;
+    CCSprite *_strike3;
+    NSMutableArray *_strikes;
 }
 
 - (void)didLoadFromCCB
@@ -45,6 +51,17 @@
         CGFloat yPos = ((_conveyorNode.contentSize.height));
         head.position = ccp(xPos, yPos);
     }
+    
+    // set up strikes
+    _numStrikes = 0;
+    
+    _strike1.visible = NO;
+    _strike2.visible = NO;
+    _strike3.visible = NO;
+    
+    [_strikes addObject:_strike1];
+    [_strikes addObject:_strike2];
+    [_strikes addObject:_strike3];
 }
 
 - (void)update:(CCTime)delta
@@ -65,10 +82,14 @@
             }
             else
             {
-                _strikes += 1;
+                _numStrikes += 1;
+                
+                CCSprite *strike = (CCSprite *)[_strikes objectAtIndex:_numStrikes-1];
+                
+                strike.visible = YES;
             }
             
-            if(_strikes == MAX_NUM_STRIKES)
+            if(_numStrikes == [_strikes count])
             {
                 [self gameOver];
             }

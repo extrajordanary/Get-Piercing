@@ -34,11 +34,15 @@
 		</data>
 		<key>Published-iOS/GameplayScene.ccbi</key>
 		<data>
-		rrZa+OjLpSGiRbJGDa0vFLI235c=
+		iUJi3kNUnGZutliBmj5iCYU8Zss=
+		</data>
+		<key>Published-iOS/Head.ccbi</key>
+		<data>
+		CXIzwqKgZl3T4EXyNgNrjmBV1mk=
 		</data>
 		<key>Published-iOS/MainScene.ccbi</key>
 		<data>
-		RlKiPHf1b7m+l7jjARsReRirbgg=
+		Dub7ll7xmkxjbIs9kxVryHJfrjM=
 		</data>
 		<key>Published-iOS/Strings.ccbLang</key>
 		<data>
@@ -46,7 +50,7 @@
 		</data>
 		<key>Published-iOS/Target.ccbi</key>
 		<data>
-		PWGqNMCmpZfq72Zg8ks1OmmLvhE=
+		0tfbiKRvhoUeFoSNnRSf7Q0gliw=
 		</data>
 		<key>Published-iOS/assets/resources-phone/earLeft.png</key>
 		<data>
@@ -59,6 +63,14 @@
 		<key>Published-iOS/assets/resources-phone/head.png</key>
 		<data>
 		PFPeW5gZrqMzO6RqITQ5i83MkA8=
+		</data>
+		<key>Published-iOS/assets/resources-phone/mainSceneBG-01.png</key>
+		<data>
+		qm4XmpMpfM/sCn218iGQORWARsY=
+		</data>
+		<key>Published-iOS/assets/resources-phone/startButton.png</key>
+		<data>
+		S063JkJS5zJEt9VXaNkmZzwsLDU=
 		</data>
 		<key>Published-iOS/assets/resources-phone/target.png</key>
 		<data>
@@ -76,6 +88,14 @@
 		<data>
 		U0jG1j/36ifrMQ6mvnqE3ZqlFLw=
 		</data>
+		<key>Published-iOS/assets/resources-phonehd/mainSceneBG-01.png</key>
+		<data>
+		THy04sjXSQW7iLN9kzSlr6svTxg=
+		</data>
+		<key>Published-iOS/assets/resources-phonehd/startButton.png</key>
+		<data>
+		8KawHK1Pzr0T5HTr/NY1+enrRVc=
+		</data>
 		<key>Published-iOS/assets/resources-phonehd/target.png</key>
 		<data>
 		VTY2mv+9ScnhsjKcsTKuzlTjf+w=
@@ -92,6 +112,14 @@
 		<data>
 		U0jG1j/36ifrMQ6mvnqE3ZqlFLw=
 		</data>
+		<key>Published-iOS/assets/resources-tablet/mainSceneBG-01.png</key>
+		<data>
+		THy04sjXSQW7iLN9kzSlr6svTxg=
+		</data>
+		<key>Published-iOS/assets/resources-tablet/startButton.png</key>
+		<data>
+		8KawHK1Pzr0T5HTr/NY1+enrRVc=
+		</data>
 		<key>Published-iOS/assets/resources-tablet/target.png</key>
 		<data>
 		VTY2mv+9ScnhsjKcsTKuzlTjf+w=
@@ -107,6 +135,14 @@
 		<key>Published-iOS/assets/resources-tablethd/head.png</key>
 		<data>
 		rhaSbiCPTyHyXkufdVRt4yJYLaQ=
+		</data>
+		<key>Published-iOS/assets/resources-tablethd/mainSceneBG-01.png</key>
+		<data>
+		HmN9cAfoGUU3JZ3zo42ruv7O4og=
+		</data>
+		<key>Published-iOS/assets/resources-tablethd/startButton.png</key>
+		<data>
+		usXLFGOJyuuCuXh8imECkRD/uYE=
 		</data>
 		<key>Published-iOS/assets/resources-tablethd/target.png</key>
 		<data>
@@ -769,11 +805,15 @@
 		</data>
 		<key>Published-iOS/GameplayScene.ccbi</key>
 		<data>
-		rrZa+OjLpSGiRbJGDa0vFLI235c=
+		iUJi3kNUnGZutliBmj5iCYU8Zss=
+		</data>
+		<key>Published-iOS/Head.ccbi</key>
+		<data>
+		CXIzwqKgZl3T4EXyNgNrjmBV1mk=
 		</data>
 		<key>Published-iOS/MainScene.ccbi</key>
 		<data>
-		RlKiPHf1b7m+l7jjARsReRirbgg=
+		Dub7ll7xmkxjbIs9kxVryHJfrjM=
 		</data>
 		<key>Published-iOS/Strings.ccbLang</key>
 		<data>
@@ -781,7 +821,7 @@
 		</data>
 		<key>Published-iOS/Target.ccbi</key>
 		<data>
-		PWGqNMCmpZfq72Zg8ks1OmmLvhE=
+		0tfbiKRvhoUeFoSNnRSf7Q0gliw=
 		</data>
 		<key>Published-iOS/assets/resources-phone/earLeft.png</key>
 		<data>
@@ -794,6 +834,14 @@
 		<key>Published-iOS/assets/resources-phone/head.png</key>
 		<data>
 		PFPeW5gZrqMzO6RqITQ5i83MkA8=
+		</data>
+		<key>Published-iOS/assets/resources-phone/mainSceneBG-01.png</key>
+		<data>
+		qm4XmpMpfM/sCn218iGQORWARsY=
+		</data>
+		<key>Published-iOS/assets/resources-phone/startButton.png</key>
+		<data>
+		S063JkJS5zJEt9VXaNkmZzwsLDU=
 		</data>
 		<key>Published-iOS/assets/resources-phone/target.png</key>
 		<data>
@@ -811,6 +859,14 @@
 		<data>
 		U0jG1j/36ifrMQ6mvnqE3ZqlFLw=
 		</data>
+		<key>Published-iOS/assets/resources-phonehd/mainSceneBG-01.png</key>
+		<data>
+		THy04sjXSQW7iLN9kzSlr6svTxg=
+		</data>
+		<key>Published-iOS/assets/resources-phonehd/startButton.png</key>
+		<data>
+		8KawHK1Pzr0T5HTr/NY1+enrRVc=
+		</data>
 		<key>Published-iOS/assets/resources-phonehd/target.png</key>
 		<data>
 		VTY2mv+9ScnhsjKcsTKuzlTjf+w=
@@ -827,6 +883,14 @@
 		<data>
 		U0jG1j/36ifrMQ6mvnqE3ZqlFLw=
 		</data>
+		<key>Published-iOS/assets/resources-tablet/mainSceneBG-01.png</key>
+		<data>
+		THy04sjXSQW7iLN9kzSlr6svTxg=
+		</data>
+		<key>Published-iOS/assets/resources-tablet/startButton.png</key>
+		<data>
+		8KawHK1Pzr0T5HTr/NY1+enrRVc=
+		</data>
 		<key>Published-iOS/assets/resources-tablet/target.png</key>
 		<data>
 		VTY2mv+9ScnhsjKcsTKuzlTjf+w=
@@ -842,6 +906,14 @@
 		<key>Published-iOS/assets/resources-tablethd/head.png</key>
 		<data>
 		rhaSbiCPTyHyXkufdVRt4yJYLaQ=
+		</data>
+		<key>Published-iOS/assets/resources-tablethd/mainSceneBG-01.png</key>
+		<data>
+		HmN9cAfoGUU3JZ3zo42ruv7O4og=
+		</data>
+		<key>Published-iOS/assets/resources-tablethd/startButton.png</key>
+		<data>
+		usXLFGOJyuuCuXh8imECkRD/uYE=
 		</data>
 		<key>Published-iOS/assets/resources-tablethd/target.png</key>
 		<data>

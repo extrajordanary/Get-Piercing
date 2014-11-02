@@ -11,7 +11,7 @@
 #define GetStabbing_Constants_h
 
 extern NSString *const APP_NAME;
-static const int MAX_NUM_HEADS = 4;
+static const int MAX_NUM_HEADS = 3;
 static const int SPACE_BETWEEN_HEADS = 100;
 static const float STARTING_CONVEYOR_SPEED = 1.0;
 

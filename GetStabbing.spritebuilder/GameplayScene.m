@@ -57,8 +57,6 @@
             
             // move to head of line
             CGFloat newX = currentHead.position.x - (MAX_NUM_HEADS * (currentHead.contentSizeInPoints.width + SPACE_BETWEEN_HEADS));
-            
-            NSLog(@"currentHead.newX = %f", newX);
                 
             currentHead.position = ccp(newX, currentHead.position.y);
             currentHead.atEnd = NO;
@@ -98,7 +96,7 @@
 
 - (BOOL)isAtEndOfConveyor:(Head *)head
 {
-    if((!head.atEnd) && ((head.position.x) > (_conveyorNode.contentSizeInPoints.width + (head.contentSizeInPoints.width))))
+    if((!head.atEnd) && ((head.position.x) > (_conveyorNode.contentSizeInPoints.width + (head.contentSizeInPoints.width/2))))
     {
         head.atEnd = YES;
         

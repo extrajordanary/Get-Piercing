@@ -137,8 +137,6 @@
 						<real>1</real>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -152,7 +150,7 @@
 				<key>displayName</key>
 				<string>Head</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_testHead</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -201,6 +199,8 @@
 						<string>Head.ccb</string>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>

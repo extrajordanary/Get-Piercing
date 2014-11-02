@@ -13,8 +13,10 @@
 
 @implementation GameplayScene
 {
+    CCSprite *_testHead;
+    
     NSMutableArray *_heads;
-    int _converyorSpeed;
+    float _converyorSpeed;
 
     int _numCorrectPiercings;
 }
@@ -22,7 +24,7 @@
 - (void)didLoadFromCCB
 {
     _heads = [NSMutableArray arrayWithCapacity:NUM_HEADS];
-    _converyorSpeed = 0.5;
+    _converyorSpeed = 0.01;
     _numCorrectPiercings = 0;
     
     // initialize heads
@@ -49,6 +51,8 @@
             
         }
     }
+    
+    _testHead.position = ccp(_testHead.position.x - _converyorSpeed, _testHead.position.y);
 }
 
 - (void)gameOver

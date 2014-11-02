@@ -13,16 +13,17 @@
 
 @implementation GameplayScene
 {
-    CCNode *_contentNode;
-    
     NSMutableArray *_heads;
     int _converyorSpeed;
+
+    int _numCorrectPiercings;
 }
 
 - (void)didLoadFromCCB
 {
     _heads = [NSMutableArray arrayWithCapacity:NUM_HEADS];
     _converyorSpeed = 0.5;
+    _numCorrectPiercings = 0;
     
     // initialize heads
     for(int i = 0; i < NUM_HEADS; i++)
@@ -50,19 +51,38 @@
     }
 }
 
--(void) touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+- (void)gameOver
 {
-    CGPoint touchLocation = [touch locationInNode:_contentNode];
+//    // set score
+//    int score = [GameState sharedInstance].score + _numCorrectPiercings;
+//    if(score < 0) { score = 0; }
+//    [GameState sharedInstance].score = score;
+//    
+//    // check if high score
+//    if(score > [GameState sharedInstance].highScore)
+//    {
+//        [GameState sharedInstance].highScore = score;
+//    }
     
-    //    // start catapult dragging when a touch inside of the catapult arm occurs
-    //    if (CGRectContainsPoint([_catapultArm boundingBox], touchLocation))
-    //    {
-    //        // move the mouseJointNode to the touch position
-    //        _mouseJointNode.position = touchLocation;
-    //
-    //        // setup a spring joint between the mouseJointNode and the catapultArm
-    //        _mouseJoint = [CCPhysicsJoint connectedSpringJointWithBodyA:_mouseJointNode.physicsBody bodyB:_catapultArm.physicsBody anchorA:ccp(0, 0) anchorB:ccp(34, 138) restLength:0.f stiffness:3000.f damping:150.f];
-    //    }
+    // load GameOver scene
+    CCTransition *gameOverTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:0.5];
+    
+    CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
+    [[CCDirector sharedDirector] replaceScene:scene withTransition:gameOverTransition];
+    
+//    // reset global values
+//    [[GameState sharedInstance] clearGameState];
+}
+
+- (void)restart
+{
+    
+}
+
+- (void)startOver
+{
+    CCScene *scene = [CCBReader loadAsScene:@"MainScene"];
+    [[CCDirector sharedDirector] replaceScene:scene];
 }
 
 #pragma mark - Helper methods

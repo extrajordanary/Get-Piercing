@@ -64,9 +64,9 @@
             [currentHead reset];
             
             // speed up conveyor
-            _conveyorSpeed += 0.1;
+            if(_conveyorSpeed < 5.0) { _conveyorSpeed += 0.1; }
             
-            // TODO: maxing out at 5.0 seems good
+            NSLog(@"Conveyor speed = %f", _conveyorSpeed);
         }
     }
 }

@@ -103,7 +103,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>assets/target.png</string>
+					<string>assets/targetX.png</string>
 				</array>
 			</dict>
 			<dict>
@@ -120,8 +120,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

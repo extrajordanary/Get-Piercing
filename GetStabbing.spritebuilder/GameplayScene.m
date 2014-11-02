@@ -15,9 +15,7 @@
 {
     CCNode *_conveyorNode;
     
-    float _conveyorSpeed;
     NSMutableArray *_heads;
-    int _headSpacing;
     
     int _numCorrectPiercings;
 }
@@ -25,9 +23,7 @@
 - (void)didLoadFromCCB
 {
     _heads = [NSMutableArray arrayWithCapacity:MAX_NUM_HEADS];
-    _conveyorSpeed = 0.01;
     _numCorrectPiercings = 0;
-    _headSpacing = 100;
     
     // initialize heads
     for(int i = 0; i < MAX_NUM_HEADS; i++)
@@ -37,12 +33,10 @@
         [_heads addObject:head];
         [_conveyorNode addChild:head];
         
+        // set head position
         CGFloat width = head.contentSize.width;
         CGFloat yPos = ((_conveyorNode.contentSize.height));
-        
-        head.position = ccp((i*(width + _headSpacing)) + width/2, yPos);
-        
-        NSLog(@"head.position = %f %f)", head.position.x, head.position.y);
+        head.position = ccp((i*(width + SPACE_BETWEEN_HEADS)) + width/2, yPos);
     }
 }
 
@@ -52,7 +46,7 @@
     {
         Head *currentHead = _heads[i];
         
-//        _testHead.position = ccp(_testHead.position.x + _converyorSpeed, _testHead.position.y);
+        currentHead.position = ccp(currentHead.position.x + STARTING_CONVEYOR_SPEED, currentHead.position.y);
         
         // head is about to exit screen
         if([self isAtEndOfConveyor:currentHead])
@@ -61,8 +55,6 @@
             
         }
     }
-    
-//    _testHead.position = ccp(_testHead.position.x - _converyorSpeed, _testHead.position.y);
 }
 
 - (void)gameOver

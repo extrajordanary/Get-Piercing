@@ -11,6 +11,7 @@
 #define GetStabbing_Constants_h
 
 extern NSString *const APP_NAME;
-static const int NUM_HEADS = 5;
+static const int MAX_NUM_PIERCINGS = 9;
+static const int NUM_HEADS = 1;
 
 #endif

@@ -10,16 +10,15 @@
 
 @class Target;
 
-@protocol TargetDelegate <NSObject>
-
-- (void)didGetTapped:(Target *)target;
-
-@end
+//@protocol TargetDelegate <NSObject>
+//
+//- (void)didGetTapped:(Target *)target;
+//
+//@end
 
 @interface Target : CCSprite
 
-@property (weak) id <TargetDelegate> delegate;
-@property (nonatomic, assign) CCButton *button;
+//@property (weak) id <TargetDelegate> delegate;
 @property (nonatomic, assign) BOOL isOnHead;
 
 @end

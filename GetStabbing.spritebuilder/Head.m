@@ -11,6 +11,11 @@
 #import "Target.h"
 
 @implementation Head
+{
+    CCNode *_head;
+    CCNode *_leftEar;
+    CCNode *_rightEar;
+}
 
 - (void)didLoadFromCCBB
 {

@@ -17,6 +17,8 @@
     
     NSMutableArray *_heads;
     int _converyorSpeed;
+    
+    Head *_testHead;
 }
 
 - (void)didLoadFromCCB

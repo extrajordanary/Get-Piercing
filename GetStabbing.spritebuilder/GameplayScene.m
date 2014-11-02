@@ -20,6 +20,7 @@
     
     int _numCorrectPiercings;
     int _score;
+    CCLabelTTF *_scoreText;
     
     // strikes
     int _numStrikes;
@@ -79,6 +80,8 @@
             if(currentHead.allTargetsHit)
             {
                 _score += 1;
+                
+                _scoreText.string = [NSString stringWithFormat:@"%i", _score];
             }
             else
             {

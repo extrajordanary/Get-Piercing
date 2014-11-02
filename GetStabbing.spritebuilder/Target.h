@@ -11,5 +11,6 @@
 @interface Target : CCSprite
 
 @property (nonatomic, assign) BOOL isOnHead;
+@property (nonatomic, strong) CCSprite *piercing;
 
 @end

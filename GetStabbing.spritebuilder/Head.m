@@ -86,23 +86,47 @@
     [self.targets addObject:self.upperLeftEar];
     [self.targets addObject:self.upperRightEar];
     
-    // add piercingss to array
-    self.piercings = [[NSMutableArray alloc] init];
-    [self.piercings addObject:_labretP];
+//    // add piercingss to array
+//    self.piercings = [[NSMutableArray alloc] init];
+//    [self.piercings addObject:_labretP];
+//    
+//    [self.piercings addObject:_leftEyebrowP];
+//    [self.piercings addObject:_rightEyebrowP];
+//    
+//    [self.piercings addObject:_leftNoseP];
+//    [self.piercings addObject:_rightNoseP];
+//    
+//    [self.piercings addObject:_lowerLeftEarP];
+//    [self.piercings addObject:_lowerRightEarP];
+//    
+//    [self.piercings addObject:_upperLeftEarP];
+//    [self.piercings addObject:_upperRightEarP];
     
-    [self.piercings addObject:_leftEyebrowP];
-    [self.piercings addObject:_rightEyebrowP];
     
-    [self.piercings addObject:_leftNoseP];
-    [self.piercings addObject:_rightNoseP];
+    self.targets = [[NSMutableArray alloc] init];
     
-    [self.piercings addObject:_lowerLeftEarP];
-    [self.piercings addObject:_lowerRightEarP];
+    self.labret.piercing = _labretP;
+    [self.targets addObject:self.labret];
     
-    [self.piercings addObject:_upperLeftEarP];
-    [self.piercings addObject:_upperRightEarP];
+    self.leftEyebrow.piercing = _leftEyebrowP;
+    self.rightEyebrow.piercing = _rightEyebrowP;
+    [self.targets addObject:self.leftEyebrow];
+    [self.targets addObject:self.rightEyebrow];
     
-    self.atEnd = NO;
+    self.leftNose.piercing = _leftNoseP;
+    self.rightNose.piercing = _rightNoseP;
+    [self.targets addObject:self.leftNose];
+    [self.targets addObject:self.rightNose];
+    
+    self.lowerLeftEar.piercing = _lowerLeftEarP;
+    self.lowerRightEar.piercing = _lowerRightEarP;
+    [self.targets addObject:self.lowerLeftEar];
+    [self.targets addObject:self.lowerRightEar];
+    
+    self.upperLeftEar.piercing = _upperLeftEarP;
+    self.upperRightEar.piercing = _upperRightEarP;
+    [self.targets addObject:self.upperLeftEar];
+    [self.targets addObject:self.upperRightEar];
     
     [self reset];
     
@@ -125,16 +149,21 @@
     [self modularMagic];
 }
 
--(void)targetTouched:(Target*)target {
-    if (target.visible) {
-        NSUInteger index = [self.targets indexOfObject:target];
-        CCSprite *piercing = [self.piercings objectAtIndex:index];
-        piercing.visible = YES;
+-(void)targetTouched:(Target*)target
+{
+    if (target.visible)
+    {
+//        NSUInteger index = [self.targets indexOfObject:target];
+//        CCSprite *piercing = [self.piercings objectAtIndex:index];
         
+        target.piercing.visible = YES;
         target.visible = NO;
+        
         self.piercingsMade++;
     }
-    if (self.piercingsMade >= self.piercingsNeeded) {
+    
+    if (self.piercingsMade >= self.piercingsNeeded)
+    {
         self.allTargetsHit = YES;
         NSLog(@"all targets hit");
     }
@@ -161,10 +190,13 @@
     _hair1Sprite.visible = NO;
     _hair2Sprite.visible = NO;
     
-    for (CCSprite *sprite in self.piercings) {
-        sprite.visible = NO;
-    }
-    for (Target *target in self.targets) {
+//    for (CCSprite *sprite in self.piercings) {
+//        sprite.visible = NO;
+//    }
+    
+    for (Target *target in self.targets)
+    {
+        target.piercing.visible = NO;
         target.visible = YES;
     }
 //    _labretP.visible = NO;
@@ -302,9 +334,10 @@
 - (void)reset
 {
     self.piercingsMade = 0;
-    self.piercingsNeeded = 1;
     self.allTargetsHit = NO;
     self.atEnd = NO;
+    
+    self.piercingsNeeded = 1;
     
     [self modularMagic];
 }

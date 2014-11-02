@@ -106,11 +106,9 @@
     if((!head.atEnd) && ((head.position.x) > (_conveyorNode.contentSizeInPoints.width + (head.contentSizeInPoints.width/2))))
     {
         head.atEnd = YES;
-        
-        return YES;
     }
     
-    return NO;
+    return head.atEnd;
 }
 
 @end

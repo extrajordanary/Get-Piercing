@@ -37,6 +37,9 @@
 		B77F1B3E17B978D7009739AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3D17B978D7009739AE /* Foundation.framework */; };
 		B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3F17B978D7009739AE /* CoreGraphics.framework */; };
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
+		CE29D0031A05DCF500EAF788 /* Head.m in Sources */ = {isa = PBXBuildFile; fileRef = CE29D0021A05DCF500EAF788 /* Head.m */; };
+		CE29D0061A05DD1900EAF788 /* Piercing.m in Sources */ = {isa = PBXBuildFile; fileRef = CE29D0051A05DD1900EAF788 /* Piercing.m */; };
+		CE29D00D1A05DE3600EAF788 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = CE29D00C1A05DE3600EAF788 /* Constants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,12 @@
 		B77F1B3F17B978D7009739AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B77F1B4117B978D7009739AE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libObjectiveChipmunk.a; path = "../libs/cocos2d-iphone/external/Chipmunk/xcode/build/Debug-iphoneos/libObjectiveChipmunk.a"; sourceTree = "<group>"; };
+		CE29D0011A05DCF500EAF788 /* Head.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Head.h; path = Source/Head.h; sourceTree = "<group>"; };
+		CE29D0021A05DCF500EAF788 /* Head.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Head.m; path = Source/Head.m; sourceTree = "<group>"; };
+		CE29D0041A05DD1800EAF788 /* Piercing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Piercing.h; path = Source/Piercing.h; sourceTree = "<group>"; };
+		CE29D0051A05DD1900EAF788 /* Piercing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Piercing.m; path = Source/Piercing.m; sourceTree = "<group>"; };
+		CE29D00B1A05DE2500EAF788 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		CE29D00C1A05DE3600EAF788 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Source/Constants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,10 +139,16 @@
 			children = (
 				B737893D1807617C0076A88C /* AppDelegate.h */,
 				B737893E1807617C0076A88C /* AppDelegate.m */,
-				B7378992180767190076A88C /* MainScene.h */,
-				B7378993180767190076A88C /* MainScene.m */,
+				CE29D00B1A05DE2500EAF788 /* Constants.h */,
+				CE29D00C1A05DE3600EAF788 /* Constants.m */,
 				1741A6D41A05D89900073075 /* GameplayScene.h */,
 				1741A6D51A05D89900073075 /* GameplayScene.m */,
+				CE29D0011A05DCF500EAF788 /* Head.h */,
+				CE29D0021A05DCF500EAF788 /* Head.m */,
+				B7378992180767190076A88C /* MainScene.h */,
+				B7378993180767190076A88C /* MainScene.m */,
+				CE29D0041A05DD1800EAF788 /* Piercing.h */,
+				CE29D0051A05DD1900EAF788 /* Piercing.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -345,9 +360,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE29D0031A05DCF500EAF788 /* Head.m in Sources */,
 				1741A6D61A05D89900073075 /* GameplayScene.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
+				CE29D0061A05DD1900EAF788 /* Piercing.m in Sources */,
+				CE29D00D1A05DE3600EAF788 /* Constants.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

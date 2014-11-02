@@ -12,22 +12,34 @@
 	<dict>
 		<key>3148B863F3E705A1F153ABD60B5E728ABD576EF7</key>
 		<string>https://github.com/extrajordanary/GetStabbing.git</string>
+		<key>6998DD03361796C101F3CDEA2F22EBBF439A9643</key>
+		<string>https://github.com/extrajordanary/GetStabbing.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>GetStabbing.xcodeproj</string>
+	<string>GetStabbing.spritebuilder/GetStabbing.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>3148B863F3E705A1F153ABD60B5E728ABD576EF7</key>
-		<string>../..</string>
+		<string>../../../../GetStabbing.spritebuilder</string>
+		<key>6998DD03361796C101F3CDEA2F22EBBF439A9643</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/extrajordanary/GetStabbing.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>3148B863F3E705A1F153ABD60B5E728ABD576EF7</string>
+	<string>6998DD03361796C101F3CDEA2F22EBBF439A9643</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6998DD03361796C101F3CDEA2F22EBBF439A9643</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GetStabbing</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

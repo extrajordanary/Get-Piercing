@@ -157,11 +157,7 @@
 						<key>displayName</key>
 						<string>Head</string>
 						<key>memberVarAssignmentName</key>
-<<<<<<< HEAD
 						<string></string>
-=======
-						<string>_testHead</string>
->>>>>>> harlan
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>properties</key>
@@ -210,11 +206,6 @@
 								<string>Head.ccb</string>
 							</dict>
 						</array>
-<<<<<<< HEAD
-=======
-						<key>selected</key>
-						<true/>
->>>>>>> harlan
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -267,7 +258,6 @@
 						<string>anchorPoint</string>
 						<key>type</key>
 						<string>Point</string>
-<<<<<<< HEAD
 						<key>value</key>
 						<array>
 							<real>0.0</real>
@@ -281,21 +271,6 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-=======
-						<key>value</key>
-						<array>
-							<real>0.0</real>
-							<real>0.0</real>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>scale</string>
-						<key>type</key>
-						<string>ScaleLock</string>
-						<key>value</key>
-						<array>
->>>>>>> harlan
 							<real>1</real>
 							<real>1</real>
 							<false/>

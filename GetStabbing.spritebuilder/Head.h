@@ -7,9 +7,10 @@
 //
 
 #import "CCSprite.h"
-#import "Target.h"
 
-@interface Head : CCSprite //<TargetDelegate>
+@class Target;
+
+@interface Head : CCSprite
 
 @property (nonatomic, strong) Target *labret;
 @property (nonatomic, strong) Target *leftEyebrow;
@@ -23,7 +24,5 @@
 
 @property (nonatomic, strong) NSMutableArray *targets;
 @property (nonatomic, assign) BOOL allTargetsHit;
-
-//- (void)didGetTapped:(Target *)target;
 
 @end

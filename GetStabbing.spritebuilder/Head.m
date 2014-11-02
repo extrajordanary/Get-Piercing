@@ -11,11 +11,6 @@
 #import "Target.h"
 
 @implementation Head
-{
-    CCNode *_head;
-    CCNode *_leftEar;
-    CCNode *_rightEar;
-}
 
 - (void)didLoadFromCCBB
 {
@@ -29,19 +24,6 @@
     [self.targets addObject:self.rightNose];
     [self.targets addObject:self.upperLeftEar];
     [self.targets addObject:self.upperRightEar];
-}
-
-- (void)didGetTapped:(Target *)target
-{
-    for(int i = 0; i < [self.targets count]; i++)
-    {
-        Target *targetToCheck = [self.targets objectAtIndex:i];
-        
-        if([target isEqual:targetToCheck])
-        {
-            targetToCheck.isOnHead = YES;
-        }
-    }
 }
 
 @end

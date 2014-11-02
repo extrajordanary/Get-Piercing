@@ -20,7 +20,7 @@
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
     NSLog(@"Touch occured!");
-
+    
     self.isOnHead = YES;
     
     // set image

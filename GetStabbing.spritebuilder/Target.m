@@ -33,11 +33,7 @@
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    NSLog(@"Touch occured!");
-    
-    // set image
-    Head *parent = (Head*)self.parent.parent;
-    [parent targetTouched:self];
+    [self.delegate targetTouched:self];
 }
 
 - (void)reset

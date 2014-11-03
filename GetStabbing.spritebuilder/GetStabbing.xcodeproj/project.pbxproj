@@ -39,6 +39,7 @@
 		B77F1B3E17B978D7009739AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3D17B978D7009739AE /* Foundation.framework */; };
 		B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3F17B978D7009739AE /* CoreGraphics.framework */; };
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
+		CE632C011A071FC8009A226B /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE632C001A071FC8009A226B /* GameState.m */; };
 		CEA037C11A060D1600AE81D0 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA037C01A060D1600AE81D0 /* Constants.m */; };
 		CEA037DC1A0629D600AE81D0 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA037DB1A0629D600AE81D0 /* GameOverScene.m */; };
 		CEA037F21A06DC7100AE81D0 /* GameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA037F11A06DC7100AE81D0 /* GameOverLayer.m */; };
@@ -102,6 +103,8 @@
 		B77F1B3F17B978D7009739AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B77F1B4117B978D7009739AE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libObjectiveChipmunk.a; path = "../libs/cocos2d-iphone/external/Chipmunk/xcode/build/Debug-iphoneos/libObjectiveChipmunk.a"; sourceTree = "<group>"; };
+		CE632BFF1A071FC8009A226B /* GameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameState.h; sourceTree = "<group>"; };
+		CE632C001A071FC8009A226B /* GameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameState.m; sourceTree = "<group>"; };
 		CEA037BF1A060CFF00AE81D0 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		CEA037C01A060D1600AE81D0 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		CEA037DA1A0629D600AE81D0 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverScene.h; path = Source/GameOverScene.h; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 				B737893E1807617C0076A88C /* AppDelegate.m */,
 				CEA037BF1A060CFF00AE81D0 /* Constants.h */,
 				CEA037C01A060D1600AE81D0 /* Constants.m */,
+				CE632BFF1A071FC8009A226B /* GameState.h */,
+				CE632C001A071FC8009A226B /* GameState.m */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
 				CEA037DA1A0629D600AE81D0 /* GameOverScene.h */,
@@ -281,7 +286,7 @@
 				ORGANIZATIONNAME = Apportable;
 				TargetAttributes = {
 					B77F1B2D17B978D7009739AE = {
-						DevelopmentTeam = KRSTNFA75G;
+						DevelopmentTeam = G58XPAD97M;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 0;
@@ -379,6 +384,7 @@
 				CEA037C11A060D1600AE81D0 /* Constants.m in Sources */,
 				CEA037DC1A0629D600AE81D0 /* GameOverScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
+				CE632C011A071FC8009A226B /* GameState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

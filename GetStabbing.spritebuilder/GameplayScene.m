@@ -15,27 +15,34 @@
 
 @implementation GameplayScene
 {
+    // Spritebuilder variables
     CCNode *_conveyorNode;
-    
-    NSMutableArray *_heads;
-    float _conveyorSpeed;
-    
-    int _score;
+    CCSprite *_needle;
     CCLabelTTF *_scoreText;
-    
-    // strikes
-    int _numStrikes;
     CCSprite *_strike1;
     CCSprite *_strike2;
     CCSprite *_strike3;
+    
+    float _conveyorSpeed;
+    NSMutableArray *_heads;
+    CGPoint _needleStartPosition;
+    int _score;
+    
+    int _numStrikes;
     NSMutableArray *_strikes;
+    
+    CCAction *_moveToTouch;
+    CCAction *_moveToNeedleStartPosition;
 }
 
 - (void)didLoadFromCCB
 {
-    _heads = [NSMutableArray arrayWithCapacity:MAX_NUM_HEADS];
     _conveyorSpeed = STARTING_CONVEYOR_SPEED;
+    _needleStartPosition = _needle.position;
+    _heads = [NSMutableArray arrayWithCapacity:MAX_NUM_HEADS];
 
+    _moveToNeedleStartPosition = [CCActionMoveTo actionWithDuration:NEEDLE_ANIMATION_DURATION position:_needleStartPosition];
+    
     // initialize heads
     for(int i = 0; i < MAX_NUM_HEADS; i++)
     {
@@ -140,18 +147,20 @@
     [[CCDirector sharedDirector] replaceScene:scene];
 }
 
-- (void)restart
-{
-    
-}
-
 #pragma mark - HeadDelegate methods
 
-- (void)headTouched
+-(void)headTouchedAtPoint:(CGPoint)point andWasOnTarget:(BOOL)onTarget
 {
-    Blood *blood = (Blood *)[CCBReader load:@"Blood"];
+    // animate needle
+    _moveToTouch = [CCActionMoveTo actionWithDuration:NEEDLE_ANIMATION_DURATION position:point];
+    [_needle runAction:[CCActionSequence actionWithArray:@[_moveToTouch, _moveToNeedleStartPosition]]];
     
-    [self addChild:blood];
+    // if not on target, add blood spatter
+    if(!onTarget)
+    {
+        Blood *blood = (Blood *)[CCBReader load:@"Blood"];
+        [self addChild:blood];
+    }
 }
 
 #pragma mark - Helper methods

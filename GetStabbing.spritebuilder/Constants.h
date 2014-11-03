@@ -22,6 +22,9 @@ static const int MAX_NUM_HEADS = 3;
 static const int SCORE_PER_HEAD = 1;
 static const int SPACE_BETWEEN_HEADS = 100;
 
+// needle
+static const int NEEDLE_ANIMATION_DURATION = 0.5;
+
 // strikes
 static const int MAX_NUM_STRIKES = 3;
 

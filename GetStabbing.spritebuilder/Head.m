@@ -261,7 +261,7 @@
         [self startAnimation:FROWN_ANIMATION_NAME];
         
         // tell delegate head was touched
-        [self.delegate headTouched];
+        [self.delegate headTouchedAtPoint:[touch locationInNode:self] andWasOnTarget:NO];
     }
 }
 
@@ -283,6 +283,9 @@
         
         [self setIsSmiling:YES];
     }
+    
+    // tell delegate touch occurred
+    [self.delegate headTouchedAtPoint:target.position andWasOnTarget:YES];
 }
 
 #pragma mark - Helper methods

@@ -258,7 +258,7 @@
 				<key>displayName</key>
 				<string>CCNodeGradient-floor</string>
 				<key>memberVarAssignmentName</key>
-				<string>_gradientBG</string>
+				<string></string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -360,6 +360,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -707,8 +709,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

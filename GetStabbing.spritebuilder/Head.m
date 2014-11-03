@@ -75,6 +75,9 @@
 
 - (void)didLoadFromCCB
 {
+    // score
+    self.isScoreTallied = NO;
+    
     // smile
     [self setIsSmiling:NO];
     
@@ -335,6 +338,7 @@
 {
     self.numPiercingsMade = 0;
     self.numPiercingsNeeded = 0;
+    self.isScoreTallied = NO;
     self.allPiercingsMade = NO;
     self.atEnd = NO;
     

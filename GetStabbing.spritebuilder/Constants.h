@@ -19,6 +19,7 @@ static const float MAX_CONVEYOR_SPEED = 4.0;
 extern NSString *const BLINK_ANIMATION_NAME;
 extern NSString *const FROWN_ANIMATION_NAME;
 static const int MAX_NUM_HEADS = 3;
+static const int SCORE_PER_HEAD = 1;
 static const int SPACE_BETWEEN_HEADS = 100;
 
 // strikes

@@ -65,6 +65,12 @@
     [_strikes addObject:_strike3];
 }
 
+- (void)setScore:(int)score
+{
+    _score = score;
+    _scoreText.string = [NSString stringWithFormat:@"%i", score];
+}
+
 - (void)update:(CCTime)delta
 {
     for(int i = 0; i < MAX_NUM_HEADS; i++)
@@ -73,29 +79,34 @@
         
         currentHead.position = ccp(currentHead.position.x + _conveyorSpeed, currentHead.position.y);
         
+        if(currentHead.allPiercingsMade)
+        {
+            currentHead.isSmiling = YES;
+
+            if(!currentHead.isScoreTallied)
+            {
+                [self setScore:_score + SCORE_PER_HEAD];
+                
+                currentHead.isScoreTallied = YES;
+            }
+        }
+        
         // head is about to exit screen
         if([self isAtEndOfConveyor:currentHead])
         {
             // check all piercings were completed
-            if(currentHead.allPiercingsMade)
-            {
-                _score += 1;
-                
-                _scoreText.string = [NSString stringWithFormat:@"%i", _score];
-                
-            }
-            else
+            if(!currentHead.allPiercingsMade)
             {
                 _numStrikes += 1;
                 
                 CCSprite *strike = (CCSprite *)[_strikes objectAtIndex:_numStrikes-1];
                 
                 strike.visible = YES;
-            }
-            
-            if(_numStrikes == MAX_NUM_STRIKES)
-            {
-                [self gameOver];
+                
+                if(_numStrikes == MAX_NUM_STRIKES)
+                {
+                    [self gameOver];
+                }
             }
             
             // move to head of line

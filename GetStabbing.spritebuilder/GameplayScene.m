@@ -112,19 +112,12 @@
 }
 
 - (void)gameOver
-{// set score
-    int score = [GameState sharedInstance].score + _score;
-    if(score < 0) { score = 0; }
-    [GameState sharedInstance].score = score;
-    
+{
     // check if high score
-    if(score > [GameState sharedInstance].highScore)
+    if(_score > [GameState sharedInstance].highScore)
     {
-        [GameState sharedInstance].highScore = score;
+        [GameState sharedInstance].highScore = _score;
     }
-    
-    // reset global values
-    [[GameState sharedInstance] reset];
     
     // display GameOver
     CCTransition *gameOverTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:1.0];

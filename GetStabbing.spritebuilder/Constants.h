@@ -20,10 +20,6 @@ static const float MAX_CONVEYOR_SPEED = 4.0;
 // heads
 static const int MAX_NUM_HEADS = 3;
 static const int SPACE_BETWEEN_HEADS = 100;
-
-// score
-static const int DEFAULT_SCORE = 0;
-
 // strikes
 static const int MAX_NUM_STRIKES = 3;
 

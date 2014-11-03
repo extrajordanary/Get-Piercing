@@ -338,10 +338,13 @@
 
 - (void)randomlyAssignPiercingsNeeded
 {
-    for(Target *target in self.targets)
+    while(self.piercingsNeeded == 0)
     {
-        target.piercingNeeded = [self coinFlip];
-        if(target.piercingNeeded) { self.piercingsNeeded++; }
+        for(Target *target in self.targets)
+        {
+            target.piercingNeeded = [self coinFlip];
+            if(target.piercingNeeded) { self.piercingsNeeded++; }
+        }
     }
 }
 

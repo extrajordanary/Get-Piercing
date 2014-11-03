@@ -16,7 +16,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>0</integer>
+	<integer>2</integer>
 	<key>docDimensionsType</key>
 	<integer>1</integer>
 	<key>fileType</key>
@@ -2907,8 +2907,6 @@
 												</array>
 											</dict>
 										</array>
-										<key>selected</key>
-										<true/>
 									</dict>
 									<dict>
 										<key>UUID</key>
@@ -3020,7 +3018,7 @@
 										<key>type</key>
 										<string>Check</string>
 										<key>value</key>
-										<true/>
+										<false/>
 									</dict>
 									<dict>
 										<key>name</key>
@@ -3251,7 +3249,7 @@
 								<array>
 									<dict>
 										<key>baseValue</key>
-										<integer>1</integer>
+										<false/>
 										<key>name</key>
 										<string>visible</string>
 										<key>type</key>
@@ -5660,7 +5658,7 @@
 			<key>name</key>
 			<string>blink</string>
 			<key>offset</key>
-			<real>2.1019434928894043</real>
+			<real>0.0</real>
 			<key>position</key>
 			<real>0.0</real>
 			<key>resolution</key>
@@ -5734,7 +5732,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>1</real>
+			<real>0.033333335071802139</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

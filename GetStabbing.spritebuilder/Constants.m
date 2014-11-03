@@ -8,4 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+// heads
+
 const NSString *BLINK_ANIMATION_NAME = @"blink";
+const NSString *FROWN_ANIMATION_NAME = @"frown";

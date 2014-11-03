@@ -8,6 +8,7 @@
 
 #import "Head.h"
 
+#import "Constants.h"
 #import "Target.h"
 
 @implementation Head
@@ -134,6 +135,9 @@
     
     // clear settings
     [self reset];
+    
+    // enable touch
+    self.userInteractionEnabled = YES;
 }
 
 -(void)setIsSmiling:(BOOL)isSmiling
@@ -142,25 +146,7 @@
     _smile.visible = isSmiling;
 }
 
--(void)targetTouched:(Target*)target
-{
-    if (target.visible)
-    {
-        target.piercing.visible = YES;
-        target.visible = NO;
-        
-        self.piercingsMade++;
-    }
-    
-    if (self.piercingsMade >= self.piercingsNeeded)
-    {
-        self.allTargetsHit = YES;
-        
-        [self setIsSmiling:YES];
-    }
-}
-
--(void)modularMagic
+-(void)generateAppearance
 {
     // semi-randomly generated customer appearance!
     
@@ -182,12 +168,6 @@
     _hair1Sprite.visible = NO;
     _hair2Sprite.visible = NO;
     
-    //    for (Target *target in self.targets)
-    //    {
-    //        target.piercing.visible = NO;
-    //        target.visible = YES;
-    //    }
-    //
     // get colors
     _skinColor = [self getSkinColor];
     _eyeColor = [self getColor];
@@ -256,15 +236,44 @@
     
 }
 
-#pragma mark - Helper methods
+#pragma mark - Touch
+
+- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    if(!self.allPiercingsMade) { [self startAnimation:FROWN_ANIMATION_NAME]; }
+}
+
+-(void)targetTouched:(Target*)target
+{
+    if (target.visible)
+    {
+        target.piercing.visible = YES;
+        target.visible = NO;
+        
+        self.numPiercingsMade++;
+    }
+    
+    if (self.numPiercingsMade >= self.numPiercingsNeeded)
+    {
+        self.allPiercingsMade = YES;
+        
+        [self setIsSmiling:YES];
+    }
+}
+
+#pragma mark - Animations
 
 - (void)blink
 {
-    CCAnimationManager* animationManager = self.animationManager;
-    
-    // timelines can be referenced and run by name
-    [animationManager runAnimationsForSequenceNamed:@"blink"];
+    [self startAnimation:BLINK_ANIMATION_NAME];
 }
+
+- (void)frown
+{
+    [self startAnimation:FROWN_ANIMATION_NAME];
+}
+
+#pragma mark - Helper methods
 
 -(void)turnOnSprite:(CCSprite*)sprite withColor:(CCColor*)color
 {
@@ -324,9 +333,9 @@
 
 - (void)reset
 {
-    self.piercingsMade = 0;
-    self.piercingsNeeded = 0;
-    self.allTargetsHit = NO;
+    self.numPiercingsMade = 0;
+    self.numPiercingsNeeded = 0;
+    self.allPiercingsMade = NO;
     self.atEnd = NO;
     
     // reset smile
@@ -335,11 +344,11 @@
     // clear targets
     for(Target *target in self.targets)
     {
-        target.piercingNeeded = NO;
+        target.isPiercingNeeded = NO;
         target.piercing.visible = NO;
     }
     
-    [self modularMagic];
+    [self generateAppearance];
     [self randomlyAssignPiercingsNeeded];
 }
 
@@ -357,14 +366,22 @@
 
 - (void)randomlyAssignPiercingsNeeded
 {
-    while(self.piercingsNeeded == 0)
+    while(self.numPiercingsNeeded == 0)
     {
         for(Target *target in self.targets)
         {
-            target.piercingNeeded = [self coinFlip];
-            if(target.piercingNeeded) { self.piercingsNeeded++; }
+            target.isPiercingNeeded = [self coinFlip];
+            if(target.isPiercingNeeded) { self.numPiercingsNeeded++; }
         }
     }
+}
+
+- (void)startAnimation:(NSString *)animationName
+{
+    CCAnimationManager* animationManager = self.animationManager;
+    
+    // timelines can be referenced and run by name
+    [animationManager runAnimationsForSequenceNamed:animationName];
 }
 
 @end

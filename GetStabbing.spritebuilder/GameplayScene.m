@@ -9,6 +9,7 @@
 #import "GameplayScene.h"
 
 #import "Constants.h"
+#import "GameState.h"
 #import "Head.h"
 
 @implementation GameplayScene
@@ -18,7 +19,6 @@
     NSMutableArray *_heads;
     float _conveyorSpeed;
     
-    int _numCorrectPiercings;
     int _score;
     CCLabelTTF *_scoreText;
     
@@ -34,7 +34,6 @@
 {
     _heads = [NSMutableArray arrayWithCapacity:MAX_NUM_HEADS];
     _conveyorSpeed = STARTING_CONVEYOR_SPEED;
-    _numCorrectPiercings = 0;
 
     // initialize heads
     for(int i = 0; i < MAX_NUM_HEADS; i++)
@@ -113,22 +112,21 @@
 }
 
 - (void)gameOver
-{
-//    // set score
-//    int score = [GameState sharedInstance].score + _numCorrectPiercings;
-//    if(score < 0) { score = 0; }
-//    [GameState sharedInstance].score = score;
-//    
-//    // check if high score
-//    if(score > [GameState sharedInstance].highScore)
-//    {
-//        [GameState sharedInstance].highScore = score;
-//    }
+{// set score
+    int score = [GameState sharedInstance].score + _score;
+    if(score < 0) { score = 0; }
+    [GameState sharedInstance].score = score;
     
-//    // reset global values
-//    [[GameState sharedInstance] clearGameState];
+    // check if high score
+    if(score > [GameState sharedInstance].highScore)
+    {
+        [GameState sharedInstance].highScore = score;
+    }
     
-    // load GameOver scene
+    // reset global values
+    [[GameState sharedInstance] reset];
+    
+    // display GameOver
     CCTransition *gameOverTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:1.0];
     
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];

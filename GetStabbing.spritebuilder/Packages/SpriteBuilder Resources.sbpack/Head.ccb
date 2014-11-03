@@ -5233,7 +5233,7 @@
 	<array>
 		<dict>
 			<key>autoPlay</key>
-			<true/>
+			<false/>
 			<key>callbackChannel</key>
 			<dict>
 				<key>keyframes</key>
@@ -5246,7 +5246,7 @@
 			<key>length</key>
 			<real>10</real>
 			<key>name</key>
-			<string>Default Timeline</string>
+			<string>blink</string>
 			<key>offset</key>
 			<real>2.1019434928894043</real>
 			<key>position</key>
@@ -5269,7 +5269,7 @@
 		</dict>
 		<dict>
 			<key>autoPlay</key>
-			<false/>
+			<true/>
 			<key>callbackChannel</key>
 			<dict>
 				<key>keyframes</key>
@@ -5282,7 +5282,7 @@
 			<key>length</key>
 			<real>10</real>
 			<key>name</key>
-			<string>frown</string>
+			<string>nothing</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>

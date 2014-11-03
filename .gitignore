@@ -20,3 +20,7 @@ xcuserdata
 *.xcuserstate
 *~.nib
 .DS_Store
+
+.svn
+.mode1
+*.xcworkspace

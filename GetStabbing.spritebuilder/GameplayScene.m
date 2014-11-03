@@ -123,7 +123,7 @@
     CCTransition *gameOverTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:1.0];
     
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
-    [[CCDirector sharedDirector] replaceScene:scene withTransition:gameOverTransition];
+    [[CCDirector sharedDirector] replaceScene:scene]; //withTransition:gameOverTransition];
 }
 
 - (void)restart

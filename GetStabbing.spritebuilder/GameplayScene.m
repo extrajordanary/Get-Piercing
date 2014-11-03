@@ -119,11 +119,9 @@
         [GameState sharedInstance].highScore = _score;
     }
     
-    // display GameOver
-    CCTransition *gameOverTransition = [CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:1.0];
-    
+    // display GameOver    
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
-    [[CCDirector sharedDirector] replaceScene:scene]; //withTransition:gameOverTransition];
+    [[CCDirector sharedDirector] replaceScene:scene];
 }
 
 - (void)restart

@@ -33,9 +33,7 @@
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    // set image
-    Head *parent = (Head *)self.parent.parent;
-    [parent targetTouched:self];
+    [self.delegate targetTouched:self];
 }
 
 - (void)reset

@@ -7,10 +7,9 @@
 //
 
 #import "CCSprite.h"
+#import "Target.h"
 
-@class Target;
-
-@interface Head : CCSprite
+@interface Head : CCSprite <TargetDelegate>
 
 @property (nonatomic, strong) Target *labret;
 @property (nonatomic, strong) Target *leftEyebrow;
@@ -33,7 +32,6 @@
 @property (nonatomic, assign) BOOL atEnd;
 
 -(void)modularMagic;
--(void)targetTouched:(Target*)target;
 - (void)reset;
 
 

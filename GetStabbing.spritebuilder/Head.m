@@ -81,25 +81,34 @@
     self.targets = [[NSMutableArray alloc] init];
     
     self.labret.piercing = _labretP;
+    self.labret.delegate = self;
     [self.targets addObject:self.labret];
     
     self.leftEyebrow.piercing = _leftEyebrowP;
     self.rightEyebrow.piercing = _rightEyebrowP;
+    self.leftEyebrow.delegate = self;
+    self.rightEyebrow.delegate = self;
     [self.targets addObject:self.leftEyebrow];
     [self.targets addObject:self.rightEyebrow];
     
     self.leftNose.piercing = _leftNoseP;
     self.rightNose.piercing = _rightNoseP;
+    self.leftNose.delegate = self;
+    self.rightNose.delegate = self;
     [self.targets addObject:self.leftNose];
     [self.targets addObject:self.rightNose];
     
     self.lowerLeftEar.piercing = _lowerLeftEarP;
     self.lowerRightEar.piercing = _lowerRightEarP;
+    self.lowerLeftEar.delegate = self;
+    self.lowerRightEar.delegate = self;
     [self.targets addObject:self.lowerLeftEar];
     [self.targets addObject:self.lowerRightEar];
     
     self.upperLeftEar.piercing = _upperLeftEarP;
     self.upperRightEar.piercing = _upperRightEarP;
+    self.upperLeftEar.delegate = self;
+    self.upperRightEar.delegate = self;
     [self.targets addObject:self.upperLeftEar];
     [self.targets addObject:self.upperRightEar];
     

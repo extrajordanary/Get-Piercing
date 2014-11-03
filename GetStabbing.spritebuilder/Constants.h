@@ -10,16 +10,16 @@
 
 #define GetStabbing_Constants_h
 
-extern NSString *const APP_NAME;
-
 // conveyor
 static const float STARTING_CONVEYOR_SPEED = 1.5;
 static const float CONVEYOR_SPEED_INCREASE = 0.05;
 static const float MAX_CONVEYOR_SPEED = 4.0;
 
 // heads
+extern NSString *const BLINK_ANIMATION_NAME;
 static const int MAX_NUM_HEADS = 3;
 static const int SPACE_BETWEEN_HEADS = 100;
+
 // strikes
 static const int MAX_NUM_STRIKES = 3;
 

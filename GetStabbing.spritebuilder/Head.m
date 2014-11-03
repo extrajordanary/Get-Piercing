@@ -77,6 +77,10 @@
     // smile
     [self setIsSmiling:NO];
     
+    // generate a random number between 0.0 and 1.0
+    float delay = (arc4random() % 1000) / 1000.f;
+    [self performSelector:@selector(blink) withObject:nil afterDelay:delay];
+    
     // add targets to array
     self.targets = [[NSMutableArray alloc] init];
     
@@ -128,7 +132,7 @@
     color4 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.197 green:0.658 blue:1.000 alpha:1.000]];
     color5 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.193 green:1.000 blue:0.258 alpha:1.000]];
     
-    // reset
+    // clear settings
     [self reset];
 }
 
@@ -254,6 +258,14 @@
 
 #pragma mark - Helper methods
 
+- (void)blink
+{
+    CCAnimationManager* animationManager = self.animationManager;
+    
+    // timelines can be referenced and run by name
+    [animationManager runAnimationsForSequenceNamed:@"blink"];
+}
+
 -(void)turnOnSprite:(CCSprite*)sprite withColor:(CCColor*)color
 {
     sprite.visible = YES;
@@ -330,8 +342,6 @@
     [self modularMagic];
     [self randomlyAssignPiercingsNeeded];
 }
-
-#pragma mark - Helper methods
 
 -(BOOL)coinFlip
 {

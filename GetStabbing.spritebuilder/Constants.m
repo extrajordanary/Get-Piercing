@@ -8,4 +8,4 @@
 
 #import <Foundation/Foundation.h>
 
-const NSString *APP_NAME = @"GetStabbing";
+const NSString *BLINK_ANIMATION_NAME = @"blink";

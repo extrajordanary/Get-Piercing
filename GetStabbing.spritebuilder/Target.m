@@ -13,15 +13,15 @@
 
 - (void)didLoadFromCCB
 {
-    self.piercingNeeded = NO;
+    self.isPiercingNeeded = NO;
     
     self.userInteractionEnabled = YES;
 }
 
-- (void)setPiercingNeeded:(BOOL)piercingNeeded
+- (void)setIsPiercingNeeded:(BOOL)isPiercingNeeded
 {
-    _piercingNeeded = piercingNeeded;
-    self.visible = piercingNeeded;
+    _isPiercingNeeded = isPiercingNeeded;
+    self.visible = isPiercingNeeded;
 }
 
 - (void)setPiercing:(CCSprite *)piercing
@@ -38,7 +38,7 @@
 
 - (void)reset
 {
-    self.piercingNeeded = NO;
+    self.isPiercingNeeded = NO;
     self.visible = NO;
 }
 

@@ -24,14 +24,14 @@
 @property (nonatomic, strong) NSMutableArray *targets;
 @property (nonatomic, strong) NSMutableArray *piercings;
 
-@property (nonatomic, assign) int piercingsNeeded;
-@property (nonatomic, assign) int piercingsMade;
-@property (nonatomic, assign) BOOL allTargetsHit;
+@property (nonatomic, assign) int numPiercingsNeeded;
+@property (nonatomic, assign) int numPiercingsMade;
+@property (nonatomic, assign) BOOL allPiercingsMade;
 
 @property (nonatomic, assign) BOOL isSmiling;
 @property (nonatomic, assign) BOOL atEnd;
 
--(void)modularMagic;
+-(void)generateAppearance;
 - (void)reset;
 
 

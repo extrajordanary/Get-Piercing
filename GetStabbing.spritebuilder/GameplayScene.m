@@ -77,7 +77,7 @@
         if([self isAtEndOfConveyor:currentHead])
         {
             // check all piercings were completed
-            if(currentHead.allTargetsHit)
+            if(currentHead.allPiercingsMade)
             {
                 _score += 1;
                 

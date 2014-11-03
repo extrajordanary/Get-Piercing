@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface GameplayScene : CCNode {
-    
-}
+#import "Head.h"
+
+@interface GameplayScene : CCNode <HeadDelegate>
 
 @end

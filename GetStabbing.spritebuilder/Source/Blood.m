@@ -13,10 +13,15 @@
 - (void)didLoadFromCCB
 {
     // get screen size
-//    CGSize screen = [[CCDirector sharedDirector] winSize];
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    int screenWidth = (int)screenRect.size.width;
+    int screenHeight = (int)screenRect.size.height;
     
     // set random position
+    CGFloat randomXPos = 0 + arc4random() % screenWidth;
+    CGFloat randomYPos = 0 + arc4random() % screenHeight;
     
+    self.position = ccp(randomXPos, randomYPos);
 }
 
 @end

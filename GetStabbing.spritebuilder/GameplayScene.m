@@ -8,6 +8,7 @@
 
 #import "GameplayScene.h"
 
+#import "Blood.h"
 #import "Constants.h"
 #import "GameState.h"
 #import "Head.h"
@@ -39,6 +40,7 @@
     for(int i = 0; i < MAX_NUM_HEADS; i++)
     {
         Head *head = (Head *)[CCBReader load:@"Head"];
+        head.delegate = self;
         
         [_heads addObject:head];
         
@@ -140,6 +142,15 @@
 - (void)restart
 {
     
+}
+
+#pragma mark - HeadDelegate methods
+
+- (void)headTouched
+{
+    Blood *blood = (Blood *)[CCBReader load:@"Blood"];
+    
+    [self addChild:blood];
 }
 
 #pragma mark - Helper methods

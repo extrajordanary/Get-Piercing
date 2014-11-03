@@ -239,12 +239,33 @@
     
 }
 
+#pragma mark - Animations
+
+- (void)blink
+{
+    [self startAnimation:BLINK_ANIMATION_NAME];
+}
+
+- (void)frown
+{
+    [self startAnimation:FROWN_ANIMATION_NAME];
+}
+
 #pragma mark - Touch
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    if(!self.allPiercingsMade) { [self startAnimation:FROWN_ANIMATION_NAME]; }
+    if(!self.allPiercingsMade)
+    {
+        // frown
+        [self startAnimation:FROWN_ANIMATION_NAME];
+        
+        // tell delegate head was touched
+        [self.delegate headTouched];
+    }
 }
+
+#pragma mark - TargetDelegate methods
 
 -(void)targetTouched:(Target*)target
 {
@@ -262,18 +283,6 @@
         
         [self setIsSmiling:YES];
     }
-}
-
-#pragma mark - Animations
-
-- (void)blink
-{
-    [self startAnimation:BLINK_ANIMATION_NAME];
-}
-
-- (void)frown
-{
-    [self startAnimation:FROWN_ANIMATION_NAME];
 }
 
 #pragma mark - Helper methods

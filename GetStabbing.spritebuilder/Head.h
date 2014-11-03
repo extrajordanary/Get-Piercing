@@ -9,7 +9,17 @@
 #import "CCSprite.h"
 #import "Target.h"
 
+@class Head;
+
+@protocol HeadDelegate
+
+-(void)headTouched;
+
+@end
+
 @interface Head : CCSprite <TargetDelegate>
+
+@property (weak) id <HeadDelegate> delegate;
 
 @property (nonatomic, strong) Target *labret;
 @property (nonatomic, strong) Target *leftEyebrow;

@@ -251,7 +251,7 @@
 						<key>type</key>
 						<string>Float</string>
 						<key>value</key>
-						<real>0.85645151138305664</real>
+						<real>0.0</real>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -263,7 +263,7 @@
 							<real>0.72803860902786255</real>
 							<real>0.13899149000644684</real>
 							<real>0.1322532594203949</real>
-							<real>0.85645151138305664</real>
+							<real>0.0</real>
 						</array>
 					</dict>
 				</array>
@@ -421,7 +421,7 @@
 						<key>type</key>
 						<string>Float</string>
 						<key>value</key>
-						<real>0.92558139562606812</real>
+						<real>0.0</real>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -433,7 +433,7 @@
 							<real>0.72803860902786255</real>
 							<real>0.13899149000644684</real>
 							<real>0.1322532594203949</real>
-							<real>0.92558139562606812</real>
+							<real>0.0</real>
 						</array>
 					</dict>
 					<dict>
@@ -527,7 +527,7 @@
 				<key>type</key>
 				<string>Float</string>
 				<key>value</key>
-				<real>0.91688311100006104</real>
+				<real>0.0</real>
 			</dict>
 			<dict>
 				<key>name</key>
@@ -539,12 +539,10 @@
 					<real>0.72803860902786255</real>
 					<real>0.13899149000644684</real>
 					<real>0.1322532594203949</real>
-					<real>0.91688311100006104</real>
+					<real>0.0</real>
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 		<key>seqExpanded</key>
 		<true/>
 	</dict>
@@ -594,7 +592,7 @@
 				<integer>12</integer>
 			</dict>
 			<key>chainedSequenceId</key>
-			<integer>0</integer>
+			<integer>-1</integer>
 			<key>length</key>
 			<real>5</real>
 			<key>name</key>
@@ -602,7 +600,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>2.1333334445953369</real>
+			<real>5</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

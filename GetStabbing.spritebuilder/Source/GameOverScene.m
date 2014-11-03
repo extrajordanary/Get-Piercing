@@ -8,7 +8,17 @@
 
 #import "GameOverScene.h"
 
+#import "GameState.h"
+
 @implementation GameOverScene
+{
+    CCLabelTTF *_scoreText;
+}
+
+- (void)didLoadFromCCB
+{
+    _scoreText.string = [NSString stringWithFormat:@"%i", [GameState sharedInstance].latestScore];
+}
 
 - (void)startOver
 {

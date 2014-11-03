@@ -126,6 +126,9 @@
 
 - (void)gameOver
 {
+    // save latest score
+    [GameState sharedInstance].latestScore = _score;
+    
     // check if high score
     if(_score > [GameState sharedInstance].highScore)
     {

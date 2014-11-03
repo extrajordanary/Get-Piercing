@@ -43,7 +43,6 @@
 		CE632C111A0743B5009A226B /* Blood.m in Sources */ = {isa = PBXBuildFile; fileRef = CE632C101A0743B5009A226B /* Blood.m */; };
 		CEA037C11A060D1600AE81D0 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA037C01A060D1600AE81D0 /* Constants.m */; };
 		CEA037DC1A0629D600AE81D0 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA037DB1A0629D600AE81D0 /* GameOverScene.m */; };
-		CEA037F21A06DC7100AE81D0 /* GameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA037F11A06DC7100AE81D0 /* GameOverLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,8 +111,6 @@
 		CEA037C01A060D1600AE81D0 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		CEA037DA1A0629D600AE81D0 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverScene.h; path = Source/GameOverScene.h; sourceTree = "<group>"; };
 		CEA037DB1A0629D600AE81D0 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverScene.m; path = Source/GameOverScene.m; sourceTree = "<group>"; };
-		CEA037F01A06DC7100AE81D0 /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverLayer.h; path = Source/GameOverLayer.h; sourceTree = "<group>"; };
-		CEA037F11A06DC7100AE81D0 /* GameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverLayer.m; path = Source/GameOverLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,8 +158,6 @@
 				B7378993180767190076A88C /* MainScene.m */,
 				CEA037DA1A0629D600AE81D0 /* GameOverScene.h */,
 				CEA037DB1A0629D600AE81D0 /* GameOverScene.m */,
-				CEA037F01A06DC7100AE81D0 /* GameOverLayer.h */,
-				CEA037F11A06DC7100AE81D0 /* GameOverLayer.m */,
 				1741A6D41A05D89900073075 /* GameplayScene.h */,
 				1741A6D51A05D89900073075 /* GameplayScene.m */,
 				17C5BD3C1A0600D60082697D /* Head.h */,
@@ -291,7 +286,7 @@
 				ORGANIZATIONNAME = Apportable;
 				TargetAttributes = {
 					B77F1B2D17B978D7009739AE = {
-						DevelopmentTeam = KRSTNFA75G;
+						DevelopmentTeam = G58XPAD97M;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 0;
@@ -383,7 +378,6 @@
 				17C5BD3E1A0600D60082697D /* Head.m in Sources */,
 				1741A6D61A05D89900073075 /* GameplayScene.m in Sources */,
 				CE632C111A0743B5009A226B /* Blood.m in Sources */,
-				CEA037F21A06DC7100AE81D0 /* GameOverLayer.m in Sources */,
 				17C5BD421A0601EE0082697D /* Target.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,

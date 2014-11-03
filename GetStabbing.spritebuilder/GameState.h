@@ -10,6 +10,7 @@
 
 @interface GameState : NSObject
 
+@property (nonatomic, assign) NSInteger latestScore;
 @property (nonatomic, assign) NSInteger highScore;
 
 + (instancetype)sharedInstance;

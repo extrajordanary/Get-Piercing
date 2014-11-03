@@ -12,6 +12,7 @@
 
 @implementation Head
 {
+    // smile
     CCSprite *_smile;
     BOOL _isSmiling;
     
@@ -73,9 +74,8 @@
 
 - (void)didLoadFromCCB
 {
-    // set smile
-    _isSmiling = NO;
-    _smile.visible = NO;
+    // smile
+    [self setIsSmiling:NO];
     
     // add targets to array
     self.targets = [[NSMutableArray alloc] init];
@@ -142,6 +142,8 @@
     if (self.piercingsMade >= self.piercingsNeeded)
     {
         self.allTargetsHit = YES;
+        
+        [self setIsSmiling:YES];
     }
 }
 

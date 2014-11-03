@@ -83,6 +83,7 @@
                 _score += 1;
                 
                 _scoreText.string = [NSString stringWithFormat:@"%i", _score];
+                
             }
             else
             {

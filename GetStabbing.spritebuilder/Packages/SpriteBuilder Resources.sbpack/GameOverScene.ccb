@@ -291,6 +291,8 @@
 								<string></string>
 								<key>displayName</key>
 								<string>CCBFile-clock</string>
+								<key>locked</key>
+								<true/>
 								<key>memberVarAssignmentName</key>
 								<string></string>
 								<key>memberVarAssignmentType</key>
@@ -347,6 +349,8 @@
 						<string></string>
 						<key>displayName</key>
 						<string>parlorBG-02</string>
+						<key>locked</key>
+						<true/>
 						<key>memberVarAssignmentName</key>
 						<string></string>
 						<key>memberVarAssignmentType</key>
@@ -1775,7 +1779,7 @@
 						<string>Block</string>
 						<key>value</key>
 						<array>
-							<string>startOver</string>
+							<string></string>
 							<integer>1</integer>
 						</array>
 					</dict>
@@ -2058,7 +2062,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string>GameOverScene</string>
+		<string></string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>

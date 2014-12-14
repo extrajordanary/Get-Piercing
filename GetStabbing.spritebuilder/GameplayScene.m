@@ -16,6 +16,11 @@
 @implementation GameplayScene
 {
     CCNode *_conveyorNode;
+    CCNode *_layerNode;
+    CCScene *_gameOverScene;
+    
+//    CCButton *_playAgainButton;
+    
     CCNode *_pauseOverlay;
     CCSprite *_playButton;
     
@@ -68,6 +73,7 @@
     isPaused = NO;
     _pauseOverlay.visible = NO;
     _playButton.visible = NO;
+    _gameOverScene = (CCScene*)[CCBReader load:@"GameOverLayer" owner:self];
     
     _strikes = [[NSMutableArray alloc] init];
     [_strikes addObject:_strike1];
@@ -145,9 +151,8 @@
     [[CCDirector sharedDirector] replaceScene:scene];
 }
 
-- (void)restart
-{
-    
+- (void)playAgain {
+    NSLog(@"again");
 }
 
 #pragma mark - Pause
@@ -157,11 +162,15 @@
         _pauseOverlay.visible = NO;
         _playButton.visible = NO;
         [[CCDirector sharedDirector] resume];
+        
+        [_layerNode removeChild:_gameOverScene];
     } else {
         isPaused = YES;
         _pauseOverlay.visible = YES;
         _playButton.visible = YES;
         [[CCDirector sharedDirector] pause];
+        
+        [_layerNode addChild:_gameOverScene];
     }
 
 }

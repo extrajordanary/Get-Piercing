@@ -12,6 +12,7 @@
 #import "Constants.h"
 #import "GameState.h"
 #import "Head.h"
+#import "Target.h"
 
 @implementation GameplayScene
 {
@@ -155,18 +156,29 @@
 #pragma mark - Pause
 -(void)togglePause
 {
-    if (isPaused)
+    isPaused = !isPaused;
+    _pauseOverlay.visible = isPaused;
+    
+    for(Head *head in _heads)
     {
-        isPaused = NO;
-        _pauseOverlay.visible = NO;
-        [[CCDirector sharedDirector] resume];
-    } else
-    {
-        isPaused = YES;
-        _pauseOverlay.visible = YES;
-        [[CCDirector sharedDirector] pause];
+        head.userInteractionEnabled = !isPaused;
+        
+        for(Target *target in head.targets)
+        {
+            target.userInteractionEnabled = !isPaused;
+        }
     }
-
+    
+    if(isPaused)
+    {
+        [[CCDirector sharedDirector] pause];
+        
+    }
+    else
+    {
+        [[CCDirector sharedDirector] resume];
+    }
+    
 }
 
 #pragma mark - HeadDelegate methods

@@ -33,7 +33,6 @@
 @property (nonatomic, strong) Target *upperRightEar;
 
 @property (nonatomic, strong) NSMutableArray *targets;
-@property (nonatomic, strong) NSMutableArray *piercings;
 
 @property (nonatomic, assign) int numPiercingsNeeded;
 @property (nonatomic, assign) int numPiercingsMade;

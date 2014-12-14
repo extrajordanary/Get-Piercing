@@ -17,7 +17,11 @@
 @implementation GameplayScene
 {
     CCNode *_conveyorNode;
+    CCNode *_layerNode;
+    CCScene *_gameOverScene;
+    
     CCNode *_pauseOverlay;
+    CCSprite *_playButton;
     
     NSMutableArray *_heads;
     float _conveyorSpeed;
@@ -71,6 +75,8 @@
     
     isPaused = NO;
     _pauseOverlay.visible = NO;
+    _playButton.visible = NO;
+    _gameOverScene = (CCScene*)[CCBReader load:@"GameOverLayer" owner:self];
     
     _strikes = [[NSMutableArray alloc] init];
     [_strikes addObject:_strike1];
@@ -142,15 +148,15 @@
     {
         [GameState sharedInstance].highScore = _score;
     }
+    [GameState sharedInstance].latestScore = _score;
     
     // display GameOver    
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
     [[CCDirector sharedDirector] replaceScene:scene];
 }
 
-- (void)restart
-{
-    
+- (void)playAgain {
+    NSLog(@"again");
 }
 
 #pragma mark - Pause
@@ -161,18 +167,17 @@
     
     for(Head *head in _heads)
     {
-//        head.userInteractionEnabled = !isPaused;
+        head.userInteractionEnabled = !isPaused;
         
         for(Target *target in head.targets)
         {
-//            target.userInteractionEnabled = !isPaused;
+            target.userInteractionEnabled = !isPaused;
         }
     }
     
     if(isPaused)
     {
         [[CCDirector sharedDirector] pause];
-        
     }
     else
     {

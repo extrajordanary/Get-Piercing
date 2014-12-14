@@ -161,11 +161,11 @@
     
     for(Head *head in _heads)
     {
-        head.userInteractionEnabled = !isPaused;
+//        head.userInteractionEnabled = !isPaused;
         
         for(Target *target in head.targets)
         {
-            target.userInteractionEnabled = !isPaused;
+//            target.userInteractionEnabled = !isPaused;
         }
     }
     
@@ -187,9 +187,10 @@
 {
     //NSLog(@"Needle start position: (%f, %f)", _needle.positionInPoints.x, _needle.positionInPoints.y);
     //NSLog(@"Position to move to: (%f, %f)", point.x, point.y);
+    CGPoint adjustedPoint = CGPointMake(point.x + _conveyorSpeed, point.y);
     
-    // move needle to touch point
-    _needle.positionInPoints = point;
+    // move needle to touch point, accounting for conveyer speed
+    _needle.positionInPoints = adjustedPoint;
     
     //NSLog(@"Needle potition after move: (%f, %f)", _needle.positionInPoints.x, _needle.positionInPoints.y);
     

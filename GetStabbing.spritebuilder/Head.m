@@ -269,7 +269,7 @@
 
 #pragma mark - TargetDelegate methods
 
--(void)targetTouched:(Target *)target
+-(void)targetTouched:(Target *)target atPoint:(CGPoint)point
 {
     if (target.visible)
     {
@@ -293,7 +293,7 @@
     targetPoint = CGPointMake(targetPoint.x, screenHeight - targetPoint.y);
     
     // tell delegate touch occurred
-    [self.delegate headTouchedAtPoint:targetPoint andWasOnTarget:YES];
+    [self.delegate headTouchedAtPoint:point andWasOnTarget:YES];
 }
 
 #pragma mark - Helper methods

@@ -12,7 +12,7 @@
 
 @protocol TargetDelegate
 
--(void)targetTouched:(Target *)target;
+-(void)targetTouched:(Target *)target atPoint:(CGPoint)point;
 
 @end
 

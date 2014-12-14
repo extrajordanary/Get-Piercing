@@ -1,7 +1,7 @@
 # Xcode
 #
 build/
-DerivedData
+DerivedData/
 xcuserdata
 !default.mode1v3
 !default.mode2v3

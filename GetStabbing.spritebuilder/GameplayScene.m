@@ -17,6 +17,7 @@
 {
     CCNode *_conveyorNode;
     CCNode *_pauseOverlay;
+    CCSprite *_playButton;
     
     NSMutableArray *_heads;
     float _conveyorSpeed;
@@ -66,6 +67,7 @@
     
     isPaused = NO;
     _pauseOverlay.visible = NO;
+    _playButton.visible = NO;
     
     _strikes = [[NSMutableArray alloc] init];
     [_strikes addObject:_strike1];
@@ -153,10 +155,12 @@
     if (isPaused) {
         isPaused = NO;
         _pauseOverlay.visible = NO;
+        _playButton.visible = NO;
         [[CCDirector sharedDirector] resume];
     } else {
         isPaused = YES;
         _pauseOverlay.visible = YES;
+        _playButton.visible = YES;
         [[CCDirector sharedDirector] pause];
     }
 

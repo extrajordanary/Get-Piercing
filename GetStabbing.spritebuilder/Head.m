@@ -253,7 +253,7 @@
 
 #pragma mark - Touch
 
-- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+- (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     if(!self.allPiercingsMade)
     {
@@ -262,6 +262,7 @@
         
         // tell delegate head was touched
         [self.delegate headTouched];
+//        [self.delegate headTouchedAtPoint:[touch locationInNode:self] andWasOnTarget:NO];
     }
 }
 
@@ -283,6 +284,9 @@
         
         [self setIsSmiling:YES];
     }
+    
+    // tell delegate touch occurred
+//    [self.delegate headTouchedAtPoint:target.position andWasOnTarget:YES];
 }
 
 #pragma mark - Helper methods

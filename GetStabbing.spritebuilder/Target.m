@@ -31,7 +31,7 @@
     _piercing.visible = NO;
 }
 
-- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+- (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     [self.delegate targetTouched:self];
 }

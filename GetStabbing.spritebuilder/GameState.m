@@ -9,6 +9,7 @@
 #import "Constants.h"
 #import "GameState.h"
 
+static NSString *const GAME_STATE_LATEST_SCORE_KEY = @"GameStateLatestScoreKey";
 static NSString *const GAME_STATE_HIGH_SCORE_KEY = @"GameStateHighScoreKey";
 
 @implementation GameState
@@ -45,6 +46,14 @@ static NSString *const GAME_STATE_HIGH_SCORE_KEY = @"GameStateHighScoreKey";
             [self setHighScore:0];
         }
         
+        NSString *latestScore = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_LATEST_SCORE_KEY];
+        
+        // if no latest score recorded
+        if(latestScore == nil)
+        {
+            [self setLatestScore:0];
+        }
+        
         // save defaults
         [[NSUserDefaults standardUserDefaults]synchronize];
         
@@ -53,7 +62,19 @@ static NSString *const GAME_STATE_HIGH_SCORE_KEY = @"GameStateHighScoreKey";
     return self;
 }
 
-# pragma mark - setter overides
+# pragma mark - Setter overides
+
+- (void)setLatestScore:(NSInteger)latestScore
+{
+    _latestScore = latestScore;
+    
+    NSNumber *latestScoreNSNumber = [NSNumber numberWithInt:latestScore];
+    
+    // store change
+    [[NSUserDefaults standardUserDefaults] setObject:latestScoreNSNumber forKey:GAME_STATE_LATEST_SCORE_KEY];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
 - (void)setHighScore:(NSInteger)highScore
 {
     _highScore = highScore;

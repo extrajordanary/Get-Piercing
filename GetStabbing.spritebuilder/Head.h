@@ -13,7 +13,8 @@
 
 @protocol HeadDelegate
 
--(void)headTouched;
+-(void)headTouchedAtPoint:(CGPoint)point andWasOnTarget:(BOOL)onTarget;
+-(void)headTouched; //AtPoint:(CGPoint)point andWasOnTarget:(BOOL)onTarget;
 
 @end
 

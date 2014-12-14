@@ -14,7 +14,6 @@
 - (void)didLoadFromCCB
 {
     self.isPiercingNeeded = NO;
-    
     self.userInteractionEnabled = YES;
 }
 
@@ -27,7 +26,6 @@
 - (void)setPiercing:(CCSprite *)piercing
 {
     _piercing = piercing;
-    
     _piercing.visible = NO;
 }
 

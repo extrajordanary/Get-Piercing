@@ -21,6 +21,9 @@
     NSMutableArray *_heads;
     float _conveyorSpeed;
     
+    CCSprite *_needle;
+    CGPoint _originalNeedlePosition;
+    
     int _score;
     CCLabelTTF *_scoreText;
     
@@ -38,7 +41,8 @@
 {
     _heads = [NSMutableArray arrayWithCapacity:MAX_NUM_HEADS];
     _conveyorSpeed = STARTING_CONVEYOR_SPEED;
-
+    _originalNeedlePosition = _needle.positionInPoints;
+    
     // initialize heads
     for(int i = 0; i < MAX_NUM_HEADS; i++)
     {
@@ -149,12 +153,15 @@
 }
 
 #pragma mark - Pause
--(void)togglePause {
-    if (isPaused) {
+-(void)togglePause
+{
+    if (isPaused)
+    {
         isPaused = NO;
         _pauseOverlay.visible = NO;
         [[CCDirector sharedDirector] resume];
-    } else {
+    } else
+    {
         isPaused = YES;
         _pauseOverlay.visible = YES;
         [[CCDirector sharedDirector] pause];
@@ -164,11 +171,22 @@
 
 #pragma mark - HeadDelegate methods
 
-- (void)headTouched
+- (void)headTouchedAtPoint:(CGPoint)point andWasOnTarget:(BOOL)onTarget
 {
-    Blood *blood = (Blood *)[CCBReader load:@"Blood"];
+    //NSLog(@"Needle start position: (%f, %f)", _needle.positionInPoints.x, _needle.positionInPoints.y);
+    //NSLog(@"Position to move to: (%f, %f)", point.x, point.y);
     
-    [self addChild:blood];
+    // move needle to touch point
+    _needle.positionInPoints = point;
+    
+    //NSLog(@"Needle potition after move: (%f, %f)", _needle.positionInPoints.x, _needle.positionInPoints.y);
+    
+    if(!onTarget)
+    {
+        // add blood to screen
+        Blood *blood = (Blood *)[CCBReader load:@"Blood"];
+        [self addChild:blood];
+    }
 }
 
 #pragma mark - Helper methods

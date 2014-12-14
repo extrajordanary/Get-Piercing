@@ -260,15 +260,16 @@
         // frown
         [self startAnimation:FROWN_ANIMATION_NAME];
         
+        NSLog(@"Touch head: (%f, %f)", touch.locationInWorld.x, touch.locationInWorld.y);
+        
         // tell delegate head was touched
-        [self.delegate headTouched];
-//        [self.delegate headTouchedAtPoint:[touch locationInNode:self] andWasOnTarget:NO];
+        [self.delegate headTouchedAtPoint:touch.locationInWorld andWasOnTarget:NO];
     }
 }
 
 #pragma mark - TargetDelegate methods
 
--(void)targetTouched:(Target*)target
+-(void)targetTouched:(Target *)target
 {
     if (target.visible)
     {
@@ -285,8 +286,14 @@
         [self setIsSmiling:YES];
     }
     
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    int screenHeight = (int)screenRect.size.height;
+    
+    CGPoint targetPoint = [target convertToWorldSpace:target.position];
+    targetPoint = CGPointMake(targetPoint.x, screenHeight - targetPoint.y);
+    
     // tell delegate touch occurred
-//    [self.delegate headTouchedAtPoint:target.position andWasOnTarget:YES];
+    [self.delegate headTouchedAtPoint:targetPoint andWasOnTarget:YES];
 }
 
 #pragma mark - Helper methods
@@ -301,7 +308,6 @@
 {
     
     int skinNumber = arc4random_uniform(6);
-    //    NSLog(@"skin number %i",skinNumber);
     
     switch (skinNumber)
     {
@@ -326,7 +332,6 @@
 {
     
     int colorNumber = arc4random_uniform(6);
-    //    NSLog(@"color number %i",colorNumber);
     
     switch (colorNumber)
     {

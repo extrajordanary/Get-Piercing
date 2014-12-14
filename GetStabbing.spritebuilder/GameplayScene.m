@@ -16,6 +16,7 @@
 @implementation GameplayScene
 {
     CCNode *_conveyorNode;
+    CCNode *_pauseOverlay;
     
     NSMutableArray *_heads;
     float _conveyorSpeed;
@@ -29,6 +30,8 @@
     CCLabelBMFont *_strike2;
     CCLabelBMFont *_strike3;
     NSMutableArray *_strikes;
+    
+    BOOL isPaused;
 }
 
 - (void)didLoadFromCCB
@@ -60,6 +63,9 @@
     _strike1.visible = NO;
     _strike2.visible = NO;
     _strike3.visible = NO;
+    
+    isPaused = NO;
+    _pauseOverlay.visible = NO;
     
     _strikes = [[NSMutableArray alloc] init];
     [_strikes addObject:_strike1];
@@ -143,8 +149,17 @@
 }
 
 #pragma mark - Pause
--(void)pause {
-    NSLog(@"PAUSE");
+-(void)togglePause {
+    if (isPaused) {
+        isPaused = NO;
+        _pauseOverlay.visible = NO;
+        [[CCDirector sharedDirector] resume];
+    } else {
+        isPaused = YES;
+        _pauseOverlay.visible = YES;
+        [[CCDirector sharedDirector] pause];
+    }
+
 }
 
 #pragma mark - HeadDelegate methods

@@ -25,9 +25,9 @@
     
     // strikes
     int _numStrikes;
-    CCSprite *_strike1;
-    CCSprite *_strike2;
-    CCSprite *_strike3;
+    CCLabelBMFont *_strike1;
+    CCLabelBMFont *_strike2;
+    CCLabelBMFont *_strike3;
     NSMutableArray *_strikes;
 }
 
@@ -140,6 +140,11 @@
 - (void)restart
 {
     
+}
+
+#pragma mark - Pause
+-(void)pause {
+    NSLog(@"PAUSE");
 }
 
 #pragma mark - HeadDelegate methods

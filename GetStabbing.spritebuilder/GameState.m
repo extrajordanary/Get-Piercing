@@ -68,7 +68,7 @@ static NSString *const GAME_STATE_HIGH_SCORE_KEY = @"GameStateHighScoreKey";
 {
     _latestScore = latestScore;
     
-    NSNumber *latestScoreNSNumber = [NSNumber numberWithInt:latestScore];
+    NSNumber *latestScoreNSNumber = [NSNumber numberWithInteger:latestScore];
     
     // store change
     [[NSUserDefaults standardUserDefaults] setObject:latestScoreNSNumber forKey:GAME_STATE_LATEST_SCORE_KEY];
@@ -79,7 +79,7 @@ static NSString *const GAME_STATE_HIGH_SCORE_KEY = @"GameStateHighScoreKey";
 {
     _highScore = highScore;
     
-    NSNumber *highScoreNSNumber = [NSNumber numberWithInt:highScore];
+    NSNumber *highScoreNSNumber = [NSNumber numberWithInteger:highScore];
     
     // store change
     [[NSUserDefaults standardUserDefaults] setObject:highScoreNSNumber forKey:GAME_STATE_HIGH_SCORE_KEY];

@@ -11,7 +11,7 @@
 #define GetStabbing_Constants_h
 
 // GameCenter
-extern NSString *const GAMECENTER_MAIN_LEADERBOARD_NAME;
+
 extern NSString *const GAMECENTER_MAIN_LEADERBOARD_ID;
 
 // conveyor

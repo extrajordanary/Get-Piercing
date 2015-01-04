@@ -17,7 +17,7 @@
 
 - (void)didLoadFromCCB
 {
-    _scoreText.string = [NSString stringWithFormat:@"%i", [GameState sharedInstance].latestScore];
+    _scoreText.string = [NSString stringWithFormat:@"%li", (long)[GameState sharedInstance].latestScore];
 }
 
 - (void)startOver

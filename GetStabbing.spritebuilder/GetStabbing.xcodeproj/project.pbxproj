@@ -39,6 +39,9 @@
 		B77F1B3E17B978D7009739AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3D17B978D7009739AE /* Foundation.framework */; };
 		B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3F17B978D7009739AE /* CoreGraphics.framework */; };
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
+		CE2E8AC61A5A01D60065A984 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E8AC51A5A01D60065A984 /* GameKit.framework */; };
+		CE2E8AC81A5A01DD0065A984 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E8AC71A5A01DD0065A984 /* Security.framework */; };
+		CE2E8ACA1A5A01E60065A984 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E8AC91A5A01E60065A984 /* SystemConfiguration.framework */; };
 		CE632C011A071FC8009A226B /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE632C001A071FC8009A226B /* GameState.m */; };
 		CE632C111A0743B5009A226B /* Blood.m in Sources */ = {isa = PBXBuildFile; fileRef = CE632C101A0743B5009A226B /* Blood.m */; };
 		CEA037C11A060D1600AE81D0 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA037C01A060D1600AE81D0 /* Constants.m */; };
@@ -127,6 +130,9 @@
 		B77F1B4117B978D7009739AE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libObjectiveChipmunk.a; path = "../libs/cocos2d-iphone/external/Chipmunk/xcode/build/Debug-iphoneos/libObjectiveChipmunk.a"; sourceTree = "<group>"; };
 		C62D572E477A8FEDB35827D4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CE2E8AC51A5A01D60065A984 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		CE2E8AC71A5A01DD0065A984 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CE2E8AC91A5A01E60065A984 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CE632BFF1A071FC8009A226B /* GameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameState.h; sourceTree = "<group>"; };
 		CE632C001A071FC8009A226B /* GameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameState.m; sourceTree = "<group>"; };
 		CE632C0F1A0743B5009A226B /* Blood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Blood.h; path = Source/Blood.h; sourceTree = "<group>"; };
@@ -143,6 +149,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2E8ACA1A5A01E60065A984 /* SystemConfiguration.framework in Frameworks */,
+				CE2E8AC81A5A01DD0065A984 /* Security.framework in Frameworks */,
+				CE2E8AC61A5A01D60065A984 /* GameKit.framework in Frameworks */,
 				8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */,
 				B737898A1807642B0076A88C /* libcocos2d.a in Frameworks */,
 				B77F1B3217B978D7009739AE /* QuartzCore.framework in Frameworks */,
@@ -259,6 +268,9 @@
 		B77F1B3017B978D7009739AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE2E8AC91A5A01E60065A984 /* SystemConfiguration.framework */,
+				CE2E8AC71A5A01DD0065A984 /* Security.framework */,
+				CE2E8AC51A5A01D60065A984 /* GameKit.framework */,
 				8392007918EE8E3300B6C429 /* GLKit.framework */,
 				B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */,
 				B77F1B3117B978D7009739AE /* QuartzCore.framework */,
@@ -518,8 +530,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -549,7 +562,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -582,6 +596,7 @@
 					"-lz",
 					"-lsqlite3",
 					"-ObjC",
+					"$(inherited)",
 				);
 				PRODUCT_NAME = GetStabbing;
 				PROVISIONING_PROFILE = "";
@@ -614,6 +629,7 @@
 					"-lz",
 					"-lsqlite3",
 					"-ObjC",
+					"$(inherited)",
 				);
 				PRODUCT_NAME = GetStabbing;
 				PROVISIONING_PROFILE = "";

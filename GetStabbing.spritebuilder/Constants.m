@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+// GameCenter
+const NSString *GAMECENTER_MAIN_LEADERBOARD_NAME = @"MainLeaderboard";
+const NSString *GAMECENTER_MAIN_LEADERBOARD_ID = @"Main_Leaderboard";
+
 // heads
 
 const NSString *BLINK_ANIMATION_NAME = @"blink";

@@ -10,6 +10,10 @@
 
 #define GetStabbing_Constants_h
 
+// GameCenter
+extern NSString *const GAMECENTER_MAIN_LEADERBOARD_NAME;
+extern NSString *const GAMECENTER_MAIN_LEADERBOARD_ID;
+
 // conveyor
 static const float STARTING_CONVEYOR_SPEED = 1.5;
 static const float CONVEYOR_SPEED_INCREASE = 0.05;
@@ -21,9 +25,6 @@ extern NSString *const FROWN_ANIMATION_NAME;
 static const int MAX_NUM_HEADS = 3;
 static const int SCORE_PER_HEAD = 1;
 static const int SPACE_BETWEEN_HEADS = 100;
-
-// needle
-static const int NEEDLE_ANIMATION_DURATION = 0.5;
 
 // strikes
 static const int MAX_NUM_STRIKES = 3;

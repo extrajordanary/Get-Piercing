@@ -1,0 +1,5 @@
+platform :ios, '6.1'
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '6.1'
+
+pod 'GameCenterManager', '5.3'

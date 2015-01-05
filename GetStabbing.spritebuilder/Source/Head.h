@@ -3,7 +3,7 @@
 //  GetStabbing
 //
 //  Created by Harlan Kellaway on 11/1/14.
-//  Copyright (c) 2014 Apportable. All rights reserved.
+//  Copyright (c) 2014 Harlan Kellaway. All rights reserved.
 //
 
 #import "CCSprite.h"
@@ -13,7 +13,6 @@
 
 @protocol HeadDelegate
 
-//-(void)headTouchedAtPoint:(CGPoint)point andWasOnTarget:(BOOL)onTarget;
 -(void)headTouchedAtPoint:(CGPoint)point andWasOnTarget:(BOOL)onTarget;
 
 @end

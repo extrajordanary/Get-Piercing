@@ -3,7 +3,7 @@
 //  GetStabbing
 //
 //  Created by Harlan Kellaway on 11/1/14.
-//  Copyright (c) 2014 Apportable. All rights reserved.
+//  Copyright (c) 2014 Harlan Kellaway. All rights reserved.
 //
 
 #import "Head.h"
@@ -261,8 +261,6 @@ NSString *const kFrownAnimationName = @"frown";
     {
         // frown
         [self startAnimation:kFrownAnimationName];
-        
-        NSLog(@"Touch head: (%f, %f)", touch.locationInWorld.x, touch.locationInWorld.y);
         
         // tell delegate head was touched
         [self.delegate headTouchedAtPoint:touch.locationInWorld andWasOnTarget:NO];

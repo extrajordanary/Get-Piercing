@@ -57,8 +57,8 @@
     
     
     // GameCenter setup
-    
-   [[GameCenterManager sharedManager] setupManager];
+    [[GameCenterManager sharedManager] setDelegate:self];
+    [[GameCenterManager sharedManager] setupManager];
     
     return YES;
 }
@@ -66,6 +66,29 @@
 - (CCScene*) startScene
 {
     return [CCBReader loadAsScene:@"MainScene"];
+}
+
+# pragma mark - GameCenterManagerDelegate methods
+
+- (void)gameCenterManager:(GameCenterManager *)manager authenticateUser:(UIViewController *)gameCenterLoginController
+{
+    UIViewController *rootViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+    
+    // Login Delegate
+    [rootViewController presentViewController:gameCenterLoginController animated:YES completion:^{
+#ifdef DEBUG
+        NSLog(@"Finished Presenting GameCenter Login Controller Authentication Controller");
+#endif
+    }];
+}
+
+- (void)gameCenterManager:(GameCenterManager *)manager availabilityChanged:(NSDictionary *)availabilityInformation {
+    NSLog(@"Availability Information: %@", availabilityInformation);
+}
+
+/// Delegate Method called when the there is an error with GameCenter or GC Manager
+- (void)gameCenterManager:(GameCenterManager *)manager error:(NSError *)error {
+    NSLog(@"Error: %@", error);
 }
 
 @end

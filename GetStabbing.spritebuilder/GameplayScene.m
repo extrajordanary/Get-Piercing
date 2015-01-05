@@ -13,6 +13,7 @@
 #import "GameState.h"
 #import "Head.h"
 #import "Target.h"
+#import <GameCenterManager/GameCenterManager.h>
 
 @implementation GameplayScene
 {
@@ -146,7 +147,11 @@
     // check if high score
     if(_score > [GameState sharedInstance].highScore)
     {
+        // save high score locally
         [GameState sharedInstance].highScore = _score;
+        
+        // report high score to GameCenter
+        [[GameCenterManager sharedManager] saveAndReportScore:_score leaderboard:GAMECENTER_MAIN_LEADERBOARD_ID  sortOrder:GameCenterSortOrderHighToLow];
     }
     [GameState sharedInstance].latestScore = _score;
     

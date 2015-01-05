@@ -10,7 +10,7 @@
 
 // Audio
 
-const NSString *AUDIO_SOUNDTRACK_FILENAME = @"Audio/soundtrack.wav";
+const NSString *AUDIO_SOUNDTRACK_FILENAME = @"soundtrack.wav";
 
 // GameCenter
 

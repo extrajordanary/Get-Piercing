@@ -43,6 +43,7 @@
 		CE2E8AC81A5A01DD0065A984 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E8AC71A5A01DD0065A984 /* Security.framework */; };
 		CE2E8ACA1A5A01E60065A984 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E8AC91A5A01E60065A984 /* SystemConfiguration.framework */; };
 		CE2E8AF91A5A261A0065A984 /* soundtrack.wav in Resources */ = {isa = PBXBuildFile; fileRef = CE2E8AF81A5A261A0065A984 /* soundtrack.wav */; };
+		CE2E8B001A5A275E0065A984 /* AudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2E8AFF1A5A275E0065A984 /* AudioManager.m */; };
 		CE632C011A071FC8009A226B /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE632C001A071FC8009A226B /* GameState.m */; };
 		CE632C111A0743B5009A226B /* Blood.m in Sources */ = {isa = PBXBuildFile; fileRef = CE632C101A0743B5009A226B /* Blood.m */; };
 		CEA037C11A060D1600AE81D0 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA037C01A060D1600AE81D0 /* Constants.m */; };
@@ -135,6 +136,8 @@
 		CE2E8AC71A5A01DD0065A984 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		CE2E8AC91A5A01E60065A984 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CE2E8AF81A5A261A0065A984 /* soundtrack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = soundtrack.wav; sourceTree = "<group>"; };
+		CE2E8AFE1A5A275E0065A984 /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioManager.h; sourceTree = "<group>"; };
+		CE2E8AFF1A5A275E0065A984 /* AudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioManager.m; sourceTree = "<group>"; };
 		CE632BFF1A071FC8009A226B /* GameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameState.h; sourceTree = "<group>"; };
 		CE632C001A071FC8009A226B /* GameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameState.m; sourceTree = "<group>"; };
 		CE632C0F1A0743B5009A226B /* Blood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Blood.h; path = Source/Blood.h; sourceTree = "<group>"; };
@@ -195,6 +198,8 @@
 				CE2E8AE91A5A244E0065A984 /* Audio */,
 				B737893D1807617C0076A88C /* AppDelegate.h */,
 				B737893E1807617C0076A88C /* AppDelegate.m */,
+				CE2E8AFE1A5A275E0065A984 /* AudioManager.h */,
+				CE2E8AFF1A5A275E0065A984 /* AudioManager.m */,
 				CE632C0F1A0743B5009A226B /* Blood.h */,
 				CE632C101A0743B5009A226B /* Blood.m */,
 				CEA037BF1A060CFF00AE81D0 /* Constants.h */,
@@ -494,6 +499,7 @@
 			files = (
 				17C5BD3E1A0600D60082697D /* Head.m in Sources */,
 				1741A6D61A05D89900073075 /* GameplayScene.m in Sources */,
+				CE2E8B001A5A275E0065A984 /* AudioManager.m in Sources */,
 				CE632C111A0743B5009A226B /* Blood.m in Sources */,
 				17C5BD421A0601EE0082697D /* Target.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,

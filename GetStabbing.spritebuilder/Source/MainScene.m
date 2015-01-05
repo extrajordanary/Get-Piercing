@@ -8,13 +8,18 @@
 
 #import "MainScene.h"
 
+#import "AudioManager.h"
+
 @implementation MainScene
 
--(void)didLoadFromCCB {
-    
+-(void)didLoadFromCCB
+{
+    // start soundtrack
+    [[AudioManager sharedInstance] playSoundtrack];
 }
 
--(void)play {
+-(void)play
+{
     // transition to GameplayScene
     CCScene *gameplayScene = [CCBReader loadAsScene:@"GameplayScene"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];

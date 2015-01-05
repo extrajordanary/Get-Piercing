@@ -32,7 +32,6 @@
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     CGPoint point = touch.locationInWorld;
-    NSLog(@"Touch target: (%f, %f)", point.x, point.y);
     [self.delegate targetTouched:self atPoint:point];
 }
 

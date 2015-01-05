@@ -8,7 +8,7 @@
 
 #import "AudioManager.h"
 
-#import "Constants.h"
+NSString *const kSoundtrackFilename = @"soundtrack.wav";
 
 @implementation AudioManager
 {
@@ -47,7 +47,7 @@
 
 - (void)playSoundtrack
 {
-    [_audio playBg:AUDIO_SOUNDTRACK_FILENAME volume:1.0 pan:0.5 loop:TRUE];
+    [_audio playBg:kSoundtrackFilename volume:1.0 pan:0.5 loop:TRUE];
 }
 
 @end

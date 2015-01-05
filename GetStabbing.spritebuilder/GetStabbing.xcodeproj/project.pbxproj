@@ -46,7 +46,6 @@
 		CE2E8B001A5A275E0065A984 /* AudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2E8AFF1A5A275E0065A984 /* AudioManager.m */; };
 		CE632C011A071FC8009A226B /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE632C001A071FC8009A226B /* GameState.m */; };
 		CE632C111A0743B5009A226B /* Blood.m in Sources */ = {isa = PBXBuildFile; fileRef = CE632C101A0743B5009A226B /* Blood.m */; };
-		CEA037C11A060D1600AE81D0 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA037C01A060D1600AE81D0 /* Constants.m */; };
 		CEA037DC1A0629D600AE81D0 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA037DB1A0629D600AE81D0 /* GameOverScene.m */; };
 		D3D841FC1B57EDF6ADE55816 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D4F553A5586931D488FFA3F /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -142,8 +141,6 @@
 		CE632C001A071FC8009A226B /* GameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameState.m; sourceTree = "<group>"; };
 		CE632C0F1A0743B5009A226B /* Blood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Blood.h; path = Source/Blood.h; sourceTree = "<group>"; };
 		CE632C101A0743B5009A226B /* Blood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Blood.m; path = Source/Blood.m; sourceTree = "<group>"; };
-		CEA037BF1A060CFF00AE81D0 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		CEA037C01A060D1600AE81D0 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		CEA037DA1A0629D600AE81D0 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverScene.h; path = Source/GameOverScene.h; sourceTree = "<group>"; };
 		CEA037DB1A0629D600AE81D0 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverScene.m; path = Source/GameOverScene.m; sourceTree = "<group>"; };
 		F2A987C17C4144E27369334A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -202,8 +199,6 @@
 				CE2E8AFF1A5A275E0065A984 /* AudioManager.m */,
 				CE632C0F1A0743B5009A226B /* Blood.h */,
 				CE632C101A0743B5009A226B /* Blood.m */,
-				CEA037BF1A060CFF00AE81D0 /* Constants.h */,
-				CEA037C01A060D1600AE81D0 /* Constants.m */,
 				CE632BFF1A071FC8009A226B /* GameState.h */,
 				CE632C001A071FC8009A226B /* GameState.m */,
 				B7378992180767190076A88C /* MainScene.h */,
@@ -504,7 +499,6 @@
 				17C5BD421A0601EE0082697D /* Target.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
-				CEA037C11A060D1600AE81D0 /* Constants.m in Sources */,
 				CEA037DC1A0629D600AE81D0 /* GameOverScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				CE632C011A071FC8009A226B /* GameState.m in Sources */,

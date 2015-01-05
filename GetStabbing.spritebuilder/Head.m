@@ -8,8 +8,10 @@
 
 #import "Head.h"
 
-#import "Constants.h"
 #import "Target.h"
+
+NSString *const kBlinkAnimationName = @"blink";
+NSString *const kFrownAnimationName = @"frown";
 
 @implementation Head
 {
@@ -243,12 +245,12 @@
 
 - (void)blink
 {
-    [self startAnimation:BLINK_ANIMATION_NAME];
+    [self startAnimation:kBlinkAnimationName];
 }
 
 - (void)frown
 {
-    [self startAnimation:FROWN_ANIMATION_NAME];
+    [self startAnimation:kFrownAnimationName];
 }
 
 #pragma mark - Touch
@@ -258,7 +260,7 @@
     if(!self.allPiercingsMade)
     {
         // frown
-        [self startAnimation:FROWN_ANIMATION_NAME];
+        [self startAnimation:kFrownAnimationName];
         
         NSLog(@"Touch head: (%f, %f)", touch.locationInWorld.x, touch.locationInWorld.y);
         

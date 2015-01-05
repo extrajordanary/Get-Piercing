@@ -35,6 +35,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    ////// Cocos2D and Spritebuilder setup //////
+    
     // Configure Cocos2d with the options set in SpriteBuilder
     NSString* configPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Published-iOS"]; // TODO: add support for Published-Android support
     configPath = [configPath stringByAppendingPathComponent:@"configCocos2d.plist"];
@@ -58,12 +60,14 @@
     [self setupCocos2dWithOptions:cocos2dSetup];
     
     
-    // start soundtrack
-    [[AudioManager sharedInstance] playSoundtrack];
+    ////// Game setup //////
     
     // GameCenter setup
     [[GameCenterManager sharedManager] setDelegate:self];
     [[GameCenterManager sharedManager] setupManager];
+    
+    // start soundtrack
+    [[AudioManager sharedInstance] playSoundtrack];
     
     return YES;
 }
@@ -89,13 +93,17 @@
 
 - (void)gameCenterManager:(GameCenterManager *)manager availabilityChanged:(NSDictionary *)availabilityInformation
 {
+#ifdef DEBUG
     NSLog(@"Availability Information: %@", availabilityInformation);
+#endif
 }
 
 /// Delegate Method called when the there is an error with GameCenter or GC Manager
 - (void)gameCenterManager:(GameCenterManager *)manager error:(NSError *)error
 {
+#ifdef DEBUG
     NSLog(@"Error: %@", error);
+#endif
 }
 
 @end

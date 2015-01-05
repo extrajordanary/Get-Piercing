@@ -9,11 +9,21 @@
 #import "GameplayScene.h"
 
 #import "Blood.h"
-#import "Constants.h"
+//#import "Constants.h"
 #import "GameState.h"
 #import "Head.h"
 #import "Target.h"
 #import <GameCenterManager/GameCenterManager.h>
+
+// constants
+NSString *const kGameCenterMainLeaderboardID = @"Main_Leaderboard";
+float const kStartingConveyorSpeed = 1.5;
+float const kConveyorSpeedIncrease = 0.05;
+float const kMaxConveyorSpeed = 4.0;
+int const kMaxNumHeads = 3;
+int const kScorePerHead = 1;
+int const kSpaceBetweenHeads = 100;
+int const kMaxNumStrikes = 3;
 
 @implementation GameplayScene
 {
@@ -45,12 +55,12 @@
 
 - (void)didLoadFromCCB
 {
-    _heads = [NSMutableArray arrayWithCapacity:MAX_NUM_HEADS];
-    _conveyorSpeed = STARTING_CONVEYOR_SPEED;
+    _heads = [NSMutableArray arrayWithCapacity:kMaxNumHeads];
+    _conveyorSpeed = kStartingConveyorSpeed;
     _originalNeedlePosition = _needle.positionInPoints;
     
     // initialize heads
-    for(int i = 0; i < MAX_NUM_HEADS; i++)
+    for(int i = 0; i < kMaxNumHeads; i++)
     {
         Head *head = (Head *)[CCBReader load:@"Head"];
         head.delegate = self;
@@ -62,7 +72,7 @@
         
         // set initial head position
         CGFloat width = head.contentSize.width;
-        CGFloat xPos = ((i*(width + SPACE_BETWEEN_HEADS)) + width/2) - (_conveyorNode.contentSize.width * 1.5);
+        CGFloat xPos = ((i*(width + kSpaceBetweenHeads)) + width/2) - (_conveyorNode.contentSize.width * 1.5);
         CGFloat yPos = ((_conveyorNode.contentSize.height));
         head.position = ccp(xPos, yPos);
     }
@@ -93,7 +103,7 @@
 
 - (void)update:(CCTime)delta
 {
-    for(int i = 0; i < MAX_NUM_HEADS; i++)
+    for(int i = 0; i < kMaxNumHeads; i++)
     {
         Head *currentHead = _heads[i];
         
@@ -105,7 +115,7 @@
 
             if(!currentHead.isScoreTallied)
             {
-                [self setScore:_score + SCORE_PER_HEAD];
+                [self setScore:_score + kScorePerHead];
                 
                 currentHead.isScoreTallied = YES;
             }
@@ -123,21 +133,21 @@
                 
                 strike.visible = YES;
                 
-                if(_numStrikes == MAX_NUM_STRIKES)
+                if(_numStrikes == kMaxNumStrikes)
                 {
                     [self gameOver];
                 }
             }
             
             // move to head of line
-            CGFloat newX = currentHead.position.x - (MAX_NUM_HEADS * (currentHead.contentSizeInPoints.width + SPACE_BETWEEN_HEADS));
+            CGFloat newX = currentHead.position.x - (kMaxNumHeads * (currentHead.contentSizeInPoints.width + kSpaceBetweenHeads));
             currentHead.position = ccp(newX, currentHead.position.y);
             
             // reset
             [currentHead reset];
             
             // speed up conveyor up to max
-            if(_conveyorSpeed < MAX_CONVEYOR_SPEED) { _conveyorSpeed += CONVEYOR_SPEED_INCREASE; }
+            if(_conveyorSpeed < kMaxConveyorSpeed) { _conveyorSpeed += kConveyorSpeedIncrease; }
         }
     }
 }
@@ -151,7 +161,7 @@
         [GameState sharedInstance].highScore = _score;
         
         // report high score to GameCenter
-        [[GameCenterManager sharedManager] saveAndReportScore:_score leaderboard:GAMECENTER_MAIN_LEADERBOARD_ID  sortOrder:GameCenterSortOrderHighToLow];
+        [[GameCenterManager sharedManager] saveAndReportScore:_score leaderboard:kGameCenterMainLeaderboardID  sortOrder:GameCenterSortOrderHighToLow];
     }
     [GameState sharedInstance].latestScore = _score;
     
@@ -195,14 +205,10 @@
 
 - (void)headTouchedAtPoint:(CGPoint)point andWasOnTarget:(BOOL)onTarget
 {
-    //NSLog(@"Needle start position: (%f, %f)", _needle.positionInPoints.x, _needle.positionInPoints.y);
-    //NSLog(@"Position to move to: (%f, %f)", point.x, point.y);
     CGPoint adjustedPoint = CGPointMake(point.x + _conveyorSpeed, point.y);
     
     // move needle to touch point, accounting for conveyer speed
     _needle.positionInPoints = adjustedPoint;
-    
-    //NSLog(@"Needle potition after move: (%f, %f)", _needle.positionInPoints.x, _needle.positionInPoints.y);
     
     if(!onTarget)
     {

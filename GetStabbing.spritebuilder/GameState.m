@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
-#import "Constants.h"
 #import "GameState.h"
 
 static NSString *const GAME_STATE_LATEST_SCORE_KEY = @"GameStateLatestScoreKey";

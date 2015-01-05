@@ -14,8 +14,7 @@
 
 -(void)didLoadFromCCB
 {
-    // start soundtrack
-    [[AudioManager sharedInstance] playSoundtrack];
+
 }
 
 -(void)play

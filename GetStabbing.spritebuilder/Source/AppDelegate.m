@@ -27,6 +27,8 @@
 
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
+
+#import "AudioManager.h"
 #import <GameCenterManager/GameCenterManager.h>
 
 @implementation AppController
@@ -56,6 +58,9 @@
     [self setupCocos2dWithOptions:cocos2dSetup];
     
     
+    // start soundtrack
+    [[AudioManager sharedInstance] playSoundtrack];
+    
     // GameCenter setup
     [[GameCenterManager sharedManager] setDelegate:self];
     [[GameCenterManager sharedManager] setupManager];
@@ -82,12 +87,14 @@
     }];
 }
 
-- (void)gameCenterManager:(GameCenterManager *)manager availabilityChanged:(NSDictionary *)availabilityInformation {
+- (void)gameCenterManager:(GameCenterManager *)manager availabilityChanged:(NSDictionary *)availabilityInformation
+{
     NSLog(@"Availability Information: %@", availabilityInformation);
 }
 
 /// Delegate Method called when the there is an error with GameCenter or GC Manager
-- (void)gameCenterManager:(GameCenterManager *)manager error:(NSError *)error {
+- (void)gameCenterManager:(GameCenterManager *)manager error:(NSError *)error
+{
     NSLog(@"Error: %@", error);
 }
 

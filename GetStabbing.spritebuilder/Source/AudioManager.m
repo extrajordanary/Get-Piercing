@@ -8,7 +8,10 @@
 
 #import "AudioManager.h"
 
-NSString *const kSoundtrackFilename = @"soundtrack.wav";
+//NSString *const kSoundtrackFilename = @"soundtrack.wav";
+NSString *const kSoundtrackFilename = @"Published-iOS/sounds/soundtrack.caf";
+//NSString *const kHitSFXFilename = @"Published-iOS/sounds/hit.caf";
+//NSString *const kMissSFXFilename = @"Published-iOS/sounds/miss.caf";
 
 @implementation AudioManager
 {

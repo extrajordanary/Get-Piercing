@@ -3,7 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>filenames</key>
-	<dict/>
+	<dict>
+		<key>sounds/hit.wav</key>
+		<string>sounds/hit.ogg</string>
+		<key>sounds/miss.wav</key>
+		<string>sounds/miss.ogg</string>
+		<key>sounds/miss2.wav</key>
+		<string>sounds/miss2.ogg</string>
+		<key>sounds/soundtrack.wav</key>
+		<string>sounds/soundtrack.ogg</string>
+	</dict>
 	<key>metadata</key>
 	<dict>
 		<key>version</key>

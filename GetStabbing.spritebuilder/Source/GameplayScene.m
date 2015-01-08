@@ -189,6 +189,7 @@ int const kMaxNumStrikes = 3;
 {
     isPaused = !isPaused;
     _pauseOverlay.visible = isPaused;
+    _playButton.visible = isPaused;
     
     for(Head *head in _heads)
     {
@@ -202,10 +203,16 @@ int const kMaxNumStrikes = 3;
     
     if(isPaused)
     {
+        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"gamePaused"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
         [[CCDirector sharedDirector] pause];
     }
     else
     {
+        [[NSUserDefaults standardUserDefaults] setObject:@"NO" forKey:@"gamePaused"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
         [[CCDirector sharedDirector] resume];
     }
     

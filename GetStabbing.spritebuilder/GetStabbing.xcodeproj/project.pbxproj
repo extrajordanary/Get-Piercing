@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		17F5D5931A5EF415007AB7F1 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17F5D5921A5EF415007AB7F1 /* Launch Screen.xib */; };
 		17F5D5951A5EF432007AB7F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F5D5941A5EF432007AB7F1 /* Images.xcassets */; };
+		17F5D5971A5F036C007AB7F1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F5D5961A5F036C007AB7F1 /* Media.xcassets */; };
 		8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8392007918EE8E3300B6C429 /* GLKit.framework */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
@@ -93,6 +94,7 @@
 /* Begin PBXFileReference section */
 		17F5D5921A5EF415007AB7F1 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "Source/Launch Screen.xib"; sourceTree = "<group>"; };
 		17F5D5941A5EF432007AB7F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		17F5D5961A5F036C007AB7F1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		4D4F553A5586931D488FFA3F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8392007918EE8E3300B6C429 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
@@ -117,7 +119,7 @@
 		B73789861807631A0076A88C /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = Source/Prefix.pch; sourceTree = SOURCE_ROOT; };
 		B7378992180767190076A88C /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainScene.h; path = Source/MainScene.h; sourceTree = "<group>"; };
 		B7378993180767190076A88C /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainScene.m; path = Source/MainScene.m; sourceTree = "<group>"; };
-		B77F1B2E17B978D7009739AE /* GetStabbing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetStabbing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B77F1B2E17B978D7009739AE /* Get Piercing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Get Piercing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77F1B3117B978D7009739AE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B77F1B3317B978D7009739AE /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		B77F1B3517B978D7009739AE /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -254,6 +256,7 @@
 		B77F1B2517B978D7009739AE = {
 			isa = PBXGroup;
 			children = (
+				17F5D5961A5F036C007AB7F1 /* Media.xcassets */,
 				17F5D5941A5EF432007AB7F1 /* Images.xcassets */,
 				17F5D5921A5EF415007AB7F1 /* Launch Screen.xib */,
 				B737893C1807616C0076A88C /* Source */,
@@ -269,7 +272,7 @@
 		B77F1B2F17B978D7009739AE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B77F1B2E17B978D7009739AE /* GetStabbing.app */,
+				B77F1B2E17B978D7009739AE /* Get Piercing.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -344,7 +347,7 @@
 			);
 			name = GetStabbing;
 			productName = Example;
-			productReference = B77F1B2E17B978D7009739AE /* GetStabbing.app */;
+			productReference = B77F1B2E17B978D7009739AE /* Get Piercing.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -432,6 +435,7 @@
 				B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */,
 				B71F5916188484E7003F4D28 /* iPhone-old@2x.png in Resources */,
 				B737893B180761570076A88C /* Published-iOS in Resources */,
+				17F5D5971A5F036C007AB7F1 /* Media.xcassets in Resources */,
 				B71F591A188484E7003F4D28 /* Settings@2x.png in Resources */,
 				CE2E8AF91A5A261A0065A984 /* soundtrack.wav in Resources */,
 				17F5D5951A5EF432007AB7F1 /* Images.xcassets in Resources */,
@@ -594,7 +598,7 @@
 			baseConfigurationReference = C62D572E477A8FEDB35827D4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon2;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -619,7 +623,7 @@
 					"-ObjC",
 					"$(inherited)",
 				);
-				PRODUCT_NAME = GetStabbing;
+				PRODUCT_NAME = "Get Piercing";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -630,7 +634,7 @@
 			baseConfigurationReference = F2A987C17C4144E27369334A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon2;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -653,7 +657,7 @@
 					"-ObjC",
 					"$(inherited)",
 				);
-				PRODUCT_NAME = GetStabbing;
+				PRODUCT_NAME = "Get Piercing";
 				PROVISIONING_PROFILE = "";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

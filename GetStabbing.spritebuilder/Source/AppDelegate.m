@@ -66,8 +66,9 @@
     [[GameCenterManager sharedManager] setDelegate:self];
     [[GameCenterManager sharedManager] setupManager];
     
-    // start soundtrack
+    // Sound setup
     [[AudioManager sharedInstance] playSoundtrack];
+    [[AudioManager sharedInstance] preloadSounds];
     
     return YES;
 }

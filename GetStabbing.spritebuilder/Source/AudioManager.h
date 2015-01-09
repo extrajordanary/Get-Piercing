@@ -12,6 +12,9 @@
 
 +(instancetype)sharedInstance;
 
+- (void)preloadSounds;
 - (void)playSoundtrack;
+- (void)playHit;
+- (void)playMiss;
 
 @end

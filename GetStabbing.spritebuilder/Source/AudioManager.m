@@ -8,10 +8,9 @@
 
 #import "AudioManager.h"
 
-//NSString *const kSoundtrackFilename = @"soundtrack.wav";
 NSString *const kSoundtrackFilename = @"Published-iOS/sounds/soundtrack.caf";
-//NSString *const kHitSFXFilename = @"Published-iOS/sounds/hit.caf";
-//NSString *const kMissSFXFilename = @"Published-iOS/sounds/miss.caf";
+NSString *const kHitSFX = @"Published-iOS/sounds/hit.caf";
+NSString *const kMissSFX = @"Published-iOS/sounds/miss2.caf";
 
 @implementation AudioManager
 {
@@ -48,9 +47,25 @@ NSString *const kSoundtrackFilename = @"Published-iOS/sounds/soundtrack.caf";
     return self;
 }
 
+- (void)preloadSounds
+{
+    [_audio preloadEffect:kHitSFX];
+    [_audio preloadEffect:kMissSFX];
+}
+
 - (void)playSoundtrack
 {
     [_audio playBg:kSoundtrackFilename volume:1.0 pan:0.5 loop:TRUE];
+}
+
+- (void)playHit
+{
+    
+}
+
+- (void)playMiss
+{
+    
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "GameplayScene.h"
 
+#import "AudioManager.h"
 #import "Blood.h"
 #import "GameState.h"
 #import "Head.h"
@@ -15,10 +16,7 @@
 #import <GameCenterManager/GameCenterManager.h>
 
 // constants
-NSString *const kHitSFX = @"Published-iOS/sounds/hit.caf";
-NSString *const kMissSFX = @"Published-iOS/sounds/miss2.caf";
-
-NSString *const kGameCenterMainLeaderboardID = @"Main_Leaderboard";
+NSString *const kGameCenterMainLeaderboardID = @"GP_Main_Leaderboard";
 float const kStartingConveyorSpeed = 1.5;
 float const kConveyorSpeedIncrease = 0.05;
 float const kMaxConveyorSpeed = 4.0;
@@ -29,8 +27,6 @@ int const kMaxNumStrikes = 3;
 
 @implementation GameplayScene
 {
-    OALSimpleAudio *_audio;
-
     CCNode *_conveyorNode;
     CCNode *_layerNode;
     CCScene *_gameOverScene;
@@ -59,12 +55,6 @@ int const kMaxNumStrikes = 3;
 
 - (void)didLoadFromCCB
 {
-    //create audio player and preload sound effects
-    _audio = [OALSimpleAudio sharedInstance];
-    [_audio preloadEffect:kHitSFX];
-    [_audio preloadEffect:kMissSFX];
-
-    
     _heads = [NSMutableArray arrayWithCapacity:kMaxNumHeads];
     _conveyorSpeed = kStartingConveyorSpeed;
     _originalNeedlePosition = _needle.positionInPoints;
@@ -222,15 +212,17 @@ int const kMaxNumStrikes = 3;
     
     if(!onTarget)
     {
-        // play hit sound effect
-        [_audio playEffect:kMissSFX];
+        // play miss sound effect
+        [[AudioManager sharedInstance] playMiss];
         
         // add blood to screen
         Blood *blood = (Blood *)[CCBReader load:@"Blood"];
         [self addChild:blood];
-    } else {
-        // play miss sound effect
-        [_audio playEffect:kHitSFX];
+    }
+    else
+    {
+        // play hit sound effect
+        [[AudioManager sharedInstance] playHit];
     }
 }
 

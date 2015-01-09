@@ -41,7 +41,6 @@
 		CE2E8AC61A5A01D60065A984 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E8AC51A5A01D60065A984 /* GameKit.framework */; };
 		CE2E8AC81A5A01DD0065A984 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E8AC71A5A01DD0065A984 /* Security.framework */; };
 		CE2E8ACA1A5A01E60065A984 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E8AC91A5A01E60065A984 /* SystemConfiguration.framework */; };
-		CE2E8AF91A5A261A0065A984 /* soundtrack.wav in Resources */ = {isa = PBXBuildFile; fileRef = CE2E8AF81A5A261A0065A984 /* soundtrack.wav */; };
 		CE2E8B031A5A3A4A0065A984 /* AudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2E8B021A5A3A4A0065A984 /* AudioManager.m */; };
 		CE2E8B061A5A3A740065A984 /* GameplayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2E8B051A5A3A740065A984 /* GameplayScene.m */; };
 		CE2E8B091A5A3A920065A984 /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2E8B081A5A3A920065A984 /* GameState.m */; };
@@ -132,7 +131,6 @@
 		CE2E8AC51A5A01D60065A984 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		CE2E8AC71A5A01DD0065A984 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		CE2E8AC91A5A01E60065A984 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		CE2E8AF81A5A261A0065A984 /* soundtrack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = soundtrack.wav; sourceTree = "<group>"; };
 		CE2E8B011A5A3A4A0065A984 /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioManager.h; path = Source/AudioManager.h; sourceTree = "<group>"; };
 		CE2E8B021A5A3A4A0065A984 /* AudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioManager.m; path = Source/AudioManager.m; sourceTree = "<group>"; };
 		CE2E8B041A5A3A740065A984 /* GameplayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameplayScene.h; path = Source/GameplayScene.h; sourceTree = "<group>"; };
@@ -196,7 +194,6 @@
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				CE2E8AE91A5A244E0065A984 /* Audio */,
 				B737893D1807617C0076A88C /* AppDelegate.h */,
 				B737893E1807617C0076A88C /* AppDelegate.m */,
 				CE2E8B011A5A3A4A0065A984 /* AudioManager.h */,
@@ -315,14 +312,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CE2E8AE91A5A244E0065A984 /* Audio */ = {
-			isa = PBXGroup;
-			children = (
-				CE2E8AF81A5A261A0065A984 /* soundtrack.wav */,
-			);
-			name = Audio;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -357,7 +346,7 @@
 				ORGANIZATIONNAME = Apportable;
 				TargetAttributes = {
 					B77F1B2D17B978D7009739AE = {
-						DevelopmentTeam = KRSTNFA75G;
+						DevelopmentTeam = G58XPAD97M;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 0;
@@ -434,7 +423,6 @@
 				B737893B180761570076A88C /* Published-iOS in Resources */,
 				17F5D5991A5F059E007AB7F1 /* Media.xcassets in Resources */,
 				B71F591A188484E7003F4D28 /* Settings@2x.png in Resources */,
-				CE2E8AF91A5A261A0065A984 /* soundtrack.wav in Resources */,
 				17F5D5931A5EF415007AB7F1 /* Launch Screen.xib in Resources */,
 				B7378976180762440076A88C /* Default-Landscape~ipad.png in Resources */,
 				B71F5915188484E7003F4D28 /* iPhone-old.png in Resources */,

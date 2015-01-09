@@ -107,4 +107,30 @@
 #endif
 }
 
+#pragma mark - Application Activity Status
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    [[CCDirector sharedDirector] stopAnimation];
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    [[CCDirector sharedDirector] startAnimation];
+}
+
+-(void) applicationWillResignActive:(UIApplication *)application
+{
+    [[CCDirector sharedDirector] pause];
+}
+
+-(void) applicationDidBecomeActive:(UIApplication *)application
+{
+    [[CCDirector sharedDirector] setNextDeltaTimeZero:YES];
+    NSString *pauseStatus = [[NSUserDefaults standardUserDefaults] objectForKey:@"gamePaused"];
+    if (![pauseStatus isEqualToString:@"YES"]) { // !YES in case it somehow hasn't been actively set to NO yet
+        [[CCDirector sharedDirector] resume];
+    }
+    
+}
+
 @end

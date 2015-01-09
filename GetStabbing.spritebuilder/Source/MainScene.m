@@ -18,7 +18,7 @@
 
 -(void)didLoadFromCCB
 {
-    _highScoreText.string = [NSString stringWithFormat:@"%i", [GameState sharedInstance].highScore];
+    _highScoreText.string = [NSString stringWithFormat:@"%li", (long)[GameState sharedInstance].highScore];
 }
 
 -(void)play

@@ -9,12 +9,16 @@
 #import "MainScene.h"
 
 #import "AudioManager.h"
+#import "GameState.h"
 
 @implementation MainScene
+{
+    CCLabelTTF *_highScoreText;
+}
 
 -(void)didLoadFromCCB
 {
-
+    _highScoreText.string = [NSString stringWithFormat:@"%i", [GameState sharedInstance].highScore];
 }
 
 -(void)play

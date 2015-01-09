@@ -60,12 +60,12 @@ NSString *const kMissSFX = @"Published-iOS/sounds/miss2.caf";
 
 - (void)playHit
 {
-    
+    [_audio playEffect:kHitSFX];
 }
 
 - (void)playMiss
 {
-    
+    [_audio playEffect:kMissSFX];
 }
 
 @end

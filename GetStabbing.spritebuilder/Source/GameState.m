@@ -54,7 +54,7 @@ static NSString *const GAME_STATE_HIGH_SCORE_KEY = @"GameStateHighScoreKey";
         }
         
         // save defaults
-        [[NSUserDefaults standardUserDefaults]synchronize];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         
     }
     

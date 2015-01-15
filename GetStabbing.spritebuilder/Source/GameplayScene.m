@@ -87,7 +87,7 @@ int const kMaxNumStrikes = 3;
     isPaused = NO;
     _pauseOverlay.visible = NO;
     _playButton.visible = NO;
-    _gameOverScene = (CCScene*)[CCBReader load:@"GameOverLayer" owner:self];
+    _gameOverScene = (CCScene*)[CCBReader load:@"GameOverScene" owner:self];
     
     _strikes = [[NSMutableArray alloc] init];
     [_strikes addObject:_strike1];

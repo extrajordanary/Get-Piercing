@@ -170,10 +170,6 @@ int const kMaxNumStrikes = 3;
     [[CCDirector sharedDirector] replaceScene:scene];
 }
 
-- (void)playAgain {
-    NSLog(@"again");
-}
-
 #pragma mark - Pause
 -(void)togglePause
 {

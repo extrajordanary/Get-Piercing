@@ -37,7 +37,7 @@ static NSString *const GAME_STATE_HIGH_SCORE_KEY = @"GameStateHighScoreKey";
     if(self)
     {
         // high score
-        NSString *currentHighScore = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_HIGH_SCORE_KEY];
+        NSNumber *currentHighScore = [[NSUserDefaults standardUserDefaults] objectForKey:GAME_STATE_HIGH_SCORE_KEY];
         
         // if no high score recorded
         if(currentHighScore == nil)
@@ -45,7 +45,7 @@ static NSString *const GAME_STATE_HIGH_SCORE_KEY = @"GameStateHighScoreKey";
             [self setHighScore:0];
         }
         
-        NSString *latestScore = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_LATEST_SCORE_KEY];
+        NSNumber *latestScore = [[NSUserDefaults standardUserDefaults] objectForKey:GAME_STATE_LATEST_SCORE_KEY];
         
         // if no latest score recorded
         if(latestScore == nil)
@@ -71,7 +71,7 @@ static NSString *const GAME_STATE_HIGH_SCORE_KEY = @"GameStateHighScoreKey";
     
     // store change
     [[NSUserDefaults standardUserDefaults] setObject:latestScoreNSNumber forKey:GAME_STATE_LATEST_SCORE_KEY];
-    [[NSUserDefaults standardUserDefaults]synchronize];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)setHighScore:(NSInteger)highScore
@@ -82,7 +82,7 @@ static NSString *const GAME_STATE_HIGH_SCORE_KEY = @"GameStateHighScoreKey";
     
     // store change
     [[NSUserDefaults standardUserDefaults] setObject:highScoreNSNumber forKey:GAME_STATE_HIGH_SCORE_KEY];
-    [[NSUserDefaults standardUserDefaults]synchronize];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end

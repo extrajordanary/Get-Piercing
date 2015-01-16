@@ -10,7 +10,6 @@
 
 #import "AudioManager.h"
 #import "Blood.h"
-#import "GameState.h"
 #import "Head.h"
 #import "Target.h"
 #import <GameCenterManager/GameCenterManager.h>
@@ -154,16 +153,20 @@ int const kMaxNumStrikes = 3;
 
 - (void)gameOver
 {
+    [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"gamePaused"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     // check if high score
-    if(_score > [GameState sharedInstance].highScore)
+    if(_score > [[[NSUserDefaults standardUserDefaults] objectForKey:@"GP_HIGH_SCORE_KEY"] integerValue])
     {
         // save high score locally
-        [GameState sharedInstance].highScore = _score;
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:_score] forKey:@"GP_HIGH_SCORE_KEY"];
         
         // report high score to GameCenter
         [[GameCenterManager sharedManager] saveAndReportScore:_score leaderboard:kGameCenterMainLeaderboardID  sortOrder:GameCenterSortOrderHighToLow];
     }
-    [GameState sharedInstance].latestScore = _score;
+    
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:_score] forKey:@"GP_LATEST_SCORE_KEY"];
     
     // display GameOver    
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];

@@ -8,8 +8,6 @@
 
 #import "MainScene.h"
 
-#import "GameState.h"
-
 @implementation MainScene
 {
     CCLabelTTF *_highScoreText;
@@ -17,7 +15,8 @@
 
 -(void)didLoadFromCCB
 {
-    _highScoreText.string = [NSString stringWithFormat:@"%li", (long)[GameState sharedInstance].highScore];
+
+    _highScoreText.string = [NSString stringWithFormat:@"%i", [[[NSUserDefaults standardUserDefaults] objectForKey:@"GP_HIGH_SCORE_KEY"] intValue]];
 }
 
 -(void)play

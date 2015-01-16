@@ -43,7 +43,6 @@
 		CE2E8ACA1A5A01E60065A984 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E8AC91A5A01E60065A984 /* SystemConfiguration.framework */; };
 		CE2E8B031A5A3A4A0065A984 /* AudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2E8B021A5A3A4A0065A984 /* AudioManager.m */; };
 		CE2E8B061A5A3A740065A984 /* GameplayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2E8B051A5A3A740065A984 /* GameplayScene.m */; };
-		CE2E8B091A5A3A920065A984 /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2E8B081A5A3A920065A984 /* GameState.m */; };
 		CE2E8B0C1A5A3AB40065A984 /* Head.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2E8B0B1A5A3AB40065A984 /* Head.m */; };
 		CE2E8B0F1A5A3ACB0065A984 /* Target.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2E8B0E1A5A3ACB0065A984 /* Target.m */; };
 		CE632C111A0743B5009A226B /* Blood.m in Sources */ = {isa = PBXBuildFile; fileRef = CE632C101A0743B5009A226B /* Blood.m */; };
@@ -135,8 +134,6 @@
 		CE2E8B021A5A3A4A0065A984 /* AudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioManager.m; path = Source/AudioManager.m; sourceTree = "<group>"; };
 		CE2E8B041A5A3A740065A984 /* GameplayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameplayScene.h; path = Source/GameplayScene.h; sourceTree = "<group>"; };
 		CE2E8B051A5A3A740065A984 /* GameplayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameplayScene.m; path = Source/GameplayScene.m; sourceTree = "<group>"; };
-		CE2E8B071A5A3A920065A984 /* GameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameState.h; path = Source/GameState.h; sourceTree = "<group>"; };
-		CE2E8B081A5A3A920065A984 /* GameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameState.m; path = Source/GameState.m; sourceTree = "<group>"; };
 		CE2E8B0A1A5A3AB40065A984 /* Head.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Head.h; path = Source/Head.h; sourceTree = "<group>"; };
 		CE2E8B0B1A5A3AB40065A984 /* Head.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Head.m; path = Source/Head.m; sourceTree = "<group>"; };
 		CE2E8B0D1A5A3ACB0065A984 /* Target.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Target.h; path = Source/Target.h; sourceTree = "<group>"; };
@@ -206,8 +203,6 @@
 				CE2E8B051A5A3A740065A984 /* GameplayScene.m */,
 				CEA037DA1A0629D600AE81D0 /* GameOverScene.h */,
 				CEA037DB1A0629D600AE81D0 /* GameOverScene.m */,
-				CE2E8B071A5A3A920065A984 /* GameState.h */,
-				CE2E8B081A5A3A920065A984 /* GameState.m */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
 				CE2E8B0D1A5A3ACB0065A984 /* Target.h */,
@@ -497,7 +492,6 @@
 				CEA037DC1A0629D600AE81D0 /* GameOverScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				CE2E8B031A5A3A4A0065A984 /* AudioManager.m in Sources */,
-				CE2E8B091A5A3A920065A984 /* GameState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -265,14 +265,20 @@ int const kMaxNumStrikes = 3;
 
 - (void)submitMostPierced
 {
+    // get current value
+    int totalPierced = _numPierced + [[GameCenterManager sharedManager] highScoreForLeaderboard:kGameCenterMostPiercedLeaderboardID];
+    
     // report to GameCenter
-    [[GameCenterManager sharedManager] saveAndReportScore:_numPierced leaderboard:kGameCenterMostPiercedLeaderboardID  sortOrder:GameCenterSortOrderHighToLow];
+    [[GameCenterManager sharedManager] saveAndReportScore:totalPierced leaderboard:kGameCenterMostPiercedLeaderboardID  sortOrder:GameCenterSortOrderHighToLow];
 }
 
 - (void)submitMostMisses
 {
+    // get current value
+    int totalMissed = _numMisses + [[GameCenterManager sharedManager] highScoreForLeaderboard:kGameCenterMostMissesLeaderboardID];
+    
     // report to GameCenter
-    [[GameCenterManager sharedManager] saveAndReportScore:_numMisses leaderboard:kGameCenterMostMissesLeaderboardID  sortOrder:GameCenterSortOrderHighToLow];
+    [[GameCenterManager sharedManager] saveAndReportScore:totalMissed leaderboard:kGameCenterMostMissesLeaderboardID  sortOrder:GameCenterSortOrderHighToLow];
 }
 
 @end

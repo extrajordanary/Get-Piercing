@@ -14,8 +14,12 @@
 #import "Target.h"
 #import <GameCenterManager/GameCenterManager.h>
 
-// constants
-NSString *const kGameCenterMainLeaderboardID = @"GP_Main_Leaderboard";
+// Game Center
+static NSString * const kGameCenterMainLeaderboardID = @"GP_Main_Leaderboard";
+static NSString * const kGameCenterMostPiercedLeaderboardID = @"GP_Most_Pierced_Leaderboard";
+static NSString * const kGameCenterMostMissesLeaderboardID = @"GP_Most_Misses_Leaderboard";
+static NSString * const kGameCenterHighScoreKey = @"GP_HIGH_SCORE_KEY";
+
 float const kStartingConveyorSpeed = 1.5;
 float const kConveyorSpeedIncrease = 0.05;
 float const kMaxConveyorSpeed = 4.0;
@@ -30,15 +34,18 @@ int const kMaxNumStrikes = 3;
     CCNode *_layerNode;
     CCScene *_gameOverScene;
     
+    BOOL isPaused;
     CCNode *_pauseOverlay;
     CCSprite *_playButton;
     
     NSMutableArray *_heads;
     float _conveyorSpeed;
     
+    // needle
     CCSprite *_needle;
     CGPoint _originalNeedlePosition;
     
+    // score
     int _score;
     CCLabelTTF *_scoreText;
     
@@ -49,7 +56,9 @@ int const kMaxNumStrikes = 3;
     CCLabelBMFont *_strike3;
     NSMutableArray *_strikes;
     
-    BOOL isPaused;
+    // stats
+    int _numPierced;
+    int _numMisses;
 }
 
 - (void)didLoadFromCCB
@@ -115,6 +124,7 @@ int const kMaxNumStrikes = 3;
             if(!currentHead.isScoreTallied)
             {
                 [self setScore:_score + kScorePerHead];
+                _numPierced++;
                 
                 currentHead.isScoreTallied = YES;
             }
@@ -156,15 +166,9 @@ int const kMaxNumStrikes = 3;
     [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"gamePaused"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    // check if high score
-    if(_score > [[[NSUserDefaults standardUserDefaults] objectForKey:@"GP_HIGH_SCORE_KEY"] integerValue])
-    {
-        // save high score locally
-        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:_score] forKey:@"GP_HIGH_SCORE_KEY"];
-        
-        // report high score to GameCenter
-        [[GameCenterManager sharedManager] saveAndReportScore:_score leaderboard:kGameCenterMainLeaderboardID  sortOrder:GameCenterSortOrderHighToLow];
-    }
+    [self submitHighScore];
+    [self submitMostPierced];
+    [self submitMostMisses];
     
     [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:_score] forKey:@"GP_LATEST_SCORE_KEY"];
     
@@ -218,6 +222,8 @@ int const kMaxNumStrikes = 3;
     
     if(!onTarget)
     {
+        _numMisses++;
+        
         // play miss sound effect
         [[AudioManager sharedInstance] playMiss];
         
@@ -242,6 +248,31 @@ int const kMaxNumStrikes = 3;
     }
     
     return head.atEnd;
+}
+
+- (void)submitHighScore
+{
+    // check if high score
+    if(_score > [[[NSUserDefaults standardUserDefaults] objectForKey:kGameCenterHighScoreKey] integerValue])
+    {
+        // save high score locally
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:_score] forKey:kGameCenterHighScoreKey];
+        
+        // report high score to GameCenter
+        [[GameCenterManager sharedManager] saveAndReportScore:_score leaderboard:kGameCenterMainLeaderboardID  sortOrder:GameCenterSortOrderHighToLow];
+    }
+}
+
+- (void)submitMostPierced
+{
+    // report to GameCenter
+    [[GameCenterManager sharedManager] saveAndReportScore:_numPierced leaderboard:kGameCenterMostPiercedLeaderboardID  sortOrder:GameCenterSortOrderHighToLow];
+}
+
+- (void)submitMostMisses
+{
+    // report to GameCenter
+    [[GameCenterManager sharedManager] saveAndReportScore:_numMisses leaderboard:kGameCenterMostMissesLeaderboardID  sortOrder:GameCenterSortOrderHighToLow];
 }
 
 @end

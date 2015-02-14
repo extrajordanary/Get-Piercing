@@ -13,6 +13,7 @@
 #import "Blood.h"
 #import "Head.h"
 #import "ModeManager.h"
+#import "Strike.h"
 #import "Target.h"
 
 // Game Center
@@ -52,10 +53,7 @@ int const kSpaceBetweenHeads = 100;
     // strikes
     int _maxNumStrikes;
     int _numStrikes;
-    CCLabelBMFont *_strike1;
-    CCLabelBMFont *_strike2;
-    CCLabelBMFont *_strike3;
-    NSMutableArray *_strikes;
+    CCLayoutBox *_strikesBox;
     
     // stats
     int _numPierced;
@@ -93,19 +91,10 @@ int const kSpaceBetweenHeads = 100;
     // set up strikes
     _numStrikes = 0;
     
-    _strike1.visible = NO;
-    _strike2.visible = NO;
-    _strike3.visible = NO;
-    
     isPaused = NO;
     _pauseOverlay.visible = NO;
     _playButton.visible = NO;
     _gameOverScene = (CCScene*)[CCBReader load:@"GameOverScene" owner:self];
-    
-    _strikes = [[NSMutableArray alloc] init];
-    [_strikes addObject:_strike1];
-    [_strikes addObject:_strike2];
-    [_strikes addObject:_strike3];
 }
 
 - (void)setScore:(int)score
@@ -143,9 +132,8 @@ int const kSpaceBetweenHeads = 100;
             {
                 _numStrikes += 1;
                 
-                CCSprite *strike = (CCSprite *)[_strikes objectAtIndex:_numStrikes-1];
-                
-                strike.visible = YES;
+                Strike *strike = (Strike *)[CCBReader load:@"Strike"];
+                [_strikesBox addChild:strike];
                 
                 if(_numStrikes == _maxNumStrikes)
                 {

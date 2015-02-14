@@ -16,6 +16,9 @@
 #import "Strike.h"
 #import "Target.h"
 
+static NSString * const kIsPausedKey = @"gamePaused";
+static NSString * const kLatestScoreKey = @"GP_LATEST_SCORE_KEY";
+
 // Game Center
 static NSString * const kGameCenterMainLeaderboardID = @"GP_Main_Leaderboard";
 static NSString * const kGameCenterMostPiercedLeaderboardID = @"GP_Most_Pierced_Leaderboard";
@@ -61,18 +64,87 @@ int const kSpaceBetweenHeads = 100;
     int _numMisses;
 }
 
+#pragma mark - Initializers
+
 - (void)didLoadFromCCB
 {
-    [self setModeInfo];
-    [self initializeStrikes];
+    [self setModeInfo]; // this should come first
+    [self setupConveyor];
+    [self setupHeads];
+    [self setupNeedle];
+    [self setupStrikes];
     
-    NSLog(@"Mode = %d; Mode Info = %@", [ModeManager sharedInstance].mode, [ModeManager sharedInstance].modeInfo);
+    isPaused = NO;
+    _pauseOverlay.visible = NO;
+    _playButton.visible = NO;
+    _gameOverScene = (CCScene*)[CCBReader load:@"GameOverScene" owner:self];
+}
+
+#pragma mark Setters
+
+- (void)setScore:(int)score
+{
+    _score = score;
+    _scoreText.string = [NSString stringWithFormat:@"%i", score];
+}
+
+#pragma mark - Public methods
+
+#pragma mark Update loop
+
+- (void)update:(CCTime)delta
+{
+    for(Head *currentHead in _heads)
+    {
+        [self updatePositionForHead:currentHead];
+        [self tallyPiercingsForHead:currentHead];
+        
+        if([self isAtEndOfConveyor:currentHead])
+        {
+            [self tallyStrikesForHead:currentHead];
+            
+            if([self isOffScreen:currentHead])
+            {
+                [self resetHead:currentHead];
+                [self speedUpConveyor];
+            }
+        }
+    }
+}
+
+#pragma mark HeadDelegate methods
+
+- (void)headTouchedAtPoint:(CGPoint)point andWasOnTarget:(BOOL)onTarget
+{
+    [self moveNeedleToPoint:point];
     
-    _heads = [NSMutableArray arrayWithCapacity:kMaxNumHeads];
+    if(onTarget)
+    {
+        [self hitTarget];
+    }
+    else
+    {
+        [self missedTarget];
+    }
+}
+
+#pragma mark - Helper methods
+
+- (void)setModeInfo
+{
+    NSDictionary *modeInfo = [ModeManager sharedInstance].modeInfo;
+    
+    _maxNumStrikes = [[modeInfo objectForKey:@"NumStrikes"] intValue];
+}
+
+- (void)setupConveyor
+{
     _conveyorSpeed = kStartingConveyorSpeed;
-    _originalNeedlePosition = _needle.positionInPoints;
-    
-    // initialize heads
+}
+
+- (void)setupHeads
+{
+    _heads = [NSMutableArray arrayWithCapacity:kMaxNumHeads];
     for(int i = 0; i < kMaxNumHeads; i++)
     {
         Head *head = (Head *)[CCBReader load:@"Head"];
@@ -89,170 +161,85 @@ int const kSpaceBetweenHeads = 100;
         CGFloat yPos = ((_conveyorNode.contentSize.height));
         head.position = ccp(xPos, yPos);
     }
-    
-    // set up strikes
+}
+
+- (void)setupNeedle
+{
+    _originalNeedlePosition = _needle.positionInPoints;
+}
+
+- (void)setupStrikes
+{
     _numStrikes = 0;
-    
-    isPaused = NO;
-    _pauseOverlay.visible = NO;
-    _playButton.visible = NO;
-    _gameOverScene = (CCScene*)[CCBReader load:@"GameOverScene" owner:self];
-}
-
-- (void)setScore:(int)score
-{
-    _score = score;
-    _scoreText.string = [NSString stringWithFormat:@"%i", score];
-}
-
-- (void)update:(CCTime)delta
-{
-    for(int i = 0; i < kMaxNumHeads; i++)
-    {
-        Head *currentHead = _heads[i];
-        
-        currentHead.position = ccp(currentHead.position.x + _conveyorSpeed, currentHead.position.y);
-        
-        if(currentHead.allPiercingsMade)
-        {
-            currentHead.isSmiling = YES;
-
-            if(!currentHead.isScoreTallied)
-            {
-                [self setScore:_score + kScorePerHead];
-                _numPierced++;
-                
-                currentHead.isScoreTallied = YES;
-            }
-        }
-        
-        // head is about to exit screen
-        if([self isAtEndOfConveyor:currentHead])
-        {
-            // check all piercings were completed
-            if(!currentHead.isStrikeTallied && !currentHead.allPiercingsMade)
-            {
-                [_strikesBox addChild:[_strikes objectAtIndex:_numStrikes]];
-                _numStrikes += 1;
-                
-                if(_numStrikes == _maxNumStrikes)
-                {
-                    [self gameOver];
-                }
-                
-                currentHead.isStrikeTallied = YES;
-            }
-            
-            if([self isOffScreen:currentHead])
-            {
-                // move to head of line
-                CGFloat newX = currentHead.position.x - (kMaxNumHeads * (currentHead.contentSizeInPoints.width + kSpaceBetweenHeads));
-                currentHead.position = ccp(newX, currentHead.position.y);
-                
-                // reset
-                [currentHead reset];
-                
-                // speed up conveyor up to max
-                if(_conveyorSpeed < kMaxConveyorSpeed) { _conveyorSpeed += kConveyorSpeedIncrease; }
-            }
-        }
-    }
-}
-
-- (void)gameOver
-{
-    [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"gamePaused"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    [self submitHighScore];
-    [self submitMostPierced];
-    [self submitMostMisses];
-    
-    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:_score] forKey:@"GP_LATEST_SCORE_KEY"];
-    
-    // display GameOver    
-    CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
-    [[CCDirector sharedDirector] replaceScene:scene];
-}
-
-#pragma mark - Pause
--(void)togglePause
-{
-    isPaused = !isPaused;
-    _pauseOverlay.visible = isPaused;
-    _playButton.visible = isPaused;
-    
-    for(Head *head in _heads)
-    {
-        head.userInteractionEnabled = !isPaused;
-        
-        for(Target *target in head.targets)
-        {
-            target.userInteractionEnabled = !isPaused;
-        }
-    }
-    
-    if(isPaused)
-    {
-        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"gamePaused"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
-        [[CCDirector sharedDirector] pause];
-    }
-    else
-    {
-        [[NSUserDefaults standardUserDefaults] setObject:@"NO" forKey:@"gamePaused"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
-        [[CCDirector sharedDirector] resume];
-    }
-    
-}
-
-#pragma mark - HeadDelegate methods
-
-- (void)headTouchedAtPoint:(CGPoint)point andWasOnTarget:(BOOL)onTarget
-{
-    CGPoint adjustedPoint = CGPointMake(point.x + _conveyorSpeed, point.y);
-    
-    // move needle to touch point, accounting for conveyer speed
-    _needle.positionInPoints = adjustedPoint;
-    
-    if(!onTarget)
-    {
-        _numMisses++;
-        
-        // play miss sound effect
-        [[AudioManager sharedInstance] playMiss];
-        
-        // add blood to screen
-        Blood *blood = (Blood *)[CCBReader load:@"Blood"];
-        [self addChild:blood];
-    }
-    else
-    {
-        // play hit sound effect
-        [[AudioManager sharedInstance] playHit];
-    }
-}
-
-#pragma mark - Helper methods
-
-- (void)setModeInfo
-{
-    NSDictionary *modeInfo = [ModeManager sharedInstance].modeInfo;
-    
-    _maxNumStrikes = [[modeInfo objectForKey:@"NumStrikes"] intValue];
-}
-
-- (void)initializeStrikes
-{
     _strikes = [NSMutableArray array];
     
     for(int i = 0; i < _maxNumStrikes; i++)
     {
         Strike *strike = (Strike *)[CCBReader load:@"Strike"];
         [_strikes addObject:strike];
+    }
+}
+
+- (void)updatePositionForHead:(Head *)head
+{
+    head.position = ccp(head.position.x + _conveyorSpeed, head.position.y);
+}
+
+- (void)tallyPiercingsForHead:(Head *)head
+{
+    if(head.allPiercingsMade)
+    {
+        head.isSmiling = YES;
+        
+        [self updateScoreForHead:head];
+    }
+}
+
+- (void)tallyStrikesForHead:(Head *)head
+{
+    if(!head.isStrikeTallied && !head.allPiercingsMade)
+    {
+        [_strikesBox addChild:[_strikes objectAtIndex:_numStrikes]];
+        _numStrikes += 1;
+        
+        if(_numStrikes == _maxNumStrikes)
+        {
+            [self gameOver];
+        }
+        
+        head.isStrikeTallied = YES;
+    }
+}
+
+- (void)resetHead:(Head *)head
+{
+    [self moveHeadToStart:head];
+    
+    [head reset];
+}
+
+- (void)moveHeadToStart:(Head *)head
+{
+    CGFloat newX = head.position.x - (kMaxNumHeads * (head.contentSizeInPoints.width + kSpaceBetweenHeads));
+    head.position = ccp(newX, head.position.y);
+}
+
+- (void)speedUpConveyor
+{
+    if(_conveyorSpeed < kMaxConveyorSpeed)
+    {
+        _conveyorSpeed += kConveyorSpeedIncrease;
+    }
+}
+
+- (void)updateScoreForHead:(Head *)head
+{
+    if(!head.isScoreTallied)
+    {
+        [self setScore:_score + kScorePerHead];
+        _numPierced++;
+        
+        head.isScoreTallied = YES;
     }
 }
 
@@ -271,6 +258,80 @@ int const kSpaceBetweenHeads = 100;
     return ((head.position.x) > (_conveyorNode.contentSizeInPoints.width + (head.contentSizeInPoints.width)));
 }
 
+- (void)moveNeedleToPoint:(CGPoint)point
+{
+    CGPoint adjustedPoint = CGPointMake(point.x + _conveyorSpeed, point.y);
+    _needle.positionInPoints = adjustedPoint;
+}
+
+- (void)hitTarget
+{
+    [[AudioManager sharedInstance] playHit];
+}
+
+- (void)missedTarget
+{
+    _numMisses++;
+    
+    [[AudioManager sharedInstance] playMiss];
+    [self splatterBlood];
+}
+
+- (void) splatterBlood
+{
+    Blood *blood = (Blood *)[CCBReader load:@"Blood"];
+    [self addChild:blood];
+}
+
+-(void)togglePause
+{
+    isPaused = !isPaused;
+    _pauseOverlay.visible = isPaused;
+    _playButton.visible = isPaused;
+    
+    for(Head *head in _heads)
+    {
+        head.userInteractionEnabled = !isPaused;
+        
+        for(Target *target in head.targets)
+        {
+            target.userInteractionEnabled = !isPaused;
+        }
+    }
+    
+    if(isPaused)
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:kIsPausedKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        [[CCDirector sharedDirector] pause];
+    }
+    else
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:@"NO" forKey:kIsPausedKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        [[CCDirector sharedDirector] resume];
+    }
+    
+}
+
+- (void)gameOver
+{
+    [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:kIsPausedKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [self submitHighScore];
+    [self submitMostPierced];
+    [self submitMostMisses];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:_score] forKey:kLatestScoreKey];
+    
+    // display GameOver
+    CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];
+    [[CCDirector sharedDirector] replaceScene:scene];
+}
+
 - (void)submitHighScore
 {
     // check if high score
@@ -286,19 +347,15 @@ int const kSpaceBetweenHeads = 100;
 
 - (void)submitMostPierced
 {
-    // get current value
     int totalPierced = _numPierced + [[GameCenterManager sharedManager] highScoreForLeaderboard:kGameCenterMostPiercedLeaderboardID];
     
-    // report to GameCenter
     [[GameCenterManager sharedManager] saveAndReportScore:totalPierced leaderboard:kGameCenterMostPiercedLeaderboardID  sortOrder:GameCenterSortOrderHighToLow];
 }
 
 - (void)submitMostMisses
 {
-    // get current value
     int totalMissed = _numMisses + [[GameCenterManager sharedManager] highScoreForLeaderboard:kGameCenterMostMissesLeaderboardID];
-    
-    // report to GameCenter
+
     [[GameCenterManager sharedManager] saveAndReportScore:totalMissed leaderboard:kGameCenterMostMissesLeaderboardID  sortOrder:GameCenterSortOrderHighToLow];
 }
 

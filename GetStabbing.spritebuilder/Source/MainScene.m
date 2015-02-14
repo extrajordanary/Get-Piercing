@@ -3,7 +3,7 @@
 //  GetStabbing
 //
 //  Created by Viktor on 10/10/13.
-//  Copyright (c) 2013 Harlan Kellaway. All rights reserved.
+//  Copyright (c) 2014 Harlan Kellaway. All rights reserved.
 //
 
 #import "MainScene.h"

@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger, GPMode)
 @interface ModeManager : NSObject
 
 @property (nonatomic, assign) GPMode mode;
-@property (nonatomic, strong) NSDictionary *modeInfo;
+@property (nonatomic, strong, readonly) NSDictionary *modeInfo;
 
 +(instancetype)sharedInstance;
 

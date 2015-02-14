@@ -13,7 +13,6 @@
 @implementation MainScene
 {
     CCLabelTTF *_highScoreText;
-    GPMode _mode;
 }
 
 -(void)didLoadFromCCB

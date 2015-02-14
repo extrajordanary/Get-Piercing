@@ -48,6 +48,7 @@
 		CE632C111A0743B5009A226B /* Blood.m in Sources */ = {isa = PBXBuildFile; fileRef = CE632C101A0743B5009A226B /* Blood.m */; };
 		CEA037DC1A0629D600AE81D0 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA037DB1A0629D600AE81D0 /* GameOverScene.m */; };
 		D3D841FC1B57EDF6ADE55816 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D4F553A5586931D488FFA3F /* libPods.a */; };
+		DC0CFC901A8FE2CF000AA09D /* ModeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0CFC8F1A8FE2CF000AA09D /* ModeManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +143,8 @@
 		CE632C101A0743B5009A226B /* Blood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Blood.m; path = Source/Blood.m; sourceTree = "<group>"; };
 		CEA037DA1A0629D600AE81D0 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverScene.h; path = Source/GameOverScene.h; sourceTree = "<group>"; };
 		CEA037DB1A0629D600AE81D0 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverScene.m; path = Source/GameOverScene.m; sourceTree = "<group>"; };
+		DC0CFC8E1A8FE2CF000AA09D /* ModeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModeManager.h; path = Source/ModeManager.h; sourceTree = "<group>"; };
+		DC0CFC8F1A8FE2CF000AA09D /* ModeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModeManager.m; path = Source/ModeManager.m; sourceTree = "<group>"; };
 		F2A987C17C4144E27369334A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -205,6 +208,8 @@
 				CEA037DB1A0629D600AE81D0 /* GameOverScene.m */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
+				DC0CFC8E1A8FE2CF000AA09D /* ModeManager.h */,
+				DC0CFC8F1A8FE2CF000AA09D /* ModeManager.m */,
 				CE2E8B0D1A5A3ACB0065A984 /* Target.h */,
 				CE2E8B0E1A5A3ACB0065A984 /* Target.m */,
 			);
@@ -485,6 +490,7 @@
 			files = (
 				CE2E8B0F1A5A3ACB0065A984 /* Target.m in Sources */,
 				CE632C111A0743B5009A226B /* Blood.m in Sources */,
+				DC0CFC901A8FE2CF000AA09D /* ModeManager.m in Sources */,
 				CE2E8B061A5A3A740065A984 /* GameplayScene.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,

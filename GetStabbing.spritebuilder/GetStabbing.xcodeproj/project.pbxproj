@@ -49,6 +49,9 @@
 		CEA037DC1A0629D600AE81D0 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA037DB1A0629D600AE81D0 /* GameOverScene.m */; };
 		D3D841FC1B57EDF6ADE55816 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D4F553A5586931D488FFA3F /* libPods.a */; };
 		DC0CFC901A8FE2CF000AA09D /* ModeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0CFC8F1A8FE2CF000AA09D /* ModeManager.m */; };
+		DC0CFC9A1A8FE967000AA09D /* GPModeInfoEasy.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFC991A8FE967000AA09D /* GPModeInfoEasy.plist */; };
+		DC0CFC9C1A8FE97D000AA09D /* GPModeInfoDefault.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFC9B1A8FE97D000AA09D /* GPModeInfoDefault.plist */; };
+		DC0CFC9E1A8FE989000AA09D /* GPModeInfoHard.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFC9D1A8FE989000AA09D /* GPModeInfoHard.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +148,9 @@
 		CEA037DB1A0629D600AE81D0 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverScene.m; path = Source/GameOverScene.m; sourceTree = "<group>"; };
 		DC0CFC8E1A8FE2CF000AA09D /* ModeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModeManager.h; path = Source/ModeManager.h; sourceTree = "<group>"; };
 		DC0CFC8F1A8FE2CF000AA09D /* ModeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModeManager.m; path = Source/ModeManager.m; sourceTree = "<group>"; };
+		DC0CFC991A8FE967000AA09D /* GPModeInfoEasy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GPModeInfoEasy.plist; sourceTree = "<group>"; };
+		DC0CFC9B1A8FE97D000AA09D /* GPModeInfoDefault.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GPModeInfoDefault.plist; sourceTree = "<group>"; };
+		DC0CFC9D1A8FE989000AA09D /* GPModeInfoHard.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GPModeInfoHard.plist; sourceTree = "<group>"; };
 		F2A987C17C4144E27369334A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -296,6 +302,7 @@
 		B77F1B4617B978D7009739AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DC0CFC981A8FE94F000AA09D /* Modes */,
 				B73789911807667A0076A88C /* Icons */,
 				B737893A180761570076A88C /* Published-iOS */,
 			);
@@ -310,6 +317,16 @@
 				B73789861807631A0076A88C /* Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC0CFC981A8FE94F000AA09D /* Modes */ = {
+			isa = PBXGroup;
+			children = (
+				DC0CFC991A8FE967000AA09D /* GPModeInfoEasy.plist */,
+				DC0CFC9B1A8FE97D000AA09D /* GPModeInfoDefault.plist */,
+				DC0CFC9D1A8FE989000AA09D /* GPModeInfoHard.plist */,
+			);
+			name = Modes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,15 +433,18 @@
 			files = (
 				B71F5919188484E7003F4D28 /* Settings.png in Resources */,
 				B7378978180762440076A88C /* Default@2x.png in Resources */,
+				DC0CFC9C1A8FE97D000AA09D /* GPModeInfoDefault.plist in Resources */,
 				B71F5914188484E7003F4D28 /* iPad@2x.png in Resources */,
 				B71F5913188484E7003F4D28 /* iPad.png in Resources */,
 				B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */,
 				B71F5916188484E7003F4D28 /* iPhone-old@2x.png in Resources */,
 				B737893B180761570076A88C /* Published-iOS in Resources */,
 				17F5D5991A5F059E007AB7F1 /* Media.xcassets in Resources */,
+				DC0CFC9A1A8FE967000AA09D /* GPModeInfoEasy.plist in Resources */,
 				B71F591A188484E7003F4D28 /* Settings@2x.png in Resources */,
 				17F5D5931A5EF415007AB7F1 /* Launch Screen.xib in Resources */,
 				B7378976180762440076A88C /* Default-Landscape~ipad.png in Resources */,
+				DC0CFC9E1A8FE989000AA09D /* GPModeInfoHard.plist in Resources */,
 				B71F5915188484E7003F4D28 /* iPhone-old.png in Resources */,
 				B71F5917188484E7003F4D28 /* iPhone.png in Resources */,
 				B7378975180762440076A88C /* Default-568h@2x.png in Resources */,

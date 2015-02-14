@@ -8,7 +8,9 @@
 
 #import "ModeManager.h"
 
-#pragma mark - Initializers
+static NSString * const kPlistNameModeInfoEasy = @"GPModeInfoEasy";
+static NSString * const kPlistNameModeInfoDefault = @"GPModeInfoDefault";
+static NSString * const kPlistNameModeInfoHard = @"GPModeInfoHard";
 
 @implementation ModeManager
 {
@@ -40,5 +42,37 @@
 }
 
 #pragma mark - Private methods
+
+- (NSArray *)getPListDataArray: (NSString *)pListName
+{
+    NSString *errorDesc = nil;
+    NSPropertyListFormat format;
+    
+    NSString *plistPath;
+    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    
+    // get file-styem path to file containing XML property list
+    plistPath = [rootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist", pListName]];
+    
+    // if file doesn't exist at file-system path, check application's main bundle
+    if(![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
+    {
+        plistPath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@", pListName] ofType:@"plist"];
+    }
+    
+    NSData *pListXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
+    
+    NSArray *pListDataArray = (NSArray *)[NSPropertyListSerialization
+                                          propertyListFromData:pListXML
+                                          mutabilityOption:NSPropertyListMutableContainersAndLeaves
+                                          format:&format
+                                          errorDescription:&errorDesc];
+    if(!pListDataArray)
+    {
+        NSLog(@"Error reading plist: %@, format: %lu", errorDesc, format);
+    }
+    
+    return pListDataArray;
+}
 
 @end

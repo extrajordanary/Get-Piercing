@@ -53,6 +53,7 @@ int const kSpaceBetweenHeads = 100;
     // strikes
     int _maxNumStrikes;
     int _numStrikes;
+    NSMutableArray *_strikes;
     CCLayoutBox *_strikesBox;
     
     // stats
@@ -63,6 +64,7 @@ int const kSpaceBetweenHeads = 100;
 - (void)didLoadFromCCB
 {
     [self setModeInfo];
+    [self initializeStrikes];
     
     NSLog(@"Mode = %d; Mode Info = %@", [ModeManager sharedInstance].mode, [ModeManager sharedInstance].modeInfo);
     
@@ -130,10 +132,8 @@ int const kSpaceBetweenHeads = 100;
             // check all piercings were completed
             if(!currentHead.isStrikeTallied && !currentHead.allPiercingsMade)
             {
+                [_strikesBox addChild:[_strikes objectAtIndex:_numStrikes]];
                 _numStrikes += 1;
-                
-                Strike *strike = (Strike *)[CCBReader load:@"Strike"];
-                [_strikesBox addChild:strike];
                 
                 if(_numStrikes == _maxNumStrikes)
                 {
@@ -243,6 +243,17 @@ int const kSpaceBetweenHeads = 100;
     NSDictionary *modeInfo = [ModeManager sharedInstance].modeInfo;
     
     _maxNumStrikes = [[modeInfo objectForKey:@"NumStrikes"] intValue];
+}
+
+- (void)initializeStrikes
+{
+    _strikes = [NSMutableArray array];
+    
+    for(int i = 0; i < _maxNumStrikes; i++)
+    {
+        Strike *strike = (Strike *)[CCBReader load:@"Strike"];
+        [_strikes addObject:strike];
+    }
 }
 
 - (BOOL)isAtEndOfConveyor:(Head *)head

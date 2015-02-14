@@ -242,7 +242,7 @@ int const kMaxNumStrikes = 3;
 
 - (BOOL)isAtEndOfConveyor:(Head *)head
 {
-    if((!head.atEnd) && ((head.position.x) > (_conveyorNode.contentSizeInPoints.width + (head.contentSizeInPoints.width/2))))
+    if((!head.atEnd) && ((head.position.x) > (_conveyorNode.contentSizeInPoints.width + (head.contentSizeInPoints.width))))
     {
         head.atEnd = YES;
     }

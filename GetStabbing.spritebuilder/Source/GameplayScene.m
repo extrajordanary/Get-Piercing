@@ -27,7 +27,6 @@ float const kMaxConveyorSpeed = 4.0;
 int const kMaxNumHeads = 3;
 int const kScorePerHead = 1;
 int const kSpaceBetweenHeads = 100;
-int const kMaxNumStrikes = 3;
 
 @implementation GameplayScene
 {
@@ -51,6 +50,7 @@ int const kMaxNumStrikes = 3;
     CCLabelTTF *_scoreText;
     
     // strikes
+    int _maxNumStrikes;
     int _numStrikes;
     CCLabelBMFont *_strike1;
     CCLabelBMFont *_strike2;
@@ -64,6 +64,8 @@ int const kMaxNumStrikes = 3;
 
 - (void)didLoadFromCCB
 {
+    [self setModeInfo];
+    
     _heads = [NSMutableArray arrayWithCapacity:kMaxNumHeads];
     _conveyorSpeed = kStartingConveyorSpeed;
     _originalNeedlePosition = _needle.positionInPoints;
@@ -147,7 +149,7 @@ int const kMaxNumStrikes = 3;
                 
                 strike.visible = YES;
                 
-                if(_numStrikes == kMaxNumStrikes)
+                if(_numStrikes == _maxNumStrikes)
                 {
                     [self gameOver];
                 }
@@ -244,6 +246,13 @@ int const kMaxNumStrikes = 3;
 }
 
 #pragma mark - Helper methods
+
+- (void)setModeInfo
+{
+    NSDictionary *modeInfo = [ModeManager sharedInstance].modeInfo;
+    
+    _maxNumStrikes = [[modeInfo objectForKey:@"NumStrikes"] intValue];
+}
 
 - (BOOL)isAtEndOfConveyor:(Head *)head
 {

@@ -92,17 +92,17 @@ static NSString * const kPlistNameModeInfoHard = @"GPModeInfoHard";
     
     NSData *pListXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
     
-    NSDictionary *pListData = (NSDictionary *)[NSPropertyListSerialization
+    NSDictionary *plistData = (NSDictionary *)[NSPropertyListSerialization
                                           propertyListFromData:pListXML
                                           mutabilityOption:NSPropertyListMutableContainersAndLeaves
                                           format:&format
                                           errorDescription:&errorDesc];
-    if(!pListData)
+    if(!plistData)
     {
         return [NSDictionary dictionary];
     }
     
-    return pListData;
+    return plistData;
 }
 
 @end

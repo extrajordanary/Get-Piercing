@@ -36,8 +36,9 @@
 @property (nonatomic, assign) int numPiercingsNeeded;
 @property (nonatomic, assign) int numPiercingsMade;
 @property (nonatomic, assign) BOOL allPiercingsMade;
-@property (nonatomic, assign) BOOL isScoreTallied;
 
+@property (nonatomic, assign) BOOL isScoreTallied;
+@property (nonatomic, assign) BOOL isStrikeTallied;
 @property (nonatomic, assign) BOOL isSmiling;
 @property (nonatomic, assign) BOOL atEnd;
 

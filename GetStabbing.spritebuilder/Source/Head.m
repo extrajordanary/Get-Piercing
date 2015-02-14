@@ -80,6 +80,9 @@ NSString *const kFrownAnimationName = @"frown";
     // score
     self.isScoreTallied = NO;
     
+    // strike
+    self.isStrikeTallied = NO;
+    
     // smile
     [self setIsSmiling:NO];
     
@@ -357,6 +360,7 @@ NSString *const kFrownAnimationName = @"frown";
     self.numPiercingsMade = 0;
     self.numPiercingsNeeded = 0;
     self.isScoreTallied = NO;
+    self.isStrikeTallied = NO;
     self.allPiercingsMade = NO;
     self.atEnd = NO;
     

@@ -66,6 +66,8 @@ int const kSpaceBetweenHeads = 100;
 {
     [self setModeInfo];
     
+    NSLog(@"Mode = %d; Mode Info = %@", [ModeManager sharedInstance].mode, [ModeManager sharedInstance].modeInfo);
+    
     _heads = [NSMutableArray arrayWithCapacity:kMaxNumHeads];
     _conveyorSpeed = kStartingConveyorSpeed;
     _originalNeedlePosition = _needle.positionInPoints;
@@ -104,10 +106,6 @@ int const kSpaceBetweenHeads = 100;
     [_strikes addObject:_strike1];
     [_strikes addObject:_strike2];
     [_strikes addObject:_strike3];
-    
-    // load mode info
-    NSDictionary *modeInfo = [ModeManager sharedInstance].modeInfo;
-    NSLog(@"modeInfo = %@", modeInfo);
 }
 
 - (void)setScore:(int)score
@@ -141,7 +139,7 @@ int const kSpaceBetweenHeads = 100;
         if([self isAtEndOfConveyor:currentHead])
         {
             // check all piercings were completed
-            if(!currentHead.allPiercingsMade)
+            if(!currentHead.isStrikeTallied && !currentHead.allPiercingsMade)
             {
                 _numStrikes += 1;
                 
@@ -153,17 +151,22 @@ int const kSpaceBetweenHeads = 100;
                 {
                     [self gameOver];
                 }
+                
+                currentHead.isStrikeTallied = YES;
             }
             
-            // move to head of line
-            CGFloat newX = currentHead.position.x - (kMaxNumHeads * (currentHead.contentSizeInPoints.width + kSpaceBetweenHeads));
-            currentHead.position = ccp(newX, currentHead.position.y);
-            
-            // reset
-            [currentHead reset];
-            
-            // speed up conveyor up to max
-            if(_conveyorSpeed < kMaxConveyorSpeed) { _conveyorSpeed += kConveyorSpeedIncrease; }
+            if([self isOffScreen:currentHead])
+            {
+                // move to head of line
+                CGFloat newX = currentHead.position.x - (kMaxNumHeads * (currentHead.contentSizeInPoints.width + kSpaceBetweenHeads));
+                currentHead.position = ccp(newX, currentHead.position.y);
+                
+                // reset
+                [currentHead reset];
+                
+                // speed up conveyor up to max
+                if(_conveyorSpeed < kMaxConveyorSpeed) { _conveyorSpeed += kConveyorSpeedIncrease; }
+            }
         }
     }
 }
@@ -256,12 +259,17 @@ int const kSpaceBetweenHeads = 100;
 
 - (BOOL)isAtEndOfConveyor:(Head *)head
 {
-    if((!head.atEnd) && ((head.position.x) > (_conveyorNode.contentSizeInPoints.width + (head.contentSizeInPoints.width))))
+    if((!head.atEnd) && ((head.position.x) > (_conveyorNode.contentSizeInPoints.width + (head.contentSizeInPoints.width/2))))
     {
         head.atEnd = YES;
     }
     
     return head.atEnd;
+}
+
+- (BOOL)isOffScreen:(Head *)head
+{
+    return ((head.position.x) > (_conveyorNode.contentSizeInPoints.width + (head.contentSizeInPoints.width)));
 }
 
 - (void)submitHighScore

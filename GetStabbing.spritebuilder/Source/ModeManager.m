@@ -15,33 +15,26 @@
     GPMode _mode;
 }
 
-- (id)initWithMode:(GPMode)mode
++(instancetype)sharedInstance
 {
-    self = [super init];
+    // structure used to test whether the block has completed or not
+    static dispatch_once_t p = 0;
     
-    if(self)
-    {
-        _mode = mode;
-    }
+    // initialize sharedObject as nil (first call only)
+    __strong static id _sharedObject = nil;
     
-    return self;
+    // executes a block object once and only once for the lifetime of an application
+    dispatch_once(&p, ^{
+        _sharedObject = [[self alloc] init];
+    });
+    
+    // returns the same object each time
+    return _sharedObject;
 }
 
-- (instancetype)init
-{
-    return [self initWithMode:GPModeDefault];
-}
+#pragma mark - Getters
 
-#pragma mark Getters
-
-- (GPMode)mode
-{
-    return _mode;
-}
-
-#pragma mark - Public methods
-
-- (NSDictionary *)modeInfo
++ (NSDictionary *)modeInfo
 {
     return [NSDictionary dictionary];
 }

@@ -11,6 +11,10 @@
 
 #import "Head.h"
 
+@class ModeManager;
+
 @interface GameplayScene : CCNode <HeadDelegate>
+
+@property (nonatomic, strong) ModeManager *modeManager;
 
 @end

@@ -8,11 +8,12 @@
 
 #import "GameplayScene.h"
 
+#import <GameCenterManager/GameCenterManager.h>
 #import "AudioManager.h"
 #import "Blood.h"
 #import "Head.h"
+#import "ModeManager.h"
 #import "Target.h"
-#import <GameCenterManager/GameCenterManager.h>
 
 // Game Center
 static NSString * const kGameCenterMainLeaderboardID = @"GP_Main_Leaderboard";
@@ -101,6 +102,10 @@ int const kMaxNumStrikes = 3;
     [_strikes addObject:_strike1];
     [_strikes addObject:_strike2];
     [_strikes addObject:_strike3];
+    
+    // load mode info
+    NSDictionary *modeInfo = [ModeManager sharedInstance].modeInfo;
+    NSLog(@"modeInfo = %@", modeInfo);
 }
 
 - (void)setScore:(int)score

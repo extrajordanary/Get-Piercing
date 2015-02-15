@@ -8,6 +8,8 @@
 
 #import "GameOverScene.h"
 
+#import "Blood.h"
+
 @implementation GameOverScene
 {
     CCLabelTTF *_scoreText;
@@ -16,6 +18,12 @@
 - (void)didLoadFromCCB
 {
     _scoreText.string = [NSString stringWithFormat:@"%i", [[[NSUserDefaults standardUserDefaults] objectForKey:@"GP_LATEST_SCORE_KEY"] intValue]];
+    
+    for(int i = 0; i < 10; i++)
+    {
+        Blood *blood = (Blood *)[CCBReader load:@"Blood"];
+        [self addChild:blood];
+    }
 }
 
 - (void)startOver

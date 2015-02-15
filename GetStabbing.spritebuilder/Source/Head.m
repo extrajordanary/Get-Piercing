@@ -16,7 +16,6 @@ NSString *const kFrownAnimationName = @"frown";
 @implementation Head
 {
     CCSprite *_smile;
-    BOOL _isSmiling;
     
     CCSprite *_neckSprite;
     CCSprite *_shirtSprite;
@@ -78,51 +77,12 @@ NSString *const kFrownAnimationName = @"frown";
 
 - (void)didLoadFromCCB
 {
-    // score
     self.isScoreTallied = NO;
-    
-    // strike
     self.isStrikeTallied = NO;
+    self.isSmiling = NO;
     
-    // smile
-    [self setIsSmiling:NO];
-    
-    [self startBlinkAnimation];
-    
-    // add targets to array
-    self.targets = [[NSMutableArray alloc] init];
-    
-    self.labret.piercing = _labretP;
-    self.labret.delegate = self;
-    [self.targets addObject:self.labret];
-    
-    self.leftEyebrow.piercing = _leftEyebrowP;
-    self.rightEyebrow.piercing = _rightEyebrowP;
-    self.leftEyebrow.delegate = self;
-    self.rightEyebrow.delegate = self;
-    [self.targets addObject:self.leftEyebrow];
-    [self.targets addObject:self.rightEyebrow];
-    
-    self.leftNose.piercing = _leftNoseP;
-    self.rightNose.piercing = _rightNoseP;
-    self.leftNose.delegate = self;
-    self.rightNose.delegate = self;
-    [self.targets addObject:self.leftNose];
-    [self.targets addObject:self.rightNose];
-    
-    self.lowerLeftEar.piercing = _lowerLeftEarP;
-    self.lowerRightEar.piercing = _lowerRightEarP;
-    self.lowerLeftEar.delegate = self;
-    self.lowerRightEar.delegate = self;
-    [self.targets addObject:self.lowerLeftEar];
-    [self.targets addObject:self.lowerRightEar];
-    
-    self.upperLeftEar.piercing = _upperLeftEarP;
-    self.upperRightEar.piercing = _upperRightEarP;
-    self.upperLeftEar.delegate = self;
-    self.upperRightEar.delegate = self;
-    [self.targets addObject:self.upperLeftEar];
-    [self.targets addObject:self.upperRightEar];
+    self.targets = [NSMutableArray array];
+    [self setupTargetsWithPiercings];
     
     // skin colors
     skin0 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.849 green:1.000 blue:0.852 alpha:1.000]];
@@ -140,10 +100,8 @@ NSString *const kFrownAnimationName = @"frown";
     color4 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.197 green:0.658 blue:1.000 alpha:1.000]];
     color5 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.193 green:1.000 blue:0.258 alpha:1.000]];
     
-    // clear settings
     [self reset];
-    
-    // enable touch
+    [self startBlinkAnimation];
     self.userInteractionEnabled = YES;
 }
 
@@ -315,6 +273,26 @@ NSString *const kFrownAnimationName = @"frown";
 }
 
 #pragma mark - Helper methods
+
+- (void)setupTargetsWithPiercings
+{
+    [self setupTarget:self.labret withPiercing:_labretP];
+    [self setupTarget:self.leftEyebrow withPiercing:_leftEyebrowP];
+    [self setupTarget:self.rightEyebrow withPiercing:_rightEyebrowP];
+    [self setupTarget:self.leftNose withPiercing:_leftNoseP];
+    [self setupTarget:self.rightNose withPiercing:_rightNoseP];
+    [self setupTarget:self.lowerLeftEar withPiercing:_lowerLeftEarP];
+    [self setupTarget:self.lowerRightEar withPiercing:_lowerRightEarP];
+    [self setupTarget:self.upperLeftEar withPiercing:_upperLeftEarP];
+    [self setupTarget:self.upperRightEar withPiercing:_upperRightEarP];
+}
+
+- (void)setupTarget:(Target *)target withPiercing:(CCSprite *)piercing
+{
+    target.piercing = piercing;
+    target.delegate = self;
+    [self.targets addObject:target];
+}
 
 -(void)turnOnSprite:(CCSprite*)sprite withColor:(CCColor*)color
 {

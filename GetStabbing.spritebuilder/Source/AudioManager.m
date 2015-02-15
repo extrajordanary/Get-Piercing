@@ -40,7 +40,6 @@ NSString *const kMissSFX = @"Published-iOS/sounds/miss2.caf";
     
     if(self)
     {
-        // audio
         _audio = [OALSimpleAudio sharedInstance];
     }
     

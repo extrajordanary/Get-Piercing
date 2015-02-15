@@ -15,7 +15,6 @@ NSString *const kFrownAnimationName = @"frown";
 
 @implementation Head
 {
-    // smile
     CCSprite *_smile;
     BOOL _isSmiling;
     
@@ -75,6 +74,8 @@ NSString *const kFrownAnimationName = @"frown";
     CCColor *color5;
 }
 
+#pragma mark - Initializers
+
 - (void)didLoadFromCCB
 {
     // score
@@ -86,9 +87,7 @@ NSString *const kFrownAnimationName = @"frown";
     // smile
     [self setIsSmiling:NO];
     
-    // generate a random number between 0.0 and 1.0
-    float delay = (arc4random() % 1000) / 1000.f;
-    [self performSelector:@selector(blink) withObject:nil afterDelay:delay];
+    [self startBlinkAnimation];
     
     // add targets to array
     self.targets = [[NSMutableArray alloc] init];
@@ -148,10 +147,26 @@ NSString *const kFrownAnimationName = @"frown";
     self.userInteractionEnabled = YES;
 }
 
--(void)setIsSmiling:(BOOL)isSmiling
+#pragma mark Getters
+
+- (BOOL)isSmiling
 {
-    _isSmiling = isSmiling;
+    return _smile.visible;
+}
+
+#pragma mark Setters
+
+- (void)setIsSmiling:(BOOL)isSmiling
+{
     _smile.visible = isSmiling;
+}
+
+#pragma mark - Helper methods
+
+- (void)startBlinkAnimation
+{
+    float delay = (arc4random() % 1000) / 1000.f;
+    [self performSelector:@selector(blink) withObject:nil afterDelay:delay];
 }
 
 -(void)generateAppearance

@@ -8,6 +8,7 @@
 
 #import "Head.h"
 
+#import "ColorManager.h"
 #import "Target.h"
 
 NSString *const kBlinkAnimationName = @"blink";
@@ -16,7 +17,6 @@ NSString *const kFrownAnimationName = @"frown";
 @implementation Head
 {
     CCSprite *_smile;
-    
     CCSprite *_neckSprite;
     CCSprite *_shirtSprite;
     
@@ -80,26 +80,7 @@ NSString *const kFrownAnimationName = @"frown";
     self.isScoreTallied = NO;
     self.isStrikeTallied = NO;
     self.isSmiling = NO;
-    
-    self.targets = [NSMutableArray array];
     [self setupTargetsWithPiercings];
-    
-    // skin colors
-    skin0 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.849 green:1.000 blue:0.852 alpha:1.000]];
-    skin1 = [CCColor colorWithUIColor:[UIColor colorWithRed:1.000 green:0.889 blue:0.929 alpha:1.000]];
-    skin2 = [CCColor colorWithUIColor:[UIColor colorWithRed:1.000 green:0.930 blue:0.936 alpha:1.000]];
-    skin3 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.846 green:0.753 blue:0.663 alpha:1.000]];
-    skin4 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.545 green:0.415 blue:0.372 alpha:1.000]];
-    skin5 = [CCColor colorWithUIColor:[UIColor colorWithRed:1.000 green:0.928 blue:0.748 alpha:1.000]];
-    
-    // hair, clothes, eye colors
-    color0 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.940 green:1.000 blue:0.197 alpha:1.000]];
-    color1 = [CCColor colorWithUIColor:[UIColor colorWithRed:1.000 green:0.384 blue:0.234 alpha:1.000]];
-    color2 = [CCColor colorWithUIColor:[UIColor colorWithRed:1.000 green:0.195 blue:0.981 alpha:1.000]];
-    color3 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.417 green:0.217 blue:0.846 alpha:1.000]];
-    color4 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.197 green:0.658 blue:1.000 alpha:1.000]];
-    color5 = [CCColor colorWithUIColor:[UIColor colorWithRed:0.193 green:1.000 blue:0.258 alpha:1.000]];
-    
     [self reset];
     [self startBlinkAnimation];
     self.userInteractionEnabled = YES;
@@ -150,8 +131,8 @@ NSString *const kFrownAnimationName = @"frown";
     _hair2Sprite.visible = NO;
     
     // get colors
-    _skinColor = [self getSkinColor];
-    _eyeColor = [self getColor];
+    _skinColor = [[ColorManager sharedInstance] randomSkinColor];
+    _eyeColor = [[ColorManager sharedInstance] randomGeneralColor];
     
     // chose body parts and assign skin color
     // ears, face, neck
@@ -178,7 +159,8 @@ NSString *const kFrownAnimationName = @"frown";
         [bodyParts addObject:_head2Sprite];
     }
     
-    for (CCSprite *sprite in bodyParts) {
+    for (CCSprite *sprite in bodyParts)
+    {
         [self turnOnSprite:sprite withColor:_skinColor];
     }
     
@@ -196,7 +178,7 @@ NSString *const kFrownAnimationName = @"frown";
     
     for (CCSprite *sprite in otherParts)
     {
-        [self turnOnSprite:sprite withColor:[self getColor]];
+        [self turnOnSprite:sprite withColor:[[ColorManager sharedInstance] randomGeneralColor]];
     }
     
     // eyes
@@ -276,6 +258,8 @@ NSString *const kFrownAnimationName = @"frown";
 
 - (void)setupTargetsWithPiercings
 {
+    self.targets = [NSMutableArray array];
+    
     [self setupTarget:self.labret withPiercing:_labretP];
     [self setupTarget:self.leftEyebrow withPiercing:_leftEyebrowP];
     [self setupTarget:self.rightEyebrow withPiercing:_rightEyebrowP];
@@ -300,54 +284,6 @@ NSString *const kFrownAnimationName = @"frown";
     sprite.color = color;
 }
 
--(CCColor*)getSkinColor
-{
-    
-    int skinNumber = arc4random_uniform(6);
-    
-    switch (skinNumber)
-    {
-        case 0:
-            return skin0;
-        case 1:
-            return skin1;
-        case 2:
-            return skin2;
-        case 3:
-            return skin3;
-        case 4:
-            return skin4;
-        case 5:
-            return skin5;
-        default:
-            return skin0;
-    }
-}
-
--(CCColor*)getColor
-{
-    
-    int colorNumber = arc4random_uniform(6);
-    
-    switch (colorNumber)
-    {
-        case 0:
-            return color0;
-        case 1:
-            return color1;
-        case 2:
-            return color2;
-        case 3:
-            return color3;
-        case 4:
-            return color4;
-        case 5:
-            return color5;
-        default:
-            return color0;
-    }
-}
-
 - (void)reset
 {
     self.numPiercingsMade = 0;
@@ -356,9 +292,7 @@ NSString *const kFrownAnimationName = @"frown";
     self.isStrikeTallied = NO;
     self.allPiercingsMade = NO;
     self.atEnd = NO;
-    
-    // reset smile
-    [self setIsSmiling:NO];
+    self.isSmiling = NO;
     
     // clear targets
     for(Target *target in self.targets)

@@ -54,6 +54,7 @@
 		DC0CFC9E1A8FE989000AA09D /* GPModeInfoHard.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFC9D1A8FE989000AA09D /* GPModeInfoHard.plist */; };
 		DC418D311A90082F007782F2 /* Strike.m in Sources */ = {isa = PBXBuildFile; fileRef = DC418D301A90082F007782F2 /* Strike.m */; };
 		DC418D561A901A6F007782F2 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = DC418D551A901A6F007782F2 /* Constants.m */; };
+		DC418D691A902D23007782F2 /* ColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC418D681A902D23007782F2 /* ColorManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +158,8 @@
 		DC418D301A90082F007782F2 /* Strike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Strike.m; path = Source/Strike.m; sourceTree = "<group>"; };
 		DC418D541A901A5C007782F2 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Source/Constants.h; sourceTree = "<group>"; };
 		DC418D551A901A6F007782F2 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Source/Constants.m; sourceTree = "<group>"; };
+		DC418D671A902D23007782F2 /* ColorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorManager.h; path = Source/ColorManager.h; sourceTree = "<group>"; };
+		DC418D681A902D23007782F2 /* ColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorManager.m; path = Source/ColorManager.m; sourceTree = "<group>"; };
 		F2A987C17C4144E27369334A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,6 +215,8 @@
 				CE2E8B021A5A3A4A0065A984 /* AudioManager.m */,
 				CE632C0F1A0743B5009A226B /* Blood.h */,
 				CE632C101A0743B5009A226B /* Blood.m */,
+				DC418D671A902D23007782F2 /* ColorManager.h */,
+				DC418D681A902D23007782F2 /* ColorManager.m */,
 				DC418D541A901A5C007782F2 /* Constants.h */,
 				DC418D551A901A6F007782F2 /* Constants.m */,
 				CE2E8B0A1A5A3AB40065A984 /* Head.h */,
@@ -521,6 +526,7 @@
 				CE2E8B0F1A5A3ACB0065A984 /* Target.m in Sources */,
 				CE632C111A0743B5009A226B /* Blood.m in Sources */,
 				DC0CFC901A8FE2CF000AA09D /* ModeManager.m in Sources */,
+				DC418D691A902D23007782F2 /* ColorManager.m in Sources */,
 				DC418D311A90082F007782F2 /* Strike.m in Sources */,
 				CE2E8B061A5A3A740065A984 /* GameplayScene.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,

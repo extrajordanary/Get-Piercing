@@ -63,6 +63,9 @@
 
 - (void)setupColors
 {
+    _generalColors = [NSMutableArray array];
+    _skinColors = [NSMutableArray array];
+    
     [_generalColors addObject:[CCColor colorWithUIColor:[UIColor colorWithRed:0.940 green:1.000 blue:0.197 alpha:1.000]]];
     [_generalColors addObject:[CCColor colorWithUIColor:[UIColor colorWithRed:1.000 green:0.384 blue:0.234 alpha:1.000]]];
     [_generalColors addObject:[CCColor colorWithUIColor:[UIColor colorWithRed:1.000 green:0.195 blue:0.981 alpha:1.000]]];

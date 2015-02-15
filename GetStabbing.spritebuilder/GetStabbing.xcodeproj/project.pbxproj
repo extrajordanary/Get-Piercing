@@ -53,6 +53,7 @@
 		DC0CFC9C1A8FE97D000AA09D /* GPModeInfoDefault.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFC9B1A8FE97D000AA09D /* GPModeInfoDefault.plist */; };
 		DC0CFC9E1A8FE989000AA09D /* GPModeInfoHard.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFC9D1A8FE989000AA09D /* GPModeInfoHard.plist */; };
 		DC418D311A90082F007782F2 /* Strike.m in Sources */ = {isa = PBXBuildFile; fileRef = DC418D301A90082F007782F2 /* Strike.m */; };
+		DC418D561A901A6F007782F2 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = DC418D551A901A6F007782F2 /* Constants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +155,8 @@
 		DC0CFC9D1A8FE989000AA09D /* GPModeInfoHard.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GPModeInfoHard.plist; sourceTree = "<group>"; };
 		DC418D2F1A90082F007782F2 /* Strike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Strike.h; path = Source/Strike.h; sourceTree = "<group>"; };
 		DC418D301A90082F007782F2 /* Strike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Strike.m; path = Source/Strike.m; sourceTree = "<group>"; };
+		DC418D541A901A5C007782F2 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Source/Constants.h; sourceTree = "<group>"; };
+		DC418D551A901A6F007782F2 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Source/Constants.m; sourceTree = "<group>"; };
 		F2A987C17C4144E27369334A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -209,6 +212,8 @@
 				CE2E8B021A5A3A4A0065A984 /* AudioManager.m */,
 				CE632C0F1A0743B5009A226B /* Blood.h */,
 				CE632C101A0743B5009A226B /* Blood.m */,
+				DC418D541A901A5C007782F2 /* Constants.h */,
+				DC418D551A901A6F007782F2 /* Constants.m */,
 				CE2E8B0A1A5A3AB40065A984 /* Head.h */,
 				CE2E8B0B1A5A3AB40065A984 /* Head.m */,
 				CE2E8B041A5A3A740065A984 /* GameplayScene.h */,
@@ -524,6 +529,7 @@
 				CEA037DC1A0629D600AE81D0 /* GameOverScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				CE2E8B031A5A3A4A0065A984 /* AudioManager.m in Sources */,
+				DC418D561A901A6F007782F2 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

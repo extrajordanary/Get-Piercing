@@ -11,13 +11,13 @@
 #import <GameCenterManager/GameCenterManager.h>
 #import "AudioManager.h"
 #import "Blood.h"
+#import "Constants.h"
 #import "Head.h"
 #import "ModeManager.h"
 #import "Strike.h"
 #import "Target.h"
 
 static NSString * const kIsPausedKey = @"gamePaused";
-static NSString * const kLatestScoreKey = @"GP_LATEST_SCORE_KEY";
 
 // Game Center
 static NSString * const kGameCenterMainLeaderboardID = @"GP_Main_Leaderboard";
@@ -325,7 +325,7 @@ int const kSpaceBetweenHeads = 100;
     [self submitMostPierced];
     [self submitMostMisses];
     
-    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:_score] forKey:kLatestScoreKey];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:_score] forKey:GPCONSTANTS_LATEST_SCORE_KEY];
     
     // display GameOver
     CCScene *scene = [CCBReader loadAsScene:@"GameOverScene"];

@@ -9,6 +9,7 @@
 #import "GameOverScene.h"
 
 #import "Blood.h"
+#import "Constants.h"
 
 @implementation GameOverScene
 {
@@ -17,7 +18,7 @@
 
 - (void)didLoadFromCCB
 {
-    _scoreText.string = [NSString stringWithFormat:@"%i", [[[NSUserDefaults standardUserDefaults] objectForKey:@"GP_LATEST_SCORE_KEY"] intValue]];
+    _scoreText.string = [NSString stringWithFormat:@"%i", [[[NSUserDefaults standardUserDefaults] objectForKey:GPCONSTANTS_LATEST_SCORE_KEY] intValue]];
     
     for(int i = 0; i < 10; i++)
     {

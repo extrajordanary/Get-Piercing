@@ -19,7 +19,6 @@ NSString *const kFrownAnimationName = @"frown";
     // body parts
     CCSprite *_smile;
     CCSprite *_neckSprite;
-    CCSprite *_shirtSprite;
     
     CCSprite *_rightEyeSprite;
     CCSprite *_leftEyeSprite;
@@ -38,6 +37,9 @@ NSString *const kFrownAnimationName = @"frown";
     
     CCSprite *_mouth1Sprite;
     CCSprite *_mouth2Sprite;
+    
+    // non body parts
+    CCSprite *_shirtSprite;
     
     CCSprite *_hair1Sprite;
     CCSprite *_hair2Sprite;
@@ -329,20 +331,12 @@ NSString *const kFrownAnimationName = @"frown";
 
 - (void)blink
 {
-    [self startAnimation:kBlinkAnimationName];
+    [self.animationManager runAnimationsForSequenceNamed:kBlinkAnimationName];
 }
 
 - (void)frown
 {
-    [self startAnimation:kFrownAnimationName];
-}
-
-- (void)startAnimation:(NSString *)animationName
-{
-    CCAnimationManager* animationManager = self.animationManager;
-    
-    // timelines can be referenced and run by name
-    [animationManager runAnimationsForSequenceNamed:animationName];
+    [self.animationManager runAnimationsForSequenceNamed:kFrownAnimationName];
 }
 
 -(BOOL)coinFlip

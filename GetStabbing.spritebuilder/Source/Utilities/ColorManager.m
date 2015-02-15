@@ -49,14 +49,14 @@
 
 - (CCColor *)randomGeneralColor
 {
-    int randomNumber = [self randomNumberUpTo:[_generalColors count]];
-    return [_generalColors objectAtIndex:randomNumber];
+    int numGeneralColors = (int)[_generalColors count];
+    return [_generalColors objectAtIndex:[self randomNumberUpTo:numGeneralColors]];
 }
 
 - (CCColor *)randomSkinColor
 {
-    int randomNumber = [self randomNumberUpTo:[_skinColors count]];
-    return [_skinColors objectAtIndex:randomNumber];
+    int numSkinColors = (int)[_generalColors count];
+    return [_skinColors objectAtIndex:[self randomNumberUpTo:numSkinColors ]];
 }
 
 #pragma mark - Helper methods

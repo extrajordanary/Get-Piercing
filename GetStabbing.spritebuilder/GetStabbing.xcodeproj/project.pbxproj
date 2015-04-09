@@ -41,13 +41,13 @@
 		CE2E8AC81A5A01DD0065A984 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E8AC71A5A01DD0065A984 /* Security.framework */; };
 		CE2E8ACA1A5A01E60065A984 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E8AC91A5A01E60065A984 /* SystemConfiguration.framework */; };
 		D3D841FC1B57EDF6ADE55816 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D4F553A5586931D488FFA3F /* libPods.a */; };
+		DC1BD4051AD7354700A25590 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1BD4001AD7354700A25590 /* GameOverScene.m */; };
+		DC1BD4061AD7354700A25590 /* GameplayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1BD4021AD7354700A25590 /* GameplayScene.m */; };
+		DC1BD4071AD7354700A25590 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1BD4041AD7354700A25590 /* MainScene.m */; };
 		DC418D561A901A6F007782F2 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = DC418D551A901A6F007782F2 /* Constants.m */; };
 		DC418D941A903B4B007782F2 /* AudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC418D8F1A903B4B007782F2 /* AudioManager.m */; };
 		DC418D951A903B4B007782F2 /* ColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC418D911A903B4B007782F2 /* ColorManager.m */; };
 		DC418D961A903B4B007782F2 /* ModeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC418D931A903B4B007782F2 /* ModeManager.m */; };
-		DC418D9E1A903BA1007782F2 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DC418D991A903BA1007782F2 /* GameOverScene.m */; };
-		DC418D9F1A903BA1007782F2 /* GameplayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DC418D9B1A903BA1007782F2 /* GameplayScene.m */; };
-		DC418DA01A903BA1007782F2 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DC418D9D1A903BA1007782F2 /* MainScene.m */; };
 		DC418DAA1A903BE6007782F2 /* Blood.m in Sources */ = {isa = PBXBuildFile; fileRef = DC418DA31A903BE6007782F2 /* Blood.m */; };
 		DC418DAB1A903BE6007782F2 /* Head.m in Sources */ = {isa = PBXBuildFile; fileRef = DC418DA51A903BE6007782F2 /* Head.m */; };
 		DC418DAC1A903BE6007782F2 /* Strike.m in Sources */ = {isa = PBXBuildFile; fileRef = DC418DA71A903BE6007782F2 /* Strike.m */; };
@@ -135,6 +135,12 @@
 		CE2E8AC51A5A01D60065A984 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		CE2E8AC71A5A01DD0065A984 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		CE2E8AC91A5A01E60065A984 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		DC1BD3FF1AD7354700A25590 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverScene.h; path = Source/UI/GameOverScene.h; sourceTree = "<group>"; };
+		DC1BD4001AD7354700A25590 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverScene.m; path = Source/UI/GameOverScene.m; sourceTree = "<group>"; };
+		DC1BD4011AD7354700A25590 /* GameplayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameplayScene.h; path = Source/UI/GameplayScene.h; sourceTree = "<group>"; };
+		DC1BD4021AD7354700A25590 /* GameplayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameplayScene.m; path = Source/UI/GameplayScene.m; sourceTree = "<group>"; };
+		DC1BD4031AD7354700A25590 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainScene.h; path = Source/UI/MainScene.h; sourceTree = "<group>"; };
+		DC1BD4041AD7354700A25590 /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainScene.m; path = Source/UI/MainScene.m; sourceTree = "<group>"; };
 		DC418D541A901A5C007782F2 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Source/Constants.h; sourceTree = "<group>"; };
 		DC418D551A901A6F007782F2 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Source/Constants.m; sourceTree = "<group>"; };
 		DC418D8E1A903B4B007782F2 /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioManager.h; sourceTree = "<group>"; };
@@ -143,12 +149,6 @@
 		DC418D911A903B4B007782F2 /* ColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorManager.m; sourceTree = "<group>"; };
 		DC418D921A903B4B007782F2 /* ModeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeManager.h; sourceTree = "<group>"; };
 		DC418D931A903B4B007782F2 /* ModeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeManager.m; sourceTree = "<group>"; };
-		DC418D981A903BA1007782F2 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
-		DC418D991A903BA1007782F2 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
-		DC418D9A1A903BA1007782F2 /* GameplayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameplayScene.h; sourceTree = "<group>"; };
-		DC418D9B1A903BA1007782F2 /* GameplayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameplayScene.m; sourceTree = "<group>"; };
-		DC418D9C1A903BA1007782F2 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
-		DC418D9D1A903BA1007782F2 /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScene.m; sourceTree = "<group>"; };
 		DC418DA21A903BE6007782F2 /* Blood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blood.h; sourceTree = "<group>"; };
 		DC418DA31A903BE6007782F2 /* Blood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Blood.m; sourceTree = "<group>"; };
 		DC418DA41A903BE6007782F2 /* Head.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Head.h; sourceTree = "<group>"; };
@@ -319,8 +319,13 @@
 		DC418D8A1A903ABA007782F2 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				DC418D971A903BA1007782F2 /* Scenes */,
 				DC418DA11A903BE6007782F2 /* Sprites */,
+				DC1BD3FF1AD7354700A25590 /* GameOverScene.h */,
+				DC1BD4001AD7354700A25590 /* GameOverScene.m */,
+				DC1BD4011AD7354700A25590 /* GameplayScene.h */,
+				DC1BD4021AD7354700A25590 /* GameplayScene.m */,
+				DC1BD4031AD7354700A25590 /* MainScene.h */,
+				DC1BD4041AD7354700A25590 /* MainScene.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -337,20 +342,6 @@
 			);
 			name = Utilities;
 			path = Source/Utilities;
-			sourceTree = "<group>";
-		};
-		DC418D971A903BA1007782F2 /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				DC418D981A903BA1007782F2 /* GameOverScene.h */,
-				DC418D991A903BA1007782F2 /* GameOverScene.m */,
-				DC418D9A1A903BA1007782F2 /* GameplayScene.h */,
-				DC418D9B1A903BA1007782F2 /* GameplayScene.m */,
-				DC418D9C1A903BA1007782F2 /* MainScene.h */,
-				DC418D9D1A903BA1007782F2 /* MainScene.m */,
-			);
-			name = Scenes;
-			path = Source/UI/Scenes;
 			sourceTree = "<group>";
 		};
 		DC418DA11A903BE6007782F2 /* Sprites */ = {
@@ -559,15 +550,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC418DAA1A903BE6007782F2 /* Blood.m in Sources */,
-				DC418D9E1A903BA1007782F2 /* GameOverScene.m in Sources */,
 				DC418DAB1A903BE6007782F2 /* Head.m in Sources */,
+				DC1BD4051AD7354700A25590 /* GameOverScene.m in Sources */,
 				DC418D941A903B4B007782F2 /* AudioManager.m in Sources */,
-				DC418DA01A903BA1007782F2 /* MainScene.m in Sources */,
 				DC418DAC1A903BE6007782F2 /* Strike.m in Sources */,
+				DC1BD4071AD7354700A25590 /* MainScene.m in Sources */,
 				DC418D961A903B4B007782F2 /* ModeManager.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				DC418D951A903B4B007782F2 /* ColorManager.m in Sources */,
-				DC418D9F1A903BA1007782F2 /* GameplayScene.m in Sources */,
+				DC1BD4061AD7354700A25590 /* GameplayScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				DC418D561A901A6F007782F2 /* Constants.m in Sources */,
 				DC418DAD1A903BE6007782F2 /* Target.m in Sources */,

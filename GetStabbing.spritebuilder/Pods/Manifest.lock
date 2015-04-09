@@ -7,7 +7,7 @@ DEPENDENCIES:
   - GameCenterManager (= 5.3)
 
 SPEC CHECKSUMS:
-  GameCenterManager: 9d36711a4688a59a728e0e3f9a050aa835fba618
-  Reachability: 1ef8adf5c4e3d362f96515d4278f68dad3c26930
+  GameCenterManager: e3a855e9db97b876a3a4a0605f5be30c6de9cebd
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.36.0

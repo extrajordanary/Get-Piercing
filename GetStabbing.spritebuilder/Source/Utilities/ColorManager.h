@@ -11,6 +11,7 @@
 @interface ColorManager : NSObject
 
 + (instancetype)sharedInstance;
+
 - (CCColor *)randomGeneralColor;
 - (CCColor *)randomSkinColor;
 

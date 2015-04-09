@@ -1,1476 +1,600 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>04DB37CCD8EA8629B08E56EA</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>9FF8D09971F9E66757835DE0</string>
-			<key>buildPhases</key>
-			<array>
-				<string>B4457B56EC662E635A3939DA</string>
-				<string>7D6BE6281C01F3E4659E3EF0</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>39BCA0DD16260913B6917E3F</string>
-				<string>0EB6690E6F600D566CCFF99F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>productName</key>
-			<string>Pods</string>
-			<key>productReference</key>
-			<string>B92C8781C4B1D23D1396AEF3</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>0655470E8298B39D737F64A9</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>DE616C3183FF027CCAA76B4B</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-GameCenterManager/Pods-GameCenterManager-prefix.pch</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.1</string>
-				<key>OTHER_CFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_CPLUSPLUSFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>06C57F37608D39CE9A9EB90A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>GameCenterManager.m</string>
-			<key>path</key>
-			<string>GC Manager/GameCenterManager.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>06D15B0DCBC48C553D8B3F39</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0510</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>CCECA47BC6508F1573DC3ED3</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>975C505B1597903B93FC8451</string>
-			<key>productRefGroup</key>
-			<string>D9D073DEAA071E8ABC9B478B</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>04DB37CCD8EA8629B08E56EA</string>
-				<string>76CFAE50CDF92D321A4755C8</string>
-				<string>88C2BC03FE01570D64D5F54A</string>
-			</array>
-		</dict>
-		<key>07D68183826339D181D8AB45</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7CAE78B22C4CEED470BD667A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>0A0C5AD3EDBE94B6CB948CD6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>29907BE6815CE483C988DF00</string>
-				<string>7F8C3746B5666EE621C97A4A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0EB6690E6F600D566CCFF99F</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>Pods-Reachability</string>
-			<key>target</key>
-			<string>88C2BC03FE01570D64D5F54A</string>
-			<key>targetProxy</key>
-			<string>F6535D159D41220FD5C6A613</string>
-		</dict>
-		<key>1185151DEFD210256780B887</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>B443B0928759462C3DE1E12A</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-Reachability/Pods-Reachability-prefix.pch</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.1</string>
-				<key>OTHER_CFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_CPLUSPLUSFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>120A811CD7A64AF32F2EC9BA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2FDA9FC3F7ECBD12163E5C7C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>1B51B7D0E7DD70E1EDC8A069</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-environment.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>20C38FE30DD5C7C465E0A696</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C2845FF7609710FA2B4082D6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>2213060FD6F1FFBC598AD56B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>663807FFEF57B1DC69223A5D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>29907BE6815CE483C988DF00</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A892B5280035B8F5FF4EFEE9</string>
-				<string>06C57F37608D39CE9A9EB90A</string>
-				<string>F8612246DD480D0DEE80F890</string>
-				<string>C2845FF7609710FA2B4082D6</string>
-				<string>C86B5D6DED4ABC92852BB363</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>GameCenterManager</string>
-			<key>path</key>
-			<string>GameCenterManager</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2FDA9FC3F7ECBD12163E5C7C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>39BCA0DD16260913B6917E3F</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>Pods-GameCenterManager</string>
-			<key>target</key>
-			<string>76CFAE50CDF92D321A4755C8</string>
-			<key>targetProxy</key>
-			<string>B0BE2D806EC386FC4F9FFCD5</string>
-		</dict>
-		<key>3C421811CEAE407D320071AE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C76546785C2D36F5E11ED243</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3F54F817036D48A1B89917D7</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>B443B0928759462C3DE1E12A</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-Reachability/Pods-Reachability-prefix.pch</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.1</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>41AEE283EFE1408A20D0770A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>89921A5086002AA4CCBDFF36</string>
-				<string>A518ADEE4ADC8C1E20731887</string>
-				<string>74DC0314F009190F91FC54EA</string>
-				<string>67393235371DA3EB037354E5</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>42A6B9CB1CDCB00B09411CEB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2FDA9FC3F7ECBD12163E5C7C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>451CA9EE6C4A8CE78CFAFDCC</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>06D15B0DCBC48C553D8B3F39</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>88C2BC03FE01570D64D5F54A</string>
-			<key>remoteInfo</key>
-			<string>Pods-Reachability</string>
-		</dict>
-		<key>615B58A42ACC1AA9DC555BBD</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-Reachability-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>62334ADB532B28B36270C662</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>66E0B6E281C3438FAE4C6697</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.1</string>
-				<key>OTHER_CFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_CPLUSPLUSFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>64C5F8DA43EDB87D3C4C35C6</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-Reachability.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>663807FFEF57B1DC69223A5D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-GameCenterManager-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>66E0B6E281C3438FAE4C6697</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>67393235371DA3EB037354E5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DF4C2A10348E2CA1130356FA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6D5E72262C2623E274E2F01E</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>DE616C3183FF027CCAA76B4B</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-GameCenterManager/Pods-GameCenterManager-prefix.pch</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.1</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>71EB6B4A9F15E03390BA9C27</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DF4C2A10348E2CA1130356FA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>7260116666BFB5750178ED50</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>A334C95A3C58C7CC471BBD24</string>
-				<string>20C38FE30DD5C7C465E0A696</string>
-				<string>2213060FD6F1FFBC598AD56B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>73DF10A4F0E645BD9D81FE4D</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>RELEASE=1</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.1</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>7449D2DB84A7511EB44FEA25</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Pods-acknowledgements.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>74BF7E61C0E399FF53263B59</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Reachability.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>74DC0314F009190F91FC54EA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F31B6E7D1620435A89B5E4D4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>76CFAE50CDF92D321A4755C8</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>C498ADFBCC38C89EDB5B6E71</string>
-			<key>buildPhases</key>
-			<array>
-				<string>7260116666BFB5750178ED50</string>
-				<string>41AEE283EFE1408A20D0770A</string>
-				<string>7F01C64429D9571E2DAB3F71</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>D15BDF9157A90789EA9CDFAE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-GameCenterManager</string>
-			<key>productName</key>
-			<string>Pods-GameCenterManager</string>
-			<key>productReference</key>
-			<string>D46BFDC0B06F030D99FD3383</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>7A9109B7200AEE89F4356596</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A892B5280035B8F5FF4EFEE9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>7CAE78B22C4CEED470BD667A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Reachability.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7D6BE6281C01F3E4659E3EF0</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>120A811CD7A64AF32F2EC9BA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>7EA64ACDAFF9FE4410BB34F3</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>3F54F817036D48A1B89917D7</string>
-				<string>1185151DEFD210256780B887</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>7F01C64429D9571E2DAB3F71</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>7A9109B7200AEE89F4356596</string>
-				<string>D08B921A7833F1026AD719D1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>7F8C3746B5666EE621C97A4A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>74BF7E61C0E399FF53263B59</string>
-				<string>7CAE78B22C4CEED470BD667A</string>
-				<string>E0F29344AB939F30F5DB9E92</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Reachability</string>
-			<key>path</key>
-			<string>Reachability</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>81DDFA38EFE112B6492515F5</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>name</key>
-			<string>Podfile</string>
-			<key>path</key>
-			<string>../Podfile</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-			<key>xcLanguageSpecificationIdentifier</key>
-			<string>xcode.lang.ruby</string>
-		</dict>
-		<key>88C2BC03FE01570D64D5F54A</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>7EA64ACDAFF9FE4410BB34F3</string>
-			<key>buildPhases</key>
-			<array>
-				<string>C0AFEADF5A4F311749987C85</string>
-				<string>AEA78C2301BBEB791CEECCE6</string>
-				<string>9680A4837BE9E71DC3E0AFED</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-Reachability</string>
-			<key>productName</key>
-			<string>Pods-Reachability</string>
-			<key>productReference</key>
-			<string>64C5F8DA43EDB87D3C4C35C6</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>89921A5086002AA4CCBDFF36</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2FDA9FC3F7ECBD12163E5C7C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8B1798BB5138D8C326720856</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9680A4837BE9E71DC3E0AFED</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>A9C81FE2485F32F3DE7F4C05</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>975C505B1597903B93FC8451</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>81DDFA38EFE112B6492515F5</string>
-				<string>3C421811CEAE407D320071AE</string>
-				<string>0A0C5AD3EDBE94B6CB948CD6</string>
-				<string>D9D073DEAA071E8ABC9B478B</string>
-				<string>C503E970B35FB7E3023600D1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9DFB711D0AD48FF550F473E4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-resources.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9FF8D09971F9E66757835DE0</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>ECE014EA614E0A8999C42E4D</string>
-				<string>62334ADB532B28B36270C662</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>A334C95A3C58C7CC471BBD24</key>
-		<dict>
-			<key>fileRef</key>
-			<string>06C57F37608D39CE9A9EB90A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A518ADEE4ADC8C1E20731887</key>
-		<dict>
-			<key>fileRef</key>
-			<string>EBE427A634FDC0D6AF44A949</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A892B5280035B8F5FF4EFEE9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>GameCenterManager.h</string>
-			<key>path</key>
-			<string>GC Manager/GameCenterManager.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A9C81FE2485F32F3DE7F4C05</key>
-		<dict>
-			<key>fileRef</key>
-			<string>74BF7E61C0E399FF53263B59</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AA6DD3A315BC17F9264BC2D2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>Pods-acknowledgements.markdown</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEA78C2301BBEB791CEECCE6</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>42A6B9CB1CDCB00B09411CEB</string>
-				<string>71EB6B4A9F15E03390BA9C27</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>B05A7F1B26B30B454ED5914E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B0BE2D806EC386FC4F9FFCD5</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>06D15B0DCBC48C553D8B3F39</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>76CFAE50CDF92D321A4755C8</string>
-			<key>remoteInfo</key>
-			<string>Pods-GameCenterManager</string>
-		</dict>
-		<key>B443B0928759462C3DE1E12A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-Reachability-Private.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B4457B56EC662E635A3939DA</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>C9327B666861B700EDF3BEDE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>B625A13A1F5F932F0EF6E122</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-Reachability.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B92C8781C4B1D23D1396AEF3</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>C0221EB87F88363A822E678A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-Reachability-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C0AFEADF5A4F311749987C85</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CBB913B3108FA44BDB663FE4</string>
-				<string>07D68183826339D181D8AB45</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>C2845FF7609710FA2B4082D6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSDataAES256.m</string>
-			<key>path</key>
-			<string>GC Manager/NSDataAES256.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C2B5289EA6B9F89C290BF1D7</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.1</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>C317C3328262ECB9AF0646FE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-GameCenterManager-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C498ADFBCC38C89EDB5B6E71</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>6D5E72262C2623E274E2F01E</string>
-				<string>0655470E8298B39D737F64A9</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>C503E970B35FB7E3023600D1</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CD81ADE798ADD33F0913FAFD</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Targets Support Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C76546785C2D36F5E11ED243</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>2FDA9FC3F7ECBD12163E5C7C</string>
-				<string>EBE427A634FDC0D6AF44A949</string>
-				<string>F31B6E7D1620435A89B5E4D4</string>
-				<string>DF4C2A10348E2CA1130356FA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>iOS</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C86B5D6DED4ABC92852BB363</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>DAFA7BAA362FCE75920B9FD2</string>
-				<string>DE616C3183FF027CCAA76B4B</string>
-				<string>663807FFEF57B1DC69223A5D</string>
-				<string>C317C3328262ECB9AF0646FE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/Pods-GameCenterManager</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C9327B666861B700EDF3BEDE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8B1798BB5138D8C326720856</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CBB913B3108FA44BDB663FE4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>615B58A42ACC1AA9DC555BBD</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CCECA47BC6508F1573DC3ED3</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>C2B5289EA6B9F89C290BF1D7</string>
-				<string>73DF10A4F0E645BD9D81FE4D</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>CD81ADE798ADD33F0913FAFD</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AA6DD3A315BC17F9264BC2D2</string>
-				<string>7449D2DB84A7511EB44FEA25</string>
-				<string>8B1798BB5138D8C326720856</string>
-				<string>1B51B7D0E7DD70E1EDC8A069</string>
-				<string>9DFB711D0AD48FF550F473E4</string>
-				<string>B05A7F1B26B30B454ED5914E</string>
-				<string>66E0B6E281C3438FAE4C6697</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>path</key>
-			<string>Target Support Files/Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D08B921A7833F1026AD719D1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F8612246DD480D0DEE80F890</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D15BDF9157A90789EA9CDFAE</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>Pods-Reachability</string>
-			<key>target</key>
-			<string>88C2BC03FE01570D64D5F54A</string>
-			<key>targetProxy</key>
-			<string>451CA9EE6C4A8CE78CFAFDCC</string>
-		</dict>
-		<key>D46BFDC0B06F030D99FD3383</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-GameCenterManager.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>D9D073DEAA071E8ABC9B478B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B92C8781C4B1D23D1396AEF3</string>
-				<string>D46BFDC0B06F030D99FD3383</string>
-				<string>64C5F8DA43EDB87D3C4C35C6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DAFA7BAA362FCE75920B9FD2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-GameCenterManager.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DE616C3183FF027CCAA76B4B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-GameCenterManager-Private.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DF4C2A10348E2CA1130356FA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>SystemConfiguration.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/SystemConfiguration.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>E0F29344AB939F30F5DB9E92</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B625A13A1F5F932F0EF6E122</string>
-				<string>B443B0928759462C3DE1E12A</string>
-				<string>615B58A42ACC1AA9DC555BBD</string>
-				<string>C0221EB87F88363A822E678A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/Pods-Reachability</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>EBE427A634FDC0D6AF44A949</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>GameKit.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/GameKit.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>ECE014EA614E0A8999C42E4D</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>B05A7F1B26B30B454ED5914E</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.1</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>F31B6E7D1620435A89B5E4D4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Security.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Security.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>F6535D159D41220FD5C6A613</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>06D15B0DCBC48C553D8B3F39</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>88C2BC03FE01570D64D5F54A</string>
-			<key>remoteInfo</key>
-			<string>Pods-Reachability</string>
-		</dict>
-		<key>F8612246DD480D0DEE80F890</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSDataAES256.h</string>
-			<key>path</key>
-			<string>GC Manager/NSDataAES256.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>06D15B0DCBC48C553D8B3F39</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03F4ACEBF98A9C64A46682E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0CA0F63D74B89C43CACF9BA /* Foundation.framework */; };
+		075841F1A832E8A14130EAE5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0CA0F63D74B89C43CACF9BA /* Foundation.framework */; };
+		0BE03C2E7440C0F8F5A8B241 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB5EC2BB9DE240BD3253AEC /* Security.framework */; };
+		3923155E93807C3565717ADB /* NSDataAES256.m in Sources */ = {isa = PBXBuildFile; fileRef = D66E4E4E7A098533BC70DCEC /* NSDataAES256.m */; };
+		3D3F40A88615AD5E414E29D7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E85075AE55C251033AD1DD9 /* SystemConfiguration.framework */; };
+		3F726C6536C86D396ED4194F /* GameCenterManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 490C8F66A402DAD31AF1F999 /* GameCenterManager.h */; };
+		4BB60F1E65E721597690B219 /* NSDataAES256.h in Headers */ = {isa = PBXBuildFile; fileRef = 097AA1C08D3DA41C15FEB8C2 /* NSDataAES256.h */; };
+		5CE89DE9C025AB60A2D2441C /* Pods-GameCenterManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A428082638C1F39EA0EED04 /* Pods-GameCenterManager-dummy.m */; };
+		60DBFC5C9949F685B1C8E96D /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C340A8373E19091AC2AA51A6 /* GameCenterManager.m */; };
+		8E57775FBAAD8904B058C1AC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E88A74BB121DF06DF6809A5 /* Reachability.m */; };
+		8F51861FD5EF3BEC4A40C9F9 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CCD5C64ACD131F2C26BAC22 /* GameKit.framework */; };
+		9187B38CA45E4EC96FBE45B6 /* Pods-Reachability-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 430A7962534C47F74DE471EC /* Pods-Reachability-dummy.m */; };
+		A2A477298168E0DB4A172E04 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = C8E903D4678B94500137AE00 /* Reachability.h */; };
+		A4D48B330494A5D8277AF30A /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC668B811C561522F22B000D /* Pods-dummy.m */; };
+		CECFB8F4D831C496C64E204F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E85075AE55C251033AD1DD9 /* SystemConfiguration.framework */; };
+		FB24D7FE67ED5D5729DD15F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0CA0F63D74B89C43CACF9BA /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9706DEE3A3C8D5DC65B7F30F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 117FCB581CA1B136776652E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C9FD7539E12B3D9B4B048D7;
+			remoteInfo = "Pods-Reachability";
+		};
+		D2A69B2E80B1847A72471A9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 117FCB581CA1B136776652E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3E4616F75564C5D44D40C9D;
+			remoteInfo = "Pods-GameCenterManager";
+		};
+		D7B1CBF284DC351BE221E718 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 117FCB581CA1B136776652E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C9FD7539E12B3D9B4B048D7;
+			remoteInfo = "Pods-Reachability";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		097AA1C08D3DA41C15FEB8C2 /* NSDataAES256.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NSDataAES256.h; path = "GC Manager/NSDataAES256.h"; sourceTree = "<group>"; };
+		1A428082638C1F39EA0EED04 /* Pods-GameCenterManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GameCenterManager-dummy.m"; sourceTree = "<group>"; };
+		1AE7E4842ABE6DCC4541860C /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		20346B6FB9AFBBEB6648E474 /* Pods-Reachability-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reachability-Private.xcconfig"; sourceTree = "<group>"; };
+		2249C72BBBA6957A00142F5F /* Pods-Reachability-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Reachability-prefix.pch"; sourceTree = "<group>"; };
+		231D11E421043A88FB30BCB5 /* Pods-Reachability.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Reachability.xcconfig"; sourceTree = "<group>"; };
+		236D4D149917770CD0407FEF /* libPods-GameCenterManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GameCenterManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E85075AE55C251033AD1DD9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		430A7962534C47F74DE471EC /* Pods-Reachability-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Reachability-dummy.m"; sourceTree = "<group>"; };
+		490C8F66A402DAD31AF1F999 /* GameCenterManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GameCenterManager.h; path = "GC Manager/GameCenterManager.h"; sourceTree = "<group>"; };
+		4EC1BF0ED8D6B9896C9590AE /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		55496E0F6ECFEB614773A1F4 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
+		5E88A74BB121DF06DF6809A5 /* Reachability.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		624B3B9E96339828B3F4B56F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BA73C187159DC551D15CFA5 /* Pods-GameCenterManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GameCenterManager-prefix.pch"; sourceTree = "<group>"; };
+		6CCD5C64ACD131F2C26BAC22 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
+		6CEEABE09F0DA54594D303B1 /* Pods-GameCenterManager-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GameCenterManager-Private.xcconfig"; sourceTree = "<group>"; };
+		6FB5EC2BB9DE240BD3253AEC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		727FE41078CB93934AAC2619 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		97287385F501AB768E29D2C2 /* Pods-GameCenterManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GameCenterManager.xcconfig"; sourceTree = "<group>"; };
+		C340A8373E19091AC2AA51A6 /* GameCenterManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GameCenterManager.m; path = "GC Manager/GameCenterManager.m"; sourceTree = "<group>"; };
+		C8E903D4678B94500137AE00 /* Reachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		CAE6D84463D320D7F895D491 /* libPods-Reachability.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reachability.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D66E4E4E7A098533BC70DCEC /* NSDataAES256.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NSDataAES256.m; path = "GC Manager/NSDataAES256.m"; sourceTree = "<group>"; };
+		DC350D6F1A9FE06980274C5A /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DC668B811C561522F22B000D /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		E3059FC91DE34B0580519887 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		F0CA0F63D74B89C43CACF9BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		F2ECF47DFFE36DD3CE8258A6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		427BEBB00F14E1D881226D6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03F4ACEBF98A9C64A46682E0 /* Foundation.framework in Frameworks */,
+				8F51861FD5EF3BEC4A40C9F9 /* GameKit.framework in Frameworks */,
+				0BE03C2E7440C0F8F5A8B241 /* Security.framework in Frameworks */,
+				CECFB8F4D831C496C64E204F /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B555A2F83CB1E5DCD44B63ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB24D7FE67ED5D5729DD15F9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9AA1EE5EECFDAA06A10A6C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				075841F1A832E8A14130EAE5 /* Foundation.framework in Frameworks */,
+				3D3F40A88615AD5E414E29D7 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03778AA89036F564DA897D06 /* GameCenterManager */ = {
+			isa = PBXGroup;
+			children = (
+				490C8F66A402DAD31AF1F999 /* GameCenterManager.h */,
+				C340A8373E19091AC2AA51A6 /* GameCenterManager.m */,
+				097AA1C08D3DA41C15FEB8C2 /* NSDataAES256.h */,
+				D66E4E4E7A098533BC70DCEC /* NSDataAES256.m */,
+				19BC40B19903BF2FD2822F21 /* Support Files */,
+			);
+			path = GameCenterManager;
+			sourceTree = "<group>";
+		};
+		19BC40B19903BF2FD2822F21 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				97287385F501AB768E29D2C2 /* Pods-GameCenterManager.xcconfig */,
+				6CEEABE09F0DA54594D303B1 /* Pods-GameCenterManager-Private.xcconfig */,
+				1A428082638C1F39EA0EED04 /* Pods-GameCenterManager-dummy.m */,
+				6BA73C187159DC551D15CFA5 /* Pods-GameCenterManager-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-GameCenterManager";
+			sourceTree = "<group>";
+		};
+		1E079BB5C0D6A0F1E9A1F9B0 = {
+			isa = PBXGroup;
+			children = (
+				1AE7E4842ABE6DCC4541860C /* Podfile */,
+				E69E1279411817B6E04A5143 /* Frameworks */,
+				D9FBEA430ECCDE01C421B667 /* Pods */,
+				ED003136589D7859AB050B93 /* Products */,
+				34D1A2B8182A787D394F5B36 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		34D1A2B8182A787D394F5B36 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A8005C9E9E33EA15BF33E095 /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		A3E4EBD66656DDA71F336C02 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				C8E903D4678B94500137AE00 /* Reachability.h */,
+				5E88A74BB121DF06DF6809A5 /* Reachability.m */,
+				E28E892AE3960976AD846428 /* Support Files */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		A8005C9E9E33EA15BF33E095 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC350D6F1A9FE06980274C5A /* Pods-acknowledgements.markdown */,
+				4EC1BF0ED8D6B9896C9590AE /* Pods-acknowledgements.plist */,
+				DC668B811C561522F22B000D /* Pods-dummy.m */,
+				55496E0F6ECFEB614773A1F4 /* Pods-environment.h */,
+				727FE41078CB93934AAC2619 /* Pods-resources.sh */,
+				E3059FC91DE34B0580519887 /* Pods.debug.xcconfig */,
+				F2ECF47DFFE36DD3CE8258A6 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		B8309A8ACBAA45BE185A7D31 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F0CA0F63D74B89C43CACF9BA /* Foundation.framework */,
+				6CCD5C64ACD131F2C26BAC22 /* GameKit.framework */,
+				6FB5EC2BB9DE240BD3253AEC /* Security.framework */,
+				2E85075AE55C251033AD1DD9 /* SystemConfiguration.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		D9FBEA430ECCDE01C421B667 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				03778AA89036F564DA897D06 /* GameCenterManager */,
+				A3E4EBD66656DDA71F336C02 /* Reachability */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E28E892AE3960976AD846428 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				231D11E421043A88FB30BCB5 /* Pods-Reachability.xcconfig */,
+				20346B6FB9AFBBEB6648E474 /* Pods-Reachability-Private.xcconfig */,
+				430A7962534C47F74DE471EC /* Pods-Reachability-dummy.m */,
+				2249C72BBBA6957A00142F5F /* Pods-Reachability-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Reachability";
+			sourceTree = "<group>";
+		};
+		E69E1279411817B6E04A5143 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8309A8ACBAA45BE185A7D31 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED003136589D7859AB050B93 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				624B3B9E96339828B3F4B56F /* libPods.a */,
+				236D4D149917770CD0407FEF /* libPods-GameCenterManager.a */,
+				CAE6D84463D320D7F895D491 /* libPods-Reachability.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		633E5B73913EFA9359F65431 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2A477298168E0DB4A172E04 /* Reachability.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABCC4231262760465C7AF349 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F726C6536C86D396ED4194F /* GameCenterManager.h in Headers */,
+				4BB60F1E65E721597690B219 /* NSDataAES256.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1A30FC80D7D34E08DC0F0D86 /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEEAE2240F0269F953C25019 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				1E3DF7BB2CA8712A02EC6AA9 /* Sources */,
+				B555A2F83CB1E5DCD44B63ED /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3463BFF7498410AA47DBBD8C /* PBXTargetDependency */,
+				25E2890F4EF92421BB057881 /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = 624B3B9E96339828B3F4B56F /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		3C9FD7539E12B3D9B4B048D7 /* Pods-Reachability */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBC7178529717940D70755C5 /* Build configuration list for PBXNativeTarget "Pods-Reachability" */;
+			buildPhases = (
+				1C03CA53565580FE77D556DB /* Sources */,
+				B9AA1EE5EECFDAA06A10A6C1 /* Frameworks */,
+				633E5B73913EFA9359F65431 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Reachability";
+			productName = "Pods-Reachability";
+			productReference = CAE6D84463D320D7F895D491 /* libPods-Reachability.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F3E4616F75564C5D44D40C9D /* Pods-GameCenterManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42F58CB577D2984E74E9B24C /* Build configuration list for PBXNativeTarget "Pods-GameCenterManager" */;
+			buildPhases = (
+				887514DD28ECA767B5400614 /* Sources */,
+				427BEBB00F14E1D881226D6B /* Frameworks */,
+				ABCC4231262760465C7AF349 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1E92415B773A6FA32425C32 /* PBXTargetDependency */,
+			);
+			name = "Pods-GameCenterManager";
+			productName = "Pods-GameCenterManager";
+			productReference = 236D4D149917770CD0407FEF /* libPods-GameCenterManager.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		117FCB581CA1B136776652E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = BFCB769340219A07227261F7 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1E079BB5C0D6A0F1E9A1F9B0;
+			productRefGroup = ED003136589D7859AB050B93 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A30FC80D7D34E08DC0F0D86 /* Pods */,
+				F3E4616F75564C5D44D40C9D /* Pods-GameCenterManager */,
+				3C9FD7539E12B3D9B4B048D7 /* Pods-Reachability */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1C03CA53565580FE77D556DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9187B38CA45E4EC96FBE45B6 /* Pods-Reachability-dummy.m in Sources */,
+				8E57775FBAAD8904B058C1AC /* Reachability.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E3DF7BB2CA8712A02EC6AA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4D48B330494A5D8277AF30A /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		887514DD28ECA767B5400614 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60DBFC5C9949F685B1C8E96D /* GameCenterManager.m in Sources */,
+				3923155E93807C3565717ADB /* NSDataAES256.m in Sources */,
+				5CE89DE9C025AB60A2D2441C /* Pods-GameCenterManager-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		25E2890F4EF92421BB057881 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Reachability";
+			target = 3C9FD7539E12B3D9B4B048D7 /* Pods-Reachability */;
+			targetProxy = 9706DEE3A3C8D5DC65B7F30F /* PBXContainerItemProxy */;
+		};
+		3463BFF7498410AA47DBBD8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-GameCenterManager";
+			target = F3E4616F75564C5D44D40C9D /* Pods-GameCenterManager */;
+			targetProxy = D2A69B2E80B1847A72471A9D /* PBXContainerItemProxy */;
+		};
+		E1E92415B773A6FA32425C32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Reachability";
+			target = 3C9FD7539E12B3D9B4B048D7 /* Pods-Reachability */;
+			targetProxy = D7B1CBF284DC351BE221E718 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1F22880DD6C8440C79547259 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CEEABE09F0DA54594D303B1 /* Pods-GameCenterManager-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-GameCenterManager/Pods-GameCenterManager-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4648CF55230D60D9B3E0085B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3059FC91DE34B0580519887 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6B6BD7F06AF5E5DBBC9C3BB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2ECF47DFFE36DD3CE8258A6 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		6EE2C749AE10320D49973FAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20346B6FB9AFBBEB6648E474 /* Pods-Reachability-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Reachability/Pods-Reachability-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		889A9390AAC32506AA57C9AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CEEABE09F0DA54594D303B1 /* Pods-GameCenterManager-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-GameCenterManager/Pods-GameCenterManager-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		9BDC02D90F290ABC596F7FA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		BDA2539118CBB619A2BE339D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F026959AF7C7C5B0CA261586 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20346B6FB9AFBBEB6648E474 /* Pods-Reachability-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Reachability/Pods-Reachability-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42F58CB577D2984E74E9B24C /* Build configuration list for PBXNativeTarget "Pods-GameCenterManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F22880DD6C8440C79547259 /* Debug */,
+				889A9390AAC32506AA57C9AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEEAE2240F0269F953C25019 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4648CF55230D60D9B3E0085B /* Debug */,
+				6B6BD7F06AF5E5DBBC9C3BB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFCB769340219A07227261F7 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BDC02D90F290ABC596F7FA8 /* Debug */,
+				BDA2539118CBB619A2BE339D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBC7178529717940D70755C5 /* Build configuration list for PBXNativeTarget "Pods-Reachability" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F026959AF7C7C5B0CA261586 /* Debug */,
+				6EE2C749AE10320D49973FAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 117FCB581CA1B136776652E8 /* Project object */;
+}
